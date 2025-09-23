@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Linkedin, MapPin, Send, Phone, Calendar, Github } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -22,15 +23,32 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Send email using edge function
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
+
+      if (error) {
+        throw error;
+      }
+
       toast({
         title: "Message sent successfully!",
         description: "Thank you for reaching out. I'll get back to you within 24 hours.",
       });
+      
       setFormData({ name: "", email: "", company: "", subject: "", message: "" });
+    } catch (error: any) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly at hasnani.shaneeza@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
