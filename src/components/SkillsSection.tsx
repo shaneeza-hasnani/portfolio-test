@@ -19,8 +19,8 @@ const SkillsSection = () => {
   const skills = [
     {
       id: "programming",
-      title: "Programming",
-      description: "Python, SQL, R for data science applications",
+      title: "Python/R/SQL",
+      description: "Core programming languages for data science",
       icon: Code2,
       level: 90,
       color: "from-blue-500 to-cyan-500",
@@ -33,18 +33,18 @@ const SkillsSection = () => {
       ]
     },
     {
-      id: "machine-learning",
-      title: "Machine Learning",
-      description: "Predictive modeling and algorithm development",
-      icon: Brain,
-      level: 90,
-      color: "from-purple-500 to-pink-500",
+      id: "fraud-detection",
+      title: "Fraud Detection",
+      description: "Advanced anomaly detection and pattern recognition",
+      icon: Shield,
+      level: 95,
+      color: "from-red-500 to-orange-500",
       detailSkills: [
-        { name: "Random Forest", level: 95, projects: "5+" },
-        { name: "Logistic Regression", level: 90, projects: "4+" },
-        { name: "Decision Trees", level: 90, projects: "4+" },
-        { name: "Feature Engineering", level: 90, experience: "Advanced" },
-        { name: "Model Validation", level: 85, focus: "Cross-validation" }
+        { name: "Anomaly Detection", level: 95, experience: "3+ years" },
+        { name: "Financial Forensics", level: 90, certification: "CFE 2025" },
+        { name: "Risk Assessment", level: 90, impact: "$500K+ recovery" },
+        { name: "Pattern Recognition", level: 95, scale: "20K+ records" },
+        { name: "Compliance Monitoring", level: 85, focus: "AML/BSA" }
       ]
     },
     {
@@ -63,18 +63,18 @@ const SkillsSection = () => {
       ]
     },
     {
-      id: "fraud-detection",
-      title: "Fraud Detection",
-      description: "Advanced anomaly detection and pattern recognition",
-      icon: Shield,
-      level: 95,
-      color: "from-red-500 to-orange-500",
+      id: "machine-learning",
+      title: "Machine Learning",
+      description: "Predictive modeling and algorithm development",
+      icon: Brain,
+      level: 90,
+      color: "from-purple-500 to-pink-500",
       detailSkills: [
-        { name: "Anomaly Detection", level: 95, experience: "3+ years" },
-        { name: "Financial Forensics", level: 90, certification: "CFE 2025" },
-        { name: "Risk Assessment", level: 90, impact: "$500K+ recovery" },
-        { name: "Pattern Recognition", level: 95, scale: "20K+ records" },
-        { name: "Compliance Monitoring", level: 85, focus: "AML/BSA" }
+        { name: "Random Forest", level: 95, projects: "5+" },
+        { name: "Logistic Regression", level: 90, projects: "4+" },
+        { name: "Decision Trees", level: 90, projects: "4+" },
+        { name: "Feature Engineering", level: 90, experience: "Advanced" },
+        { name: "Model Validation", level: 85, focus: "Cross-validation" }
       ]
     },
     {
