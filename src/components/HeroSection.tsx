@@ -43,7 +43,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center hero-gradient relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center hero-gradient relative overflow-hidden pt-20">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-32 h-32 rounded-full bg-primary animate-pulse" />
@@ -61,12 +61,11 @@ const HeroSection = () => {
                 <span>Available for opportunities</span>
               </div>
               
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+              <h1 className="font-heading text-4xl lg:text-6xl font-bold leading-tight">
                 Hi, I'm{" "}
                 <span className="bg-gradient-accent bg-clip-text text-transparent">
-                  Shaneeza
+                  Shaneeza Hasnani
                 </span>
-                —
               </h1>
               
               <h2 className="text-2xl lg:text-3xl font-semibold text-muted-foreground">
@@ -78,9 +77,9 @@ const HeroSection = () => {
               </p>
               
               <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                I turn complex data into actionable insights that protect businesses and drive growth. 
-                With expertise in fraud detection, machine learning, and financial forensics, I build 
-                models that make a real difference.
+                I solve complex problems with data-driven solutions that have real business impact. 
+                From detecting $500K+ in fraud to building systems that protect millions in transactions, 
+                I create models that organizations depend on to make critical decisions.
               </p>
             </div>
 

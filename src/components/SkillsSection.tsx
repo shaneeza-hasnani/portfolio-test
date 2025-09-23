@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { 
   Code2, 
   Database, 
@@ -10,36 +12,43 @@ import {
   FileSpreadsheet,
   TrendingUp,
   Zap,
-  Award
+  Award,
+  ChevronRight,
+  Star
 } from "lucide-react";
 
 const SkillsSection = () => {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+
   const skillCategories = [
     {
       title: "Programming & Data",
-      description: "Core technical skills for data manipulation and analysis",
+      description: "Core technical foundation for data manipulation and analysis",
       icon: Code2,
       color: "from-blue-500 to-cyan-500",
+      category: "technical",
       skills: [
-        { name: "Python", level: "Expert", years: "3+" },
-        { name: "SQL", level: "Expert", years: "3+" },
-        { name: "R", level: "Advanced", years: "2+" },
-        { name: "C++", level: "Intermediate", years: "1+" },
-        { name: "Scala", level: "Intermediate", years: "1+" }
+        { name: "Python", level: "Expert", years: "3+", proficiency: 95 },
+        { name: "SQL", level: "Expert", years: "3+", proficiency: 95 },
+        { name: "R", level: "Advanced", years: "2+", proficiency: 85 },
+        { name: "C++", level: "Intermediate", years: "1+", proficiency: 70 },
+        { name: "Scala", level: "Intermediate", years: "1+", proficiency: 65 }
       ]
     },
     {
       title: "Machine Learning",
-      description: "Advanced ML algorithms and predictive modeling",
+      description: "Advanced algorithms and predictive modeling expertise",
       icon: Brain,
       color: "from-purple-500 to-pink-500",
+      category: "ml",
       skills: [
-        { name: "Random Forest", level: "Expert", projects: "5+" },
-        { name: "Logistic Regression", level: "Expert", projects: "4+" },
-        { name: "Decision Trees", level: "Expert", projects: "4+" },
-        { name: "Anomaly Detection", level: "Expert", projects: "3+" },
-        { name: "Predictive Analysis", level: "Advanced", projects: "3+" },
-        { name: "Feature Engineering", level: "Advanced", projects: "5+" }
+        { name: "Random Forest", level: "Expert", projects: "5+", proficiency: 95 },
+        { name: "Logistic Regression", level: "Expert", projects: "4+", proficiency: 90 },
+        { name: "Decision Trees", level: "Expert", projects: "4+", proficiency: 90 },
+        { name: "Anomaly Detection", level: "Expert", projects: "3+", proficiency: 95 },
+        { name: "Predictive Analysis", level: "Advanced", projects: "3+", proficiency: 85 },
+        { name: "Feature Engineering", level: "Advanced", projects: "5+", proficiency: 90 }
       ]
     },
     {
@@ -47,12 +56,13 @@ const SkillsSection = () => {
       description: "Specialized expertise in fraud detection and financial forensics",
       icon: Shield,
       color: "from-red-500 to-orange-500",
+      category: "domain",
       skills: [
-        { name: "Fraud Detection", level: "Expert", impact: "25% accuracy improvement" },
-        { name: "Risk Assessment", level: "Expert", impact: "$500K+ recovery identified" },
-        { name: "Financial Forensics", level: "Advanced", certification: "CFE 2025" },
-        { name: "Compliance Monitoring", level: "Advanced", impact: "30% enhancement" },
-        { name: "Pattern Recognition", level: "Expert", scale: "20K+ records" }
+        { name: "Fraud Detection", level: "Expert", impact: "25% accuracy improvement", proficiency: 95 },
+        { name: "Risk Assessment", level: "Expert", impact: "$500K+ recovery identified", proficiency: 90 },
+        { name: "Financial Forensics", level: "Advanced", certification: "CFE 2025", proficiency: 85 },
+        { name: "Compliance Monitoring", level: "Advanced", impact: "30% enhancement", proficiency: 80 },
+        { name: "Pattern Recognition", level: "Expert", scale: "20K+ records", proficiency: 90 }
       ]
     },
     {
@@ -60,11 +70,12 @@ const SkillsSection = () => {
       description: "Data storytelling and business intelligence tools",
       icon: BarChart3,
       color: "from-green-500 to-emerald-500",
+      category: "visualization",
       skills: [
-        { name: "Tableau", level: "Advanced", experience: "Dashboard creation" },
-        { name: "Power BI", level: "Expert", impact: "15% efficiency gain" },
-        { name: "Excel (Advanced)", level: "Expert", experience: "Complex modeling" },
-        { name: "Statistical Visualization", level: "Advanced", tools: "Multiple platforms" }
+        { name: "Tableau", level: "Advanced", experience: "Dashboard creation", proficiency: 85 },
+        { name: "Power BI", level: "Expert", impact: "15% efficiency gain", proficiency: 90 },
+        { name: "Excel (Advanced)", level: "Expert", experience: "Complex modeling", proficiency: 95 },
+        { name: "Statistical Visualization", level: "Advanced", tools: "Multiple platforms", proficiency: 85 }
       ]
     },
     {
@@ -72,11 +83,12 @@ const SkillsSection = () => {
       description: "Modern deployment and cloud technologies",
       icon: Cloud,
       color: "from-indigo-500 to-blue-500",
+      category: "cloud",
       skills: [
-        { name: "AWS", level: "Intermediate", focus: "Data services" },
-        { name: "Docker", level: "Intermediate", use: "Model deployment" },
-        { name: "Git/GitHub", level: "Advanced", experience: "Version control" },
-        { name: "MLOps", level: "Intermediate", focus: "Pipeline automation" }
+        { name: "AWS", level: "Intermediate", focus: "Data services", proficiency: 70 },
+        { name: "Docker", level: "Intermediate", use: "Model deployment", proficiency: 65 },
+        { name: "Git/GitHub", level: "Advanced", experience: "Version control", proficiency: 85 },
+        { name: "MLOps", level: "Intermediate", focus: "Pipeline automation", proficiency: 70 }
       ]
     },
     {
@@ -84,12 +96,13 @@ const SkillsSection = () => {
       description: "Industry expertise and certifications",
       icon: Award,
       color: "from-yellow-500 to-orange-500",
+      category: "domain",
       skills: [
-        { name: "Certified Fraud Examiner (CFE)", level: "Certified", year: "2025" },
-        { name: "Financial Crime Investigation", level: "Expert", experience: "Government work" },
-        { name: "Healthcare Fraud", level: "Advanced", impact: "$500K+ identified" },
-        { name: "AML/BSA Compliance", level: "Advanced", focus: "Wire transfers" },
-        { name: "Data Privacy & Ethics", level: "Advanced", focus: "GDPR/CCPA" }
+        { name: "Certified Fraud Examiner (CFE)", level: "Certified", year: "2025", proficiency: 100 },
+        { name: "Financial Crime Investigation", level: "Expert", experience: "Government work", proficiency: 90 },
+        { name: "Healthcare Fraud", level: "Advanced", impact: "$500K+ identified", proficiency: 85 },
+        { name: "AML/BSA Compliance", level: "Advanced", focus: "Wire transfers", proficiency: 80 },
+        { name: "Data Privacy & Ethics", level: "Advanced", focus: "GDPR/CCPA", proficiency: 85 }
       ]
     }
   ];
@@ -98,19 +111,37 @@ const SkillsSection = () => {
     {
       title: "ACFE Ritchie-Jennings Memorial Scholarship",
       year: "2024",
-      description: "Prestigious scholarship awarded for excellence in fraud examination studies"
+      description: "Prestigious scholarship recognizing excellence in fraud examination studies and commitment to the profession"
     },
     {
-      title: "Dean's List",
+      title: "Dean's List Recognition",
       year: "2022-2025",
-      description: "Consistent academic excellence with 3.87 GPA"
+      description: "Consistent academic excellence with 3.87 GPA throughout undergraduate studies"
     },
     {
       title: "Cum Laude, Honors in Major",
       year: "2025",
-      description: "Graduated with highest honors in Fraud Examination"
+      description: "Graduated with highest honors in Fraud Examination and Financial Forensics"
+    },
+    {
+      title: "Certified Fraud Examiner (CFE)",
+      year: "2025",
+      description: "Professional certification demonstrating expertise in fraud prevention, detection, and deterrence"
     }
   ];
+
+  const categories = [
+    { id: "all", label: "All Skills" },
+    { id: "technical", label: "Technical" },
+    { id: "ml", label: "Machine Learning" },
+    { id: "domain", label: "Domain Expertise" },
+    { id: "visualization", label: "Visualization" },
+    { id: "cloud", label: "Cloud & Ops" }
+  ];
+
+  const filteredCategories = selectedCategory === "all" 
+    ? skillCategories 
+    : skillCategories.filter(cat => cat.category === selectedCategory);
 
   return (
     <section id="skills" className="py-20 bg-background">

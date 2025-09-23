@@ -11,7 +11,7 @@ const Navigation = () => {
     { id: "about", label: "About", icon: User },
     { id: "projects", label: "Projects", icon: Briefcase },
     { id: "skills", label: "Skills", icon: Code },
-    { id: "blog", label: "Blog", icon: BookOpen },
+    
     { id: "contact", label: "Contact", icon: Mail }
   ];
 
@@ -49,8 +49,8 @@ const Navigation = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="font-bold text-xl">
-            <span className="text-primary">Shaneeza</span>
+          <div className="font-heading font-bold text-xl">
+            <span className="text-primary">Shaneeza Hasnani</span>
             <span className="text-muted-foreground">.</span>
           </div>
 

@@ -256,7 +256,7 @@ const ProjectsSection = () => {
     <section id="projects" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+          <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
             Featured <span className="text-primary">Projects</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -277,35 +277,40 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.id} 
-              className="project-card cursor-pointer group animate-slide-up"
+              className="project-card cursor-pointer group animate-slide-up hover:shadow-hover transition-all duration-300 border-0 bg-gradient-card relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
               onClick={() => setSelectedProject(project.id)}
             >
-              <CardHeader>
+              {/* Animated background gradient */}
+              <div className={`absolute inset-0 bg-gradient-to-r ${project.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+              
+              <CardHeader className="relative">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className={`p-2 rounded-lg bg-gradient-to-r ${project.color} group-hover:scale-110 transition-transform`}>
+                  <div className={`p-2 rounded-lg bg-gradient-to-r ${project.color} group-hover:scale-110 transition-transform duration-300`}>
                     <project.icon className="w-5 h-5 text-white" />
                   </div>
-                  <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                  <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </CardTitle>
                 </div>
-                <CardDescription>{project.subtitle}</CardDescription>
+                <CardDescription className="group-hover:text-foreground transition-colors duration-300">
+                  {project.subtitle}
+                </CardDescription>
               </CardHeader>
 
-              <CardContent>
-                <p className="text-muted-foreground mb-4 line-clamp-3">
+              <CardContent className="relative">
+                <p className="text-muted-foreground mb-4 line-clamp-3 group-hover:text-foreground transition-colors duration-300">
                   {project.description}
                 </p>
                 
                 <div className="flex flex-wrap gap-1 mb-4">
                   {project.technologies.slice(0, 3).map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-xs">
+                    <Badge key={tech} variant="secondary" className="text-xs group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                       {tech}
                     </Badge>
                   ))}
                   {project.technologies.length > 3 && (
-                    <Badge variant="secondary" className="text-xs">
+                    <Badge variant="secondary" className="text-xs group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                       +{project.technologies.length - 3} more
                     </Badge>
                   )}
@@ -313,7 +318,7 @@ const ProjectsSection = () => {
                 
                 <div className="grid grid-cols-2 gap-2 text-sm">
                   {Object.entries(project.metrics).slice(0, 2).map(([key, value]) => (
-                    <div key={key} className="text-center p-2 bg-muted/50 rounded">
+                    <div key={key} className="text-center p-2 bg-muted/50 rounded group-hover:bg-primary/10 transition-colors duration-300">
                       <div className="font-semibold text-primary">{value}</div>
                       <div className="text-xs text-muted-foreground capitalize">
                         {key.replace(/([A-Z])/g, ' $1')}
@@ -323,13 +328,13 @@ const ProjectsSection = () => {
                 </div>
               </CardContent>
 
-              <CardFooter>
+              <CardFooter className="relative">
                 <Button 
-                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 transform group-hover:scale-105"
                   variant="outline"
                 >
                   View Case Study
-                  <ExternalLink className="w-4 h-4 ml-2" />
+                  <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
               </CardFooter>
             </Card>

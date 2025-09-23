@@ -88,7 +88,7 @@ const ContactSection = () => {
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+          <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
             Let's <span className="text-primary">Connect</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -237,25 +237,31 @@ const ContactSection = () => {
               </CardContent>
             </Card>
 
-            {/* Availability */}
-            <Card className="border-0 shadow-soft animate-scale-in">
-              <CardHeader>
-                <CardTitle className="text-xl flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-primary" />
-                  Availability
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  {availabilityInfo.map((info, index) => (
-                    <div key={index} className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground">{info}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+        {/* Availability */}
+        <Card className="border-0 shadow-soft animate-scale-in">
+          <CardHeader>
+            <CardTitle className="text-xl flex items-center gap-2">
+              <Calendar className="w-5 h-5 text-primary" />
+              Status
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              <div className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                <span className="text-sm text-muted-foreground">Open to new opportunities</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                <span className="text-sm text-muted-foreground">Available for consulting projects</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                <span className="text-sm text-muted-foreground">Remote work preferred</span>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
             {/* Response Time */}
             <Card className="border-0 shadow-soft bg-gradient-accent/10 animate-scale-in">

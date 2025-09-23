@@ -44,8 +44,8 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-2">
-              <div className="font-bold text-2xl">
-                <span className="text-primary">Shaneeza</span>
+              <div className="font-heading font-bold text-2xl">
+                <span className="text-primary">Shaneeza Hasnani</span>
                 <span className="text-muted-foreground">.</span>
               </div>
             </div>
@@ -106,9 +106,6 @@ const Footer = () => {
             </div>
 
             <div className="flex items-center gap-4">
-              <div className="text-sm text-muted-foreground">
-                Available for opportunities
-              </div>
               <Button
                 variant="outline"
                 size="sm"

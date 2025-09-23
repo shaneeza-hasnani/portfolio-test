@@ -65,8 +65,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Inter", "system-ui", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
+        serif: ["Playfair Display", "serif"],
+        heading: ["Playfair Display", "serif"],
       },
       backgroundImage: {
         "gradient-hero": "var(--gradient-hero)",
