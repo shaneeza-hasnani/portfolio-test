@@ -1,267 +1,118 @@
 import { useState } from "react";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { 
   Code2, 
-  Database, 
   BarChart3, 
   Shield, 
   Brain, 
-  Cloud, 
-  FileSpreadsheet,
-  TrendingUp,
-  Zap,
-  Award,
-  ChevronRight,
-  Star
+  Cloud
 } from "lucide-react";
 
 const SkillsSection = () => {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
-  const skillCategories = [
+  const skills = [
     {
-      title: "Programming & Data",
-      description: "Core technical foundation for data manipulation and analysis",
-      icon: Code2,
-      color: "from-blue-500 to-cyan-500",
-      category: "technical",
-      skills: [
-        { name: "Python", level: "Expert", years: "3+", proficiency: 95 },
-        { name: "SQL", level: "Expert", years: "3+", proficiency: 95 },
-        { name: "R", level: "Advanced", years: "2+", proficiency: 85 },
-        { name: "C++", level: "Intermediate", years: "1+", proficiency: 70 },
-        { name: "Scala", level: "Intermediate", years: "1+", proficiency: 65 }
-      ]
-    },
-    {
-      title: "Machine Learning",
-      description: "Advanced algorithms and predictive modeling expertise",
-      icon: Brain,
-      color: "from-purple-500 to-pink-500",
-      category: "ml",
-      skills: [
-        { name: "Random Forest", level: "Expert", projects: "5+", proficiency: 95 },
-        { name: "Logistic Regression", level: "Expert", projects: "4+", proficiency: 90 },
-        { name: "Decision Trees", level: "Expert", projects: "4+", proficiency: 90 },
-        { name: "Anomaly Detection", level: "Expert", projects: "3+", proficiency: 95 },
-        { name: "Predictive Analysis", level: "Advanced", projects: "3+", proficiency: 85 },
-        { name: "Feature Engineering", level: "Advanced", projects: "5+", proficiency: 90 }
-      ]
-    },
-    {
-      title: "Fraud & Risk Analytics",
-      description: "Specialized expertise in fraud detection and financial forensics",
+      id: "fraud-detection",
+      title: "Fraud Detection",
+      description: "Advanced anomaly detection and pattern recognition",
       icon: Shield,
-      color: "from-red-500 to-orange-500",
-      category: "domain",
-      skills: [
-        { name: "Fraud Detection", level: "Expert", impact: "25% accuracy improvement", proficiency: 95 },
-        { name: "Risk Assessment", level: "Expert", impact: "$500K+ recovery identified", proficiency: 90 },
-        { name: "Financial Forensics", level: "Advanced", certification: "CFE 2025", proficiency: 85 },
-        { name: "Compliance Monitoring", level: "Advanced", impact: "30% enhancement", proficiency: 80 },
-        { name: "Pattern Recognition", level: "Expert", scale: "20K+ records", proficiency: 90 }
-      ]
+      level: 95,
+      color: "from-red-500 to-orange-500"
     },
     {
-      title: "Visualization & BI",
-      description: "Data storytelling and business intelligence tools",
+      id: "machine-learning",
+      title: "Machine Learning",
+      description: "Predictive modeling and algorithm development",
+      icon: Brain,
+      level: 90,
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      id: "data-analysis",
+      title: "Data Analysis",
+      description: "Statistical analysis and insights extraction",
       icon: BarChart3,
-      color: "from-green-500 to-emerald-500",
-      category: "visualization",
-      skills: [
-        { name: "Tableau", level: "Advanced", experience: "Dashboard creation", proficiency: 85 },
-        { name: "Power BI", level: "Expert", impact: "15% efficiency gain", proficiency: 90 },
-        { name: "Excel (Advanced)", level: "Expert", experience: "Complex modeling", proficiency: 95 },
-        { name: "Statistical Visualization", level: "Advanced", tools: "Multiple platforms", proficiency: 85 }
-      ]
+      level: 95,
+      color: "from-green-500 to-emerald-500"
     },
     {
-      title: "Cloud & Deployment",
-      description: "Modern deployment and cloud technologies",
+      id: "programming",
+      title: "Programming",
+      description: "Python, SQL, R for data science applications",
+      icon: Code2,
+      level: 90,
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      id: "cloud-deployment",
+      title: "Cloud & MLOps",
+      description: "AWS deployment and model operations",
       icon: Cloud,
-      color: "from-indigo-500 to-blue-500",
-      category: "cloud",
-      skills: [
-        { name: "AWS", level: "Intermediate", focus: "Data services", proficiency: 70 },
-        { name: "Docker", level: "Intermediate", use: "Model deployment", proficiency: 65 },
-        { name: "Git/GitHub", level: "Advanced", experience: "Version control", proficiency: 85 },
-        { name: "MLOps", level: "Intermediate", focus: "Pipeline automation", proficiency: 70 }
-      ]
-    },
-    {
-      title: "Domain Knowledge",
-      description: "Industry expertise and certifications",
-      icon: Award,
-      color: "from-yellow-500 to-orange-500",
-      category: "domain",
-      skills: [
-        { name: "Certified Fraud Examiner (CFE)", level: "Certified", year: "2025", proficiency: 100 },
-        { name: "Financial Crime Investigation", level: "Expert", experience: "Government work", proficiency: 90 },
-        { name: "Healthcare Fraud", level: "Advanced", impact: "$500K+ identified", proficiency: 85 },
-        { name: "AML/BSA Compliance", level: "Advanced", focus: "Wire transfers", proficiency: 80 },
-        { name: "Data Privacy & Ethics", level: "Advanced", focus: "GDPR/CCPA", proficiency: 85 }
-      ]
+      level: 75,
+      color: "from-indigo-500 to-blue-500"
     }
   ];
-
-  const achievements = [
-    {
-      title: "Certified Fraud Examiner (CFE)",
-      year: "2025",
-      description: "Professional certification demonstrating expertise in fraud prevention, detection, and deterrence"
-    },
-    {
-      title: "ACFE Ritchie-Jennings Memorial Scholarship",
-      year: "2024",
-      description: "Prestigious scholarship recognizing excellence in fraud examination studies and commitment to the profession"
-    },
-    {
-      title: "Dean's List Recognition",
-      year: "2022-2025",
-      description: "Consistent academic excellence with 3.87 GPA throughout undergraduate studies"
-    },
-    {
-      title: "Cum Laude, Honors in Major",
-      year: "2025",
-      description: "Graduated with highest honors in Fraud Examination and Financial Forensics"
-    }
-  ];
-
-  const categories = [
-    { id: "all", label: "All Skills" },
-    { id: "technical", label: "Technical" },
-    { id: "ml", label: "Machine Learning" },
-    { id: "domain", label: "Domain Expertise" },
-    { id: "visualization", label: "Visualization" },
-    { id: "cloud", label: "Cloud & Ops" }
-  ];
-
-  const filteredCategories = selectedCategory === "all" 
-    ? skillCategories 
-    : skillCategories.filter(cat => cat.category === selectedCategory);
 
   return (
     <section id="skills" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+          <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
             Skills & <span className="text-primary">Expertise</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A comprehensive toolkit for turning complex data challenges into actionable business solutions.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Specialized in fraud detection and data science with hands-on experience in machine learning and financial forensics
           </p>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
-          {skillCategories.map((category, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {skills.map((skill, index) => (
             <Card 
-              key={category.title} 
-              className="project-card animate-slide-up border-0"
+              key={skill.id}
+              className="group relative overflow-hidden border-0 bg-card hover:shadow-hover transition-all duration-300 cursor-pointer animate-scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
+              onMouseEnter={() => setHoveredSkill(skill.id)}
+              onMouseLeave={() => setHoveredSkill(null)}
             >
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className={`p-3 rounded-lg bg-gradient-to-r ${category.color}`}>
-                    <category.icon className="w-6 h-6 text-white" />
+              <CardContent className="p-6">
+                {/* Icon and Title */}
+                <div className="flex items-center gap-4 mb-4">
+                  <div className={`p-3 rounded-xl bg-gradient-to-r ${skill.color} transform transition-transform duration-300 ${hoveredSkill === skill.id ? 'scale-110' : ''}`}>
+                    <skill.icon className="w-6 h-6 text-white" />
                   </div>
-                  <div>
-                    <CardTitle className="text-lg">{category.title}</CardTitle>
-                    <CardDescription className="text-sm">
-                      {category.description}
-                    </CardDescription>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-lg mb-1">{skill.title}</h3>
+                    <p className="text-sm text-muted-foreground">{skill.description}</p>
                   </div>
                 </div>
-              </CardHeader>
 
-              <CardContent>
-                <div className="space-y-3">
-                  {category.skills.map((skill) => (
-                    <div key={skill.name} className="flex items-center justify-between">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="font-medium text-sm">{skill.name}</span>
-                          <Badge 
-                            variant="secondary" 
-                            className="text-xs px-2 py-0"
-                          >
-                            {skill.level}
-                          </Badge>
-                        </div>
-                        <div className="text-xs text-muted-foreground">
-                          {skill.years && `${skill.years} years`}
-                          {skill.projects && `${skill.projects} projects`}
-                          {skill.impact && skill.impact}
-                          {skill.certification && skill.certification}
-                          {skill.experience && skill.experience}
-                          {skill.scale && skill.scale}
-                          {skill.focus && skill.focus}
-                          {skill.use && skill.use}
-                          {skill.tools && skill.tools}
-                          {skill.year && skill.year}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+                {/* Skill Level Bar */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs font-medium text-muted-foreground">Proficiency</span>
+                    <span className="text-xs font-bold text-primary">{skill.level}%</span>
+                  </div>
+                  <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+                    <div 
+                      className={`h-full bg-gradient-to-r ${skill.color} transition-all duration-1000 ease-out`}
+                      style={{ 
+                        width: hoveredSkill === skill.id ? `${skill.level}%` : '0%'
+                      }}
+                    />
+                  </div>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Achievements Section */}
-        <div className="animate-fade-in">
-          <h3 className="text-2xl font-bold text-center mb-8">
-            Awards & <span className="text-primary">Recognition</span>
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {achievements.map((achievement, index) => (
-              <Card 
-                key={achievement.title}
-                className="text-center hover-lift border-0 bg-gradient-card"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardHeader className="pb-3">
-                  <div className="w-12 h-12 mx-auto bg-gradient-accent rounded-full flex items-center justify-center mb-3">
-                    <Award className="w-6 h-6 text-white" />
-                  </div>
-                  <CardTitle className="text-lg">{achievement.title}</CardTitle>
-                  <Badge variant="outline" className="w-fit mx-auto">
-                    {achievement.year}
-                  </Badge>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    {achievement.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+        {/* Simple Achievement Highlight */}
+        <div className="mt-16 text-center animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary">
+            <Shield className="w-4 h-4" />
+            <span className="text-sm font-medium">Certified Fraud Examiner (CFE) - 2025</span>
           </div>
-        </div>
-
-        {/* Quick Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in">
-          {[
-            { label: "Years Experience", value: "3+", icon: TrendingUp },
-            { label: "Projects Completed", value: "15+", icon: FileSpreadsheet },
-            { label: "Models Deployed", value: "8+", icon: Zap },
-            { label: "Fraud Cases Analyzed", value: "500+", icon: Shield }
-          ].map((stat, index) => (
-            <div 
-              key={stat.label}
-              className="text-center p-4 rounded-lg bg-muted/50 hover-lift"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <stat.icon className="w-8 h-8 mx-auto mb-2 text-primary" />
-              <div className="text-2xl font-bold text-primary">{stat.value}</div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
