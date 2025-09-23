@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, FileText, Mail, ExternalLink, Sparkles } from "lucide-react";
-import headshotImage from "@/assets/shaneeza-headshot.jpg";
+import headshotImage from "@/assets/shaneeza-new-headshot.jpg";
 
 const HeroSection = () => {
   const socialLinks = [
