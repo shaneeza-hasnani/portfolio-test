@@ -83,8 +83,7 @@ const ContactSection = () => {
     {
       icon: MapPin,
       label: "Location", 
-      value: "Washington, DC",
-      description: "Based in the capital"
+      value: "Washington, DC"
     },
     {
       icon: Phone,
