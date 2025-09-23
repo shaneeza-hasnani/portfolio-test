@@ -47,6 +47,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Custom portfolio colors
+        "old-rose": "hsl(var(--old-rose))",
+        "powder-blue": "hsl(var(--powder-blue))",
+        "tea-green": "hsl(var(--tea-green))",
+        "davys-gray": "hsl(var(--davys-gray))",
+        "melon": "hsl(var(--melon))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -57,6 +63,24 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Inter", "system-ui", "sans-serif"],
+      },
+      backgroundImage: {
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-card": "var(--gradient-card)",
+        "gradient-accent": "var(--gradient-accent)",
+      },
+      boxShadow: {
+        "soft": "var(--shadow-soft)",
+        "medium": "var(--shadow-medium)",
+        "hover": "var(--shadow-hover)",
+      },
+      transitionTimingFunction: {
+        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'bounce': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
       },
       borderRadius: {
         lg: "var(--radius)",
