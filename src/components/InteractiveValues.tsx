@@ -38,10 +38,10 @@ const InteractiveValues = () => {
   ];
 
   const topSkills = [
-    { name: "Machine Learning", icon: Brain, proficiency: 95 },
+    { name: "Python/R/SQL", icon: Code2, proficiency: 90 },
     { name: "Fraud Detection", icon: Shield, proficiency: 98 },
     { name: "Data Analysis", icon: BarChart3, proficiency: 92 },
-    { name: "Python/SQL", icon: Code2, proficiency: 90 }
+    { name: "Machine Learning", icon: Brain, proficiency: 95 }
   ];
 
   return (
