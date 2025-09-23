@@ -252,9 +252,34 @@ const ProjectsSection = () => {
     </Card>
   );
 
+  const scrollToFraudSimulator = () => {
+    document.getElementById('fraud-simulator')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  };
+
   return (
-    <section id="projects" className="py-20 bg-muted/30">
+    <section id="projects" className="py-12 bg-muted/30">
       <div className="container mx-auto px-6">
+        {/* Call to Action for Fraud Simulator */}
+        <div className="text-center mb-12 animate-fade-in">
+          <div className="bg-gradient-card border border-primary/20 rounded-xl p-8 max-w-4xl mx-auto shadow-soft">
+            <h3 className="text-2xl font-bold mb-4">
+              Experience <span className="text-primary">Live Fraud Detection</span>
+            </h3>
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              See my machine learning models in action! Try the interactive fraud detection simulator below to test real transaction scenarios and understand how AI protects your finances.
+            </p>
+            <Button 
+              onClick={scrollToFraudSimulator}
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-medium hover:shadow-hover transition-all duration-300 hover-lift"
+            >
+              🚀 Try Interactive Demo
+            </Button>
+          </div>
+        </div>
+
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
             Featured <span className="text-primary">Projects</span>

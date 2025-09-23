@@ -82,9 +82,9 @@ const ContactSection = () => {
     },
     {
       icon: MapPin,
-      label: "Location",
+      label: "Location", 
       value: "Washington, DC",
-      description: "Available for remote work"
+      description: "Based in the capital"
     },
     {
       icon: Phone,
@@ -97,7 +97,7 @@ const ContactSection = () => {
 
 
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section id="contact" className="py-12 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">

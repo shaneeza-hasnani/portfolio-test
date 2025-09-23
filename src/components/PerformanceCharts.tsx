@@ -40,7 +40,7 @@ const PerformanceCharts = () => {
   const formatPercentage = (value: number) => `${value.toFixed(1)}%`;
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-12 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
@@ -157,7 +157,7 @@ const PerformanceCharts = () => {
                       cy="50%"
                       outerRadius={100}
                       dataKey="value"
-                      label={({ name, value }) => `${name}: ${value}%`}
+                      label={false}
                       labelLine={false}
                     >
                       {projectImpactData.map((entry, index) => (
@@ -165,7 +165,8 @@ const PerformanceCharts = () => {
                       ))}
                     </Pie>
                     <Tooltip 
-                      formatter={(value: number) => [`${value}%`, 'Impact']}
+                      formatter={(value: number, name: string) => [`${value}%`, name]}
+                      labelFormatter={(label) => `Project: ${label}`}
                       contentStyle={{ 
                         backgroundColor: 'hsl(var(--card))', 
                         border: '1px solid hsl(var(--border))',

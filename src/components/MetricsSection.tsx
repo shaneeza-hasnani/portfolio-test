@@ -56,14 +56,14 @@ const MetricsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-12 bg-muted/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
-            Impact by the <span className="text-primary">Numbers</span>
+            Live Impact by the <span className="text-primary">Numbers</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Quantifiable results from fraud detection systems, machine learning models, and data analytics solutions.
+            Real-time performance metrics from active fraud detection systems and machine learning models.
           </p>
         </div>
 

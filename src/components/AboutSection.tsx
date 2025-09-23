@@ -171,7 +171,7 @@ const AboutSection = () => {
   );
 
   return (
-    <section id="about" className="py-20 bg-muted/30">
+    <section id="about" className="py-12 bg-muted/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">

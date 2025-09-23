@@ -22,9 +22,7 @@ const Index = () => {
         <ProjectsSection />
         <FraudSimulator />
         <PerformanceCharts />
-        <BlogSection />
         <SkillsSection />
-        <CaseStudyDownload />
         <ContactSection />
       </main>
       <Footer />
