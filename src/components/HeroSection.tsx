@@ -58,10 +58,10 @@ const HeroSection = () => {
               
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
             <span className="text-muted-foreground">Hi, I'm </span>
-            <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="text-primary">
               Shaneeza
             </span>{" "}
-            <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="text-primary">
               Hasnani
             </span>
             <br />
