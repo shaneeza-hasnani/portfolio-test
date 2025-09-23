@@ -65,9 +65,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        serif: ["Playfair Display", "serif"],
-        heading: ["Playfair Display", "serif"],
+        sans: ["Source Sans Pro", "sans-serif"],
+        serif: ["Poppins", "sans-serif"],
+        heading: ["Poppins", "sans-serif"],
       },
       backgroundImage: {
         "gradient-hero": "var(--gradient-hero)",

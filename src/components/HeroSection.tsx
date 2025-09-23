@@ -61,25 +61,22 @@ const HeroSection = () => {
                 <span>Available for opportunities</span>
               </div>
               
-              <h1 className="font-heading text-4xl lg:text-6xl font-bold leading-tight">
-                Hi, I'm{" "}
-                <span className="bg-gradient-accent bg-clip-text text-transparent">
-                  Shaneeza Hasnani
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
+            Hi, I'm{" "}
+            <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Shaneeza Hasnani
+            </span>
+            <br />
+            <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground mt-2 block">
+              CFE & Fraud Data Analyst → Data Science
+            </span>
+          </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl leading-relaxed">
+                <span className="font-semibold text-foreground">From fraud examiner to data scientist.</span>
+                <br />
+                <span className="text-lg opacity-90">
+                  I build machine learning systems that detect financial fraud, protect businesses, and turn complex data into clear insights that drive decisions.
                 </span>
-              </h1>
-              
-              <h2 className="text-2xl lg:text-3xl font-semibold text-muted-foreground">
-                Data Science & Fraud Analytics Specialist
-              </h2>
-              
-              <p className="text-xl text-primary font-medium">
-                Insights you can trust. Models that matter.
-              </p>
-              
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                I solve complex problems with data-driven solutions that have real business impact. 
-                From detecting $500K+ in fraud to building systems that protect millions in transactions, 
-                I create models that organizations depend on to make critical decisions.
               </p>
             </div>
 

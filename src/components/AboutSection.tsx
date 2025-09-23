@@ -3,9 +3,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Briefcase, Globe, Heart, Target, Users, ChevronDown, ChevronRight } from "lucide-react";
+import TimelineExperience from "./TimelineExperience";
+import InteractiveStory from "./InteractiveStory";
+import InteractiveValues from "./InteractiveValues";
 
 const AboutSection = () => {
-  const [expandedExperience, setExpandedExperience] = useState<number | null>(0);
   const [expandedEducation, setExpandedEducation] = useState<number | null>(0);
 
   const workExperience = [
@@ -58,11 +60,11 @@ const AboutSection = () => {
 
   const education = [
     {
-      period: "2022 - Present", 
+      period: "Aug 2025 - Dec 2026", 
       title: "MS Business Analytics & AI",
       company: "American University",
       location: "Washington, DC",
-      description: "Advanced graduate program focusing on artificial intelligence applications in business analytics, with expected graduation December 2026.",
+      description: "Advanced graduate program focusing on artificial intelligence applications in business analytics.",
       achievements: [
         "Core focus on AI and machine learning applications in business contexts",
         "Advanced coursework in predictive analytics and statistical modeling",
@@ -73,7 +75,7 @@ const AboutSection = () => {
       type: "education"
     },
     {
-      period: "2021 - 2025",
+      period: "Aug 2022 - May 2025",
       title: "BS Fraud Examination & Financial Forensics",
       company: "CUNY John Jay College",
       location: "New York, NY",
@@ -181,99 +183,35 @@ const AboutSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-12">
+        <div className="lg:col-span-2 space-y-8">
           {/* Personal Story */}
-          <div className="lg:col-span-2 space-y-8">
-            <Card className="border-0 bg-gradient-card shadow-medium animate-fade-in">
-              <CardHeader>
-                <CardTitle className="font-heading text-2xl">My Story</CardTitle>
-                <CardDescription>Building expertise at the intersection of data science and fraud prevention</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <p className="text-muted-foreground leading-relaxed">
-                  My journey in fraud detection began with a simple realization: data has the power to protect people. What started as 
-                  academic curiosity in Fraud Examination quickly evolved into a passion for building machine learning systems that 
-                  make a measurable difference in business outcomes.
-                </p>
-                
-                <p className="text-muted-foreground leading-relaxed">
-                  As a <strong>Certified Fraud Examiner (CFE)</strong> and data scientist, I combine domain expertise in 
-                  fraud examination with advanced analytics capabilities. My work spans industries — from safeguarding 
-                  educational payment systems to analyzing healthcare fraud for government investigations.
-                </p>
+          <InteractiveStory />
 
-                <p className="text-muted-foreground leading-relaxed">
-                  What drives my work is the tangible impact: models that have identified over $500K in fraudulent activity, 
-                  systems that process millions in transactions safely, and algorithms that help organizations make critical 
-                  decisions with confidence. I believe effective fraud detection systems balance technical sophistication 
-                  with practical usability.
-                </p>
+          {/* Professional Experience */}
+          <TimelineExperience />
 
-                <p className="text-muted-foreground leading-relaxed">
-                  Beyond building models, I stay engaged with the broader fraud examination community, contribute to knowledge 
-                  sharing, and mentor others interested in this dynamic field where technology meets financial crime prevention.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Professional Experience */}
-            <div className="animate-slide-up">
-              <h3 className="font-heading text-2xl font-bold mb-6">Professional Experience</h3>
-              <div className="space-y-4">
-                {workExperience.map((item, index) => (
-                  <ExperienceCard 
-                    key={`work-${index}`}
-                    item={item}
-                    index={index}
-                    expanded={expandedExperience}
-                    setExpanded={setExpandedExperience}
-                    items={workExperience}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Education */}
-            <div className="animate-slide-up">
-              <h3 className="font-heading text-2xl font-bold mb-6">Education</h3>
-              <div className="space-y-4">
-                {education.map((item, index) => (
-                  <ExperienceCard 
-                    key={`edu-${index}`}
-                    item={item}
-                    index={index}
-                    expanded={expandedEducation}
-                    setExpanded={setExpandedEducation}
-                    items={education}
-                  />
-                ))}
-              </div>
+          {/* Education */}
+          <div className="animate-slide-up">
+            <h3 className="font-heading text-2xl font-bold mb-6">Education</h3>
+            <div className="space-y-4">
+              {education.map((item, index) => (
+                <ExperienceCard 
+                  key={`edu-${index}`}
+                  item={item}
+                  index={index}
+                  expanded={expandedEducation}
+                  setExpanded={setExpandedEducation}
+                  items={education}
+                />
+              ))}
             </div>
           </div>
+        </div>
 
           {/* Sidebar */}
           <div className="space-y-8">
             {/* Values */}
-            <Card className="border-0 bg-gradient-card shadow-medium animate-scale-in">
-              <CardHeader>
-                <CardTitle className="text-xl">What Drives Me</CardTitle>
-                <CardDescription>The principles that guide my work</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {values.map((value) => (
-                  <div key={value.title} className="flex gap-3">
-                    <div className="p-2 rounded-lg bg-primary/10 flex-shrink-0">
-                      <value.icon className="w-4 h-4 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-sm mb-1">{value.title}</h4>
-                      <p className="text-xs text-muted-foreground leading-relaxed">
-                        {value.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
+            <InteractiveValues />
 
             {/* Languages */}
             <Card className="border-0 bg-gradient-card shadow-soft animate-scale-in">
@@ -293,31 +231,6 @@ const AboutSection = () => {
                       </Badge>
                     </div>
                   ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Contact Info */}
-            <Card className="border-0 bg-gradient-card shadow-soft animate-scale-in">
-              <CardHeader>
-                <CardTitle className="text-xl">Location & Status</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Based in</span>
-                  <span className="font-medium">Washington, DC</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Certifications</span>
-                  <span className="font-medium">CFE (2025)</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Scholarship</span>
-                  <span className="font-medium">ACFE Ritchie-Jennings</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Academic Honor</span>
-                  <span className="font-medium">Dean's List</span>
                 </div>
               </CardContent>
             </Card>

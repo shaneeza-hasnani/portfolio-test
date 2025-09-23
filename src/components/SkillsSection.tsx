@@ -109,6 +109,11 @@ const SkillsSection = () => {
 
   const achievements = [
     {
+      title: "Certified Fraud Examiner (CFE)",
+      year: "2025",
+      description: "Professional certification demonstrating expertise in fraud prevention, detection, and deterrence"
+    },
+    {
       title: "ACFE Ritchie-Jennings Memorial Scholarship",
       year: "2024",
       description: "Prestigious scholarship recognizing excellence in fraud examination studies and commitment to the profession"
@@ -122,11 +127,6 @@ const SkillsSection = () => {
       title: "Cum Laude, Honors in Major",
       year: "2025",
       description: "Graduated with highest honors in Fraud Examination and Financial Forensics"
-    },
-    {
-      title: "Certified Fraud Examiner (CFE)",
-      year: "2025",
-      description: "Professional certification demonstrating expertise in fraud prevention, detection, and deterrence"
     }
   ];
 
