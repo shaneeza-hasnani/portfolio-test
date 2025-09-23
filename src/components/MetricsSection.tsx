@@ -63,7 +63,7 @@ const MetricsSection = () => {
             Impact by the <span className="text-primary">Numbers</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Real-time performance metrics from active fraud detection systems and machine learning models.
+            Performance metrics from active fraud detection systems and machine learning models.
           </p>
         </div>
 
