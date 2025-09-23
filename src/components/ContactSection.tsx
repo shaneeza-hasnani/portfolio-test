@@ -4,8 +4,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
-import { Mail, Linkedin, MapPin, Send, Phone, Calendar, Github } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
@@ -260,26 +258,7 @@ const ContactSection = () => {
           <CardHeader>
             <CardTitle className="text-xl flex items-center gap-2">
               <Calendar className="w-5 h-5 text-primary" />
-              Status
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-3">
-              <div className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span className="text-sm text-muted-foreground">Open to new opportunities</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span className="text-sm text-muted-foreground">Available for consulting projects</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span className="text-sm text-muted-foreground">Remote work preferred</span>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+              
 
             {/* Response Time */}
             <Card className="border-0 shadow-soft bg-gradient-accent/10 animate-scale-in">
