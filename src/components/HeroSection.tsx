@@ -66,8 +66,6 @@ const HeroSection = () => {
             </span>
           </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl leading-relaxed">
-                <span className="font-semibold text-foreground">From fraud examiner to data scientist.</span>
-                <br />
                 <span className="text-lg opacity-90">
                   I build machine learning systems that detect financial fraud, protect businesses, and turn complex data into clear insights that drive decisions.
                 </span>
