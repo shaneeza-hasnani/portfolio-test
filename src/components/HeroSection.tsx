@@ -76,6 +76,26 @@ const HeroSection = () => {
                   I build machine learning systems that detect financial fraud, protect businesses, and turn complex data into clear insights that drive decisions.
                 </span>
               </p>
+
+              {/* Quick Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 p-6 bg-card/30 backdrop-blur-sm rounded-2xl border border-border/50">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary">99.96%</div>
+                  <div className="text-xs text-muted-foreground">ML Accuracy</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary">$500K+</div>
+                  <div className="text-xs text-muted-foreground">Fraud Prevented</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary">4+</div>
+                  <div className="text-xs text-muted-foreground">Years CFE</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary">20+</div>
+                  <div className="text-xs text-muted-foreground">ML Projects</div>
+                </div>
+              </div>
             </div>
 
             {/* CTA Buttons */}

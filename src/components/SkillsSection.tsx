@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
 import { 
   Code2, 
   BarChart3, 
@@ -15,6 +16,25 @@ import {
 const SkillsSection = () => {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
   const [expandedSkill, setExpandedSkill] = useState<string | null>(null);
+  const [skillsVisible, setSkillsVisible] = useState(false);
+  const skillsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSkillsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (skillsRef.current) {
+      observer.observe(skillsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const skills = [
     {
@@ -134,7 +154,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
+        <div ref={skillsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
           {skills.map((skill, index) => (
             <Card 
               key={skill.id}
@@ -175,7 +195,7 @@ const SkillsSection = () => {
                     <div 
                       className={`h-full bg-gradient-to-r ${skill.color} transition-all duration-1000 ease-out`}
                       style={{ 
-                        width: hoveredSkill === skill.id || expandedSkill === skill.id ? `${skill.level}%` : '0%'
+                        width: skillsVisible ? `${skill.level}%` : '0%'
                       }}
                     />
                   </div>
