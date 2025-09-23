@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, FileText, Mail, ExternalLink, Sparkles } from "lucide-react";
-import headshotImage from "@/assets/shaneeza-new-headshot.jpg";
+import headshotImage from "@/assets/shaneeza-headshot.jpg";
 
 const HeroSection = () => {
   const socialLinks = [
@@ -16,7 +16,12 @@ const HeroSection = () => {
       icon: Linkedin,
       label: "Connect with me professionally"
     },
-    
+    {
+      name: "Kaggle",
+      url: "https://kaggle.com/shaneeza",
+      icon: ExternalLink,
+      label: "See my data science competitions"
+    },
     {
       name: "Resume",
       url: "/resume.pdf",
@@ -57,12 +62,9 @@ const HeroSection = () => {
               </div>
               
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
-            <span className="text-muted-foreground">Hi, I'm </span>
-            <span className="text-primary">
-              Shaneeza
-            </span>{" "}
-            <span className="text-primary">
-              Hasnani
+            Hi, I'm{" "}
+            <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Shaneeza Hasnani
             </span>
             <br />
             <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground mt-2 block">
@@ -76,26 +78,6 @@ const HeroSection = () => {
                   I build machine learning systems that detect financial fraud, protect businesses, and turn complex data into clear insights that drive decisions.
                 </span>
               </p>
-
-              {/* Quick Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 p-6 bg-card/30 backdrop-blur-sm rounded-2xl border border-border/50">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">99.96%</div>
-                  <div className="text-xs text-muted-foreground">ML Accuracy</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">$500K+</div>
-                  <div className="text-xs text-muted-foreground">Fraud Prevented</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">4+</div>
-                  <div className="text-xs text-muted-foreground">Years CFE</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">20+</div>
-                  <div className="text-xs text-muted-foreground">ML Projects</div>
-                </div>
-              </div>
             </div>
 
             {/* CTA Buttons */}
@@ -142,7 +124,7 @@ const HeroSection = () => {
               <div className="absolute -inset-4 bg-gradient-accent rounded-3xl opacity-20 blur-lg" />
               <img
                 src={headshotImage}
-                alt="Shaneeza Hasnani - Data Science & Fraud Analytics Specialist"
+                alt="Shaneeza Hasnani - CFE & Fraud Data Analyst"
                 className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-medium hover-lift"
               />
             </div>
