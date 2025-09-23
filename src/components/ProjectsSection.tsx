@@ -263,6 +263,20 @@ const ProjectsSection = () => {
             Real-world applications of machine learning and data analytics in fraud detection, 
             risk assessment, and financial crime prevention.
           </p>
+          
+          {/* Interactive Demo Button */}
+          <div className="mt-8">
+            <Button 
+              size="lg"
+              onClick={() => document.getElementById('fraud-simulator')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white shadow-medium hover:shadow-hover transition-all duration-300 hover:scale-105"
+            >
+              🔍 Try Interactive Fraud Detection Demo
+            </Button>
+            <p className="text-sm text-muted-foreground mt-2">
+              Experience real-time fraud detection in action
+            </p>
+          </div>
         </div>
 
         {selectedProject && (

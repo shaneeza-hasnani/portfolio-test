@@ -157,7 +157,7 @@ const PerformanceCharts = () => {
                       cy="50%"
                       outerRadius={100}
                       dataKey="value"
-                      label={({ name, value }) => `${name}: ${value}%`}
+                      label={({ name, value }) => `${value}%`}
                       labelLine={false}
                     >
                       {projectImpactData.map((entry, index) => (
