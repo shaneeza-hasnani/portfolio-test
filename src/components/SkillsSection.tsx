@@ -43,7 +43,7 @@ const SkillsSection = () => {
       description: "Core programming languages for data science",
       icon: Code2,
       level: 90,
-      color: "from-blue-200 to-cyan-200",
+      color: "from-blue-500 to-cyan-500",
       detailSkills: [
         { name: "Python", level: 95, libraries: "Pandas, NumPy, Scikit-learn" },
         { name: "SQL", level: 95, databases: "PostgreSQL, MySQL" },
@@ -58,7 +58,7 @@ const SkillsSection = () => {
       description: "Advanced anomaly detection and pattern recognition",
       icon: Shield,
       level: 95,
-      color: "from-rose-200 to-orange-200",
+      color: "from-red-500 to-orange-500",
       detailSkills: [
         { name: "Anomaly Detection", level: 95, experience: "3+ years" },
         { name: "Financial Forensics", level: 90, certification: "CFE 2025" },
@@ -73,7 +73,7 @@ const SkillsSection = () => {
       description: "Statistical analysis and insights extraction",
       icon: BarChart3,
       level: 95,
-      color: "from-green-200 to-emerald-200",
+      color: "from-green-500 to-emerald-500",
       detailSkills: [
         { name: "Statistical Analysis", level: 95, tools: "Python/R" },
         { name: "Data Visualization", level: 90, platforms: "Tableau/Power BI" },
@@ -88,7 +88,7 @@ const SkillsSection = () => {
       description: "Predictive modeling and algorithm development",
       icon: Brain,
       level: 90,
-      color: "from-purple-200 to-pink-200",
+      color: "from-purple-500 to-pink-500",
       detailSkills: [
         { name: "Random Forest", level: 95, projects: "5+" },
         { name: "Logistic Regression", level: 90, projects: "4+" },
@@ -103,7 +103,7 @@ const SkillsSection = () => {
       description: "AWS deployment and model operations",
       icon: Cloud,
       level: 75,
-      color: "from-indigo-200 to-blue-200",
+      color: "from-indigo-500 to-blue-500",
       detailSkills: [
         { name: "AWS Services", level: 70, focus: "S3, EC2, Lambda" },
         { name: "Docker", level: 65, use: "Model containerization" },
@@ -118,30 +118,22 @@ const SkillsSection = () => {
     {
       title: "Certified Fraud Examiner (CFE)",
       year: "2025",
-      description: "Professional certification demonstrating expertise in fraud prevention, detection, and deterrence",
-      link: "https://example.com/cfe-certificate.pdf",
-      linkText: "View Certificate"
+      description: "Professional certification demonstrating expertise in fraud prevention, detection, and deterrence"
     },
     {
       title: "ACFE Ritchie-Jennings Memorial Scholarship",
       year: "2024",
-      description: "Prestigious scholarship recognizing excellence in fraud examination studies and commitment to the profession",
-      link: "https://example.com/acfe-scholarship.pdf",
-      linkText: "View Scholarship"
+      description: "Prestigious scholarship recognizing excellence in fraud examination studies and commitment to the profession"
     },
     {
       title: "Cum Laude, Honors in Major", 
       year: "2025",
-      description: "Graduated with highest honors in Fraud Examination and Financial Forensics",
-      link: "https://example.com/diploma.pdf",
-      linkText: "View Diploma"
+      description: "Graduated with highest honors in Fraud Examination and Financial Forensics"
     },
     {
       title: "Dean's List Recognition",
       year: "2022-2025",
-      description: "Consistent academic excellence with 3.87 GPA throughout undergraduate studies",
-      link: "https://example.com/transcript.pdf",
-      linkText: "View Transcript"
+      description: "Consistent academic excellence with 3.87 GPA throughout undergraduate studies"
     }
   ];
 
@@ -260,25 +252,21 @@ const SkillsSection = () => {
             {achievements.map((achievement, index) => (
               <Card 
                 key={achievement.title}
-                className="text-center hover:shadow-hover transition-all duration-300 border-0 bg-gradient-to-br from-card to-card/50 animate-scale-in cursor-pointer group"
+                className="text-center hover:shadow-hover transition-all duration-300 border-0 bg-gradient-to-br from-card to-card/50 animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
-                onClick={() => window.open(achievement.link, '_blank', 'noopener,noreferrer')}
               >
                 <CardHeader className="pb-3">
-                  <div className="w-12 h-12 mx-auto bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 mx-auto bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center mb-3">
                     <Award className="w-6 h-6 text-white" />
                   </div>
-                  <CardTitle className="text-lg leading-tight group-hover:text-primary transition-colors duration-300">{achievement.title}</CardTitle>
+                  <CardTitle className="text-lg leading-tight">{achievement.title}</CardTitle>
                   <Badge variant="outline" className="w-fit mx-auto">
                     {achievement.year}
                   </Badge>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {achievement.description}
-                  </p>
-                  <p className="text-xs text-primary font-medium group-hover:underline">
-                    Click to {achievement.linkText}
                   </p>
                 </CardContent>
               </Card>

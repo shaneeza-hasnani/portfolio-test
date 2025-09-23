@@ -84,7 +84,7 @@ const ContactSection = () => {
       icon: MapPin,
       label: "Location",
       value: "Washington, DC",
-      description: "Washington, DC Metro"
+      description: "Available for remote work"
     },
     {
       icon: Phone,

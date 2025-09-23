@@ -17,6 +17,12 @@ const HeroSection = () => {
       label: "Connect with me professionally"
     },
     {
+      name: "Kaggle",
+      url: "https://kaggle.com/shaneeza",
+      icon: ExternalLink,
+      label: "See my data science competitions"
+    },
+    {
       name: "Resume",
       url: "/resume.pdf",
       icon: FileText,
