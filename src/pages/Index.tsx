@@ -3,8 +3,10 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import MetricsSection from "@/components/MetricsSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import FraudSimulator from "@/components/FraudSimulator";
+import PerformanceCharts from "@/components/PerformanceCharts";
+import BlogSection from "@/components/BlogSection";
 import SkillsSection from "@/components/SkillsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import CaseStudyDownload from "@/components/CaseStudyDownload";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -18,8 +20,10 @@ const Index = () => {
         <MetricsSection />
         <AboutSection />
         <ProjectsSection />
+        <FraudSimulator />
+        <PerformanceCharts />
+        <BlogSection />
         <SkillsSection />
-        <TestimonialsSection />
         <CaseStudyDownload />
         <ContactSection />
       </main>
