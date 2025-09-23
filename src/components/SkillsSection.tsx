@@ -18,18 +18,18 @@ const SkillsSection = () => {
 
   const skills = [
     {
-      id: "fraud-detection",
-      title: "Fraud Detection",
-      description: "Advanced anomaly detection and pattern recognition",
-      icon: Shield,
-      level: 95,
-      color: "from-red-500 to-orange-500",
+      id: "programming",
+      title: "Programming",
+      description: "Python, SQL, R for data science applications",
+      icon: Code2,
+      level: 90,
+      color: "from-blue-500 to-cyan-500",
       detailSkills: [
-        { name: "Anomaly Detection", level: 95, experience: "3+ years" },
-        { name: "Financial Forensics", level: 90, certification: "CFE 2025" },
-        { name: "Risk Assessment", level: 90, impact: "$500K+ recovery" },
-        { name: "Pattern Recognition", level: 95, scale: "20K+ records" },
-        { name: "Compliance Monitoring", level: 85, focus: "AML/BSA" }
+        { name: "Python", level: 95, libraries: "Pandas, NumPy, Scikit-learn" },
+        { name: "SQL", level: 95, databases: "PostgreSQL, MySQL" },
+        { name: "R", level: 85, focus: "Statistical analysis" },
+        { name: "Git/GitHub", level: 85, experience: "Version control" },
+        { name: "Data Processing", level: 90, scale: "Large datasets" }
       ]
     },
     {
@@ -63,18 +63,18 @@ const SkillsSection = () => {
       ]
     },
     {
-      id: "programming",
-      title: "Programming",
-      description: "Python, SQL, R for data science applications",
-      icon: Code2,
-      level: 90,
-      color: "from-blue-500 to-cyan-500",
+      id: "fraud-detection",
+      title: "Fraud Detection",
+      description: "Advanced anomaly detection and pattern recognition",
+      icon: Shield,
+      level: 95,
+      color: "from-red-500 to-orange-500",
       detailSkills: [
-        { name: "Python", level: 95, libraries: "Pandas, NumPy, Scikit-learn" },
-        { name: "SQL", level: 95, databases: "PostgreSQL, MySQL" },
-        { name: "R", level: 85, focus: "Statistical analysis" },
-        { name: "Git/GitHub", level: 85, experience: "Version control" },
-        { name: "Data Processing", level: 90, scale: "Large datasets" }
+        { name: "Anomaly Detection", level: 95, experience: "3+ years" },
+        { name: "Financial Forensics", level: 90, certification: "CFE 2025" },
+        { name: "Risk Assessment", level: 90, impact: "$500K+ recovery" },
+        { name: "Pattern Recognition", level: 95, scale: "20K+ records" },
+        { name: "Compliance Monitoring", level: 85, focus: "AML/BSA" }
       ]
     },
     {
