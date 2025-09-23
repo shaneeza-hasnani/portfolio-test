@@ -60,7 +60,7 @@ const MetricsSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
-            Live Impact by the <span className="text-primary">Numbers</span>
+            Impact by the <span className="text-primary">Numbers</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Real-time performance metrics from active fraud detection systems and machine learning models.
