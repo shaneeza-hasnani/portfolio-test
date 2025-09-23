@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, FileText, Mail, ExternalLink, Sparkles } from "lucide-react";
-import headshotImage from "@/assets/shaneeza-headshot.jpg";
+import headshotImage from "@/assets/shaneeza-new-headshot.jpg";
 
 const HeroSection = () => {
   const socialLinks = [
@@ -63,7 +63,7 @@ const HeroSection = () => {
               
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
             Hi, I'm{" "}
-            <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="text-primary">
               Shaneeza Hasnani
             </span>
             <br />
