@@ -95,12 +95,6 @@ const ContactSection = () => {
     }
   ];
 
-  const availabilityInfo = [
-    "Currently open to new opportunities",
-    "Available for consulting projects",
-    "Remote work preferred",
-    "Flexible schedule for different time zones"
-  ];
 
   return (
     <section id="contact" className="py-20 bg-background">
@@ -252,26 +246,6 @@ const ContactSection = () => {
                     </div>
                   </div>
                 ))}
-              </CardContent>
-            </Card>
-
-            {/* Availability */}
-            <Card className="border-0 shadow-soft animate-scale-in">
-              <CardHeader>
-                <CardTitle className="text-xl flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-primary" />
-                  Availability
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  {availabilityInfo.map((info, index) => (
-                    <div key={index} className="flex items-center gap-2 text-sm">
-                      <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0" />
-                      <span className="text-muted-foreground">{info}</span>
-                    </div>
-                  ))}
-                </div>
               </CardContent>
             </Card>
 
