@@ -8,7 +8,7 @@ import InteractiveStory from "./InteractiveStory";
 import InteractiveValues from "./InteractiveValues";
 
 const AboutSection = () => {
-  const [expandedEducation, setExpandedEducation] = useState<number | null>(0);
+  const [expandedEducation, setExpandedEducation] = useState<number | null>(null);
 
   const workExperience = [
     {
