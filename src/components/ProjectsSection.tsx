@@ -30,7 +30,7 @@ const ProjectsSection = () => {
       icon: ShieldCheck,
       color: "from-red-500 to-orange-500",
       metrics: { accuracy: "99.96%", recall: "97.25%", precision: "77.9%" },
-      github: "https://github.com/shaneeza/fraud-detection",
+      github: "https://github.com/shaneeza-hasnani/fraud-detection",
       demo: "https://fraud-detector-demo.streamlit.app"
     },
     {
@@ -55,7 +55,7 @@ const ProjectsSection = () => {
       icon: Target,
       color: "from-blue-500 to-cyan-500",
       metrics: { improvement: "25%", reduction: "20%", processed: "500+/month" },
-      github: "https://github.com/shaneeza/student-risk-assessment"
+      github: "https://github.com/shaneeza-hasnani/student-risk-assessment"
     },
     {
       id: 3,
@@ -79,7 +79,7 @@ const ProjectsSection = () => {
       icon: TrendingUp,
       color: "from-green-500 to-emerald-500",
       metrics: { enhancement: "30%", records: "20,000+", adoption: "Director-level" },
-      github: "https://github.com/shaneeza/wire-transfer-anomaly"
+      github: "https://github.com/shaneeza-hasnani/wire-transfer-anomaly"
     },
     {
       id: 4,
@@ -151,7 +151,7 @@ const ProjectsSection = () => {
       icon: Brain,
       color: "from-indigo-500 to-purple-500",
       metrics: { prediction: "Early detection", accuracy: "High confidence", interpretability: "Business-friendly" },
-      github: "https://github.com/shaneeza/predictive-risk-framework"
+      github: "https://github.com/shaneeza-hasnani/predictive-risk-framework"
     }
   ];
 

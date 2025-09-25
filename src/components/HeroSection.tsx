@@ -6,7 +6,7 @@ const HeroSection = () => {
   const socialLinks = [
     {
       name: "GitHub",
-      url: "https://github.com/shaneeza",
+      url: "https://github.com/shaneeza-hasnani",
       icon: Github,
       label: "View my code and projects"
     },
@@ -116,7 +116,7 @@ const HeroSection = () => {
               <div className="absolute -inset-4 bg-gradient-accent rounded-3xl opacity-20 blur-lg" />
               <img
                 src={headshotImage}
-                alt="Shaneeza Hasnani - CFE & Fraud Data Analyst"
+                alt="Shaneeza Hasnani - Certified Fraud Examiner & Fraud Data Analyst"
                 className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-medium hover-lift"
               />
             </div>
