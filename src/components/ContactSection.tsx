@@ -76,8 +76,8 @@ const ContactSection = () => {
     {
       icon: Github,
       label: "GitHub",
-      value: "github.com/shaneeza",
-      href: "https://github.com/shaneeza",
+      value: "https://github.com/shaneezahasnani",
+      href: "https://github.com/shaneezahasnani",
       description: "Code repositories"
     },
     {
