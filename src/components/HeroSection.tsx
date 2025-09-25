@@ -62,7 +62,7 @@ const HeroSection = () => {
             </span>
             <br />
             <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground mt-2 block">
-              CFE & Fraud Data Analyst → Data Scientist
+              Fraud Data Analyst → Data Scientist
             </span>
           </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl leading-relaxed">
