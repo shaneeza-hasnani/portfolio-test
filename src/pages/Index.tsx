@@ -1,8 +1,10 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
 import MetricsSection from "@/components/MetricsSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import ProfessionalExperience from "@/components/ProfessionalExperience";
+import Education from "@/components/Education";
+import PersonalAbout from "@/components/PersonalAbout";
 import FraudSimulator from "@/components/FraudSimulator";
 import PerformanceCharts from "@/components/PerformanceCharts";
 import BlogSection from "@/components/BlogSection";
@@ -18,8 +20,10 @@ const Index = () => {
       <main>
         <HeroSection />
         <MetricsSection />
-        <AboutSection />
         <ProjectsSection />
+        <ProfessionalExperience />
+        <Education />
+        <PersonalAbout />
         <FraudSimulator />
         <PerformanceCharts />
         <SkillsSection />
