@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
+import FeaturedProjects from "@/components/FeaturedProjects";
 import MetricsSection from "@/components/MetricsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ProfessionalExperience from "@/components/ProfessionalExperience";
@@ -19,6 +20,7 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
+        <FeaturedProjects />
         <MetricsSection />
         <ProjectsSection />
         <ProfessionalExperience />
@@ -27,6 +29,8 @@ const Index = () => {
         <FraudSimulator />
         <PerformanceCharts />
         <SkillsSection />
+        <CaseStudyDownload />
+        <BlogSection />
         <ContactSection />
       </main>
       <Footer />
