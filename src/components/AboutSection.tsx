@@ -150,21 +150,22 @@ const AboutSection = () => {
             <CardDescription className="font-medium">
               {item.company} • {item.location}
             </CardDescription>
+            <p className="text-muted-foreground text-sm leading-relaxed mt-2">{item.description}</p>
           </div>
         </div>
       </CardHeader>
       
       {expanded === index && (
         <CardContent className="animate-fade-in">
-          <p className="text-muted-foreground mb-4 leading-relaxed">{item.description}</p>
-          <ul className="space-y-2">
+          <div className="space-y-2">
+            <h4 className="font-semibold text-sm mb-3">Key Achievements:</h4>
             {item.achievements.map((achievement, idx) => (
               <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <span>{achievement}</span>
               </li>
             ))}
-          </ul>
+          </div>
         </CardContent>
       )}
     </Card>
