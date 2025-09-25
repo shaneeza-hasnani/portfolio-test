@@ -103,8 +103,8 @@ const ContactSection = () => {
             Let's <span className="text-primary">Connect</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm actively seeking data science and fraud analytics opportunities where I can make a meaningful impact. 
-            Ready to discuss how data science can solve your fraud detection challenges? Let's connect!
+            Ready to discuss how data science can solve your fraud detection challenges? 
+            I'd love to hear about your project and explore how we can work together.
           </p>
         </div>
 

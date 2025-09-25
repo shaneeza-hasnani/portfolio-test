@@ -67,7 +67,7 @@ const HeroSection = () => {
           </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl leading-relaxed">
                 <span className="text-lg opacity-90">
-                  What excites me most? The moment when data reveals hidden patterns that protect people's financial security. I combine my fraud examination expertise with advanced machine learning to build systems that don't just detect fraud—they prevent it before it happens, turning complex data into actionable insights that make a real difference.
+                  I build machine learning systems that detect financial fraud, protect businesses, and turn complex data into clear insights that drive decisions.
                 </span>
               </p>
             </div>

@@ -39,58 +39,77 @@ const SkillsSection = () => {
   const skills = [
     {
       id: "programming",
-      title: "Programming Languages",
-      description: "Core programming skills for data science and automation",
+      title: "Python/R/SQL",
+      description: "Core programming languages for data science",
       icon: Code2,
-      level: 92,
+      level: 90,
       color: "from-blue-200 to-cyan-200",
       detailSkills: [
-        { name: "Python", level: 95, experience: "Built fraud detection pipeline with scikit-learn, pandas" },
-        { name: "SQL", level: 95, experience: "Complex queries for 20K+ financial records analysis" },
-        { name: "R", level: 85, experience: "Statistical modeling and fraud pattern analysis" },
-        { name: "Git/GitHub", level: 85, experience: "Version control for ML projects and collaboration" }
-      ]
-    },
-    {
-      id: "ml-tools",
-      title: "ML/Analytics Tools",
-      description: "Machine learning frameworks and analytical platforms",
-      icon: Brain,
-      level: 90,
-      color: "from-purple-200 to-pink-200",
-      detailSkills: [
-        { name: "Scikit-learn", level: 95, experience: "Random Forest models achieving 99.96% accuracy" },
-        { name: "Pandas/NumPy", level: 90, experience: "Data processing for 10K+ transaction datasets" },
-        { name: "Tableau", level: 85, experience: "Interactive fraud monitoring dashboards" },
-        { name: "Power BI", level: 90, experience: "Automated reporting reduced review time by 15%" }
+        { name: "Python", level: 95, libraries: "Pandas, NumPy, Scikit-learn" },
+        { name: "SQL", level: 95, databases: "PostgreSQL, MySQL" },
+        { name: "R", level: 85, focus: "Statistical analysis" },
+        { name: "Git/GitHub", level: 85, experience: "Version control" },
+        { name: "Data Processing", level: 90, scale: "Large datasets" }
       ]
     },
     {
       id: "fraud-detection",
-      title: "Fraud & Risk Analysis",
-      description: "Specialized expertise in financial crime detection",
+      title: "Fraud Detection",
+      description: "Advanced anomaly detection and pattern recognition",
       icon: Shield,
       level: 95,
       color: "from-rose-200 to-orange-200",
       detailSkills: [
-        { name: "Anomaly Detection", level: 95, experience: "Enhanced compliance monitoring by 30%" },
-        { name: "Financial Forensics", level: 90, experience: "CFE certification - $500K+ recovery support" },
-        { name: "Risk Scoring", level: 90, experience: "Automated systems reducing fraud by 20%" },
-        { name: "Pattern Recognition", level: 95, experience: "Real-time transaction monitoring systems" }
+        { name: "Anomaly Detection", level: 95, experience: "3+ years" },
+        { name: "Financial Forensics", level: 90, certification: "CFE 2025" },
+        { name: "Risk Assessment", level: 90, impact: "$500K+ recovery" },
+        { name: "Pattern Recognition", level: 95, scale: "20K+ records" },
+        { name: "Compliance Monitoring", level: 85, focus: "AML/BSA" }
       ]
     },
     {
-      id: "cloud-platforms",
-      title: "Cloud & Deployment",
-      description: "Modern infrastructure for scalable ML solutions",
+      id: "data-analysis",
+      title: "Data Analysis",
+      description: "Statistical analysis and insights extraction",
+      icon: BarChart3,
+      level: 95,
+      color: "from-green-200 to-emerald-200",
+      detailSkills: [
+        { name: "Statistical Analysis", level: 95, tools: "Python/R" },
+        { name: "Data Visualization", level: 90, platforms: "Tableau/Power BI" },
+        { name: "SQL Querying", level: 95, experience: "3+ years" },
+        { name: "Excel Advanced", level: 95, focus: "Complex modeling" },
+        { name: "Report Generation", level: 90, automation: "Yes" }
+      ]
+    },
+    {
+      id: "machine-learning",
+      title: "Machine Learning",
+      description: "Predictive modeling and algorithm development",
+      icon: Brain,
+      level: 90,
+      color: "from-purple-200 to-pink-200",
+      detailSkills: [
+        { name: "Random Forest", level: 95, projects: "5+" },
+        { name: "Logistic Regression", level: 90, projects: "4+" },
+        { name: "Decision Trees", level: 90, projects: "4+" },
+        { name: "Feature Engineering", level: 90, experience: "Advanced" },
+        { name: "Model Validation", level: 85, focus: "Cross-validation" }
+      ]
+    },
+    {
+      id: "cloud-deployment",
+      title: "Cloud & MLOps",
+      description: "AWS deployment and model operations",
       icon: Cloud,
       level: 75,
       color: "from-indigo-200 to-blue-200",
       detailSkills: [
-        { name: "AWS", level: 70, experience: "S3, EC2, Lambda for model deployment" },
-        { name: "Docker", level: 65, experience: "Containerized ML applications" },
-        { name: "Streamlit", level: 80, experience: "Interactive demo applications" },
-        { name: "MLOps", level: 70, experience: "Automated model pipelines and monitoring" }
+        { name: "AWS Services", level: 70, focus: "S3, EC2, Lambda" },
+        { name: "Docker", level: 65, use: "Model containerization" },
+        { name: "MLOps Pipeline", level: 70, automation: "CI/CD" },
+        { name: "Model Deployment", level: 75, platforms: "Cloud-based" },
+        { name: "Monitoring", level: 65, tools: "Performance tracking" }
       ]
     }
   ];
@@ -199,7 +218,18 @@ const SkillsSection = () => {
                           </Badge>
                         </div>
                         <div className="text-xs text-muted-foreground">
-                          {detailSkill.experience}
+                          {detailSkill.experience && `Experience: ${detailSkill.experience}`}
+                          {detailSkill.projects && `Projects: ${detailSkill.projects}`}
+                          {detailSkill.impact && `Impact: ${detailSkill.impact}`}
+                          {detailSkill.certification && `Certification: ${detailSkill.certification}`}
+                          {detailSkill.tools && `Tools: ${detailSkill.tools}`}
+                          {detailSkill.platforms && `Platforms: ${detailSkill.platforms}`}
+                          {detailSkill.libraries && `Libraries: ${detailSkill.libraries}`}
+                          {detailSkill.databases && `Databases: ${detailSkill.databases}`}
+                          {detailSkill.focus && `Focus: ${detailSkill.focus}`}
+                          {detailSkill.use && `Use Case: ${detailSkill.use}`}
+                          {detailSkill.automation && `Automation: ${detailSkill.automation}`}
+                          {detailSkill.scale && `Scale: ${detailSkill.scale}`}
                         </div>
                         <div className="w-full h-1 bg-muted rounded-full overflow-hidden">
                           <div 
