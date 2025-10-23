@@ -58,7 +58,8 @@ const ProjectsSection = () => {
       icon: Target,
       color: "from-blue-500 to-cyan-500",
       metrics: { improvement: "25%", reduction: "20%", processed: "500+/month" },
-      github: "https://github.com/shaneeza-hasnani/student-risk-assessment"
+      github: "https://github.com/shaneeza-hasnani/student-risk-assessment",
+      model: "/student-risk-model"
     },
     {
       id: 3,
