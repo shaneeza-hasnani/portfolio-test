@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -10,6 +11,10 @@ import Footer from "@/components/Footer";
 
 const StudentRiskShowcase = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const keyMetrics = [
     { label: "Monthly Classifications", value: "200k+", icon: Users, color: "text-blue-500" },
@@ -61,7 +66,12 @@ const StudentRiskShowcase = () => {
       <div className="container mx-auto px-6 py-24">
         <Button
           variant="ghost"
-          onClick={() => navigate("/")}
+          onClick={() => {
+            navigate("/");
+            setTimeout(() => {
+              document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+          }}
           className="mb-6"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
