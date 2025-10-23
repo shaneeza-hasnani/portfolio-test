@@ -30,7 +30,6 @@ const StudentRiskModel = () => {
   const [formData, setFormData] = useState({
     studentName: "",
     email: "",
-    phone: "",
     program: "",
     academicLevel: "Undergraduate",
     previousInstitution: "",
@@ -162,17 +161,6 @@ const StudentRiskModel = () => {
                       placeholder="student@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      required
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number</Label>
-                    <Input
-                      id="phone"
-                      placeholder="+1 (555) 123-4567"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       required
                     />
                   </div>
