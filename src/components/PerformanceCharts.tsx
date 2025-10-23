@@ -36,10 +36,10 @@ const PerformanceCharts = () => {
     
     return (
       <g>
-        <text x={cx} y={cy - 10} textAnchor="middle" className="fill-foreground text-2xl font-bold">
+        <text x={cx} y={cy - 5} textAnchor="middle" className="fill-foreground text-base font-bold">
           {value}%
         </text>
-        <text x={cx} y={cy + 20} textAnchor="middle" className="fill-muted-foreground text-sm">
+        <text x={cx} y={cy + 15} textAnchor="middle" className="fill-muted-foreground text-xs">
           {payload.name}
         </text>
         <Sector
