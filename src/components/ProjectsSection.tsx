@@ -237,7 +237,7 @@ const ProjectsSection = () => {
             }}
           >
             <BarChart3 className="w-4 h-4 mr-2" />
-            Try Model
+            Explore System
           </Button>
         )}
         {project.demo && (
