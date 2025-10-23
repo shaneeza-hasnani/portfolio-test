@@ -82,30 +82,6 @@ const ProjectsSection = () => {
       github: "https://github.com/shaneeza-hasnani/wire-transfer-anomaly"
     },
     {
-      id: 4,
-      title: "Medicaid Fraud Investigation Analytics",
-      subtitle: "Statistical Analysis for Healthcare Fraud Detection",
-      description: "Conducted comprehensive data analysis on provider billing patterns across multiple Medicaid fraud investigations.",
-      problem: "The NY State Attorney General's office needed to efficiently analyze large volumes of healthcare billing data to identify fraudulent patterns and quantify financial impact.",
-      methodology: [
-        "Applied statistical validation on billing transactions",
-        "Used SQL for complex healthcare data queries",
-        "Implemented prescriptive analytics for case prioritization",
-        "Created evidence review workflows for investigators"
-      ],
-      results: [
-        "Identified $500K+ in recovery anomalies",
-        "Improved fraud case resolution turnaround by 20%",
-        "Streamlined evidence review process",
-        "Supported successful fraud prosecutions"
-      ],
-      technologies: ["SQL", "Statistical Analysis", "Healthcare Data", "Prescriptive Analytics", "Evidence Analysis"],
-      icon: BarChart3,
-      color: "from-purple-500 to-pink-500",
-      metrics: { recovery: "$500K+", improvement: "20%", cases: "4 investigations" },
-      impact: "Government prosecution support"
-    },
-    {
       id: 5,
       title: "Real-time Fraud Monitoring Dashboard",
       subtitle: "Interactive Business Intelligence for Risk Management",
