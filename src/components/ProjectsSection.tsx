@@ -31,6 +31,7 @@ const ProjectsSection = () => {
       color: "from-red-500 to-orange-500",
       metrics: { accuracy: "99.96%", recall: "97.25%", "false positives": "<0.02%" },
       github: "https://github.com/shaneeza-hasnani/credit-card-fraud-model",
+      model: "YOUR_MODEL_URL_HERE", // Replace with your actual model URL
       impact: "CUNY John Jay College of Criminal Justice - October 2024"
     },
     {
@@ -213,6 +214,14 @@ const ProjectsSection = () => {
             <a href={project.github} target="_blank" rel="noopener noreferrer">
               <Github className="w-4 h-4 mr-2" />
               Code
+            </a>
+          </Button>
+        )}
+        {project.model && (
+          <Button asChild size="sm" className="bg-primary hover:bg-primary/90">
+            <a href={project.model} target="_blank" rel="noopener noreferrer">
+              <BarChart3 className="w-4 h-4 mr-2" />
+              View Model
             </a>
           </Button>
         )}
