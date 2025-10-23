@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, BarChart3, ShieldCheck, Brain, TrendingUp, Zap, Target } from "lucide-react";
 
 const ProjectsSection = () => {
+  const navigate = useNavigate();
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
   const projects = [
@@ -31,7 +33,7 @@ const ProjectsSection = () => {
       color: "from-red-500 to-orange-500",
       metrics: { accuracy: "99.96%", recall: "97.25%", "false positives": "<0.02%" },
       github: "https://github.com/shaneeza-hasnani/credit-card-fraud-model",
-      model: "YOUR_MODEL_URL_HERE", // Replace with your actual model URL
+      model: "/fraud-model",
       impact: "CUNY John Jay College of Criminal Justice - October 2024"
     },
     {
@@ -218,11 +220,20 @@ const ProjectsSection = () => {
           </Button>
         )}
         {project.model && (
-          <Button asChild size="sm" className="bg-primary hover:bg-primary/90">
-            <a href={project.model} target="_blank" rel="noopener noreferrer">
-              <BarChart3 className="w-4 h-4 mr-2" />
-              View Model
-            </a>
+          <Button 
+            size="sm" 
+            className="bg-primary hover:bg-primary/90"
+            onClick={(e) => {
+              e.stopPropagation();
+              if (project.model.startsWith('/')) {
+                navigate(project.model);
+              } else {
+                window.open(project.model, '_blank');
+              }
+            }}
+          >
+            <BarChart3 className="w-4 h-4 mr-2" />
+            Try Model
           </Button>
         )}
         {project.demo && (
