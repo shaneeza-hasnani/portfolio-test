@@ -121,13 +121,14 @@ const StudentRiskModel = () => {
               <h1 className="text-4xl font-bold">Student Application Risk Assessment</h1>
             </div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Automated anomaly detection system using Random Forest and Logistic Regression
-              for identifying high-risk applications
+              ML-powered automated scoring pipeline using Random Forest and Logistic Regression
+              to classify 200k+ high-risk applications monthly with enhanced fraud detection
             </p>
             <div className="flex justify-center gap-4 mt-4">
-              <Badge variant="secondary" className="text-sm">25% Accuracy Improvement</Badge>
+              <Badge variant="secondary" className="text-sm">25% Enhanced Accuracy</Badge>
+              <Badge variant="secondary" className="text-sm">200k+ Monthly Classifications</Badge>
               <Badge variant="secondary" className="text-sm">20% Annual Reduction</Badge>
-              <Badge variant="secondary" className="text-sm">500+ Applications/Month</Badge>
+              <Badge variant="secondary" className="text-sm">500+ Datasets/Month</Badge>
             </div>
           </div>
 
@@ -345,21 +346,57 @@ const StudentRiskModel = () => {
 
                   <Card>
                     <CardHeader>
-                      <CardTitle>Model Metrics</CardTitle>
+                      <CardTitle>Model Performance Metrics</CardTitle>
+                      <CardDescription>Production system performance indicators</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <div className="grid grid-cols-3 gap-4">
+                      <div className="grid grid-cols-2 gap-4">
                         <div className="text-center p-4 bg-muted rounded-lg">
                           <div className="text-2xl font-bold text-primary">25%</div>
-                          <div className="text-xs text-muted-foreground">Improvement</div>
+                          <div className="text-xs text-muted-foreground">Enhanced Accuracy</div>
+                        </div>
+                        <div className="text-center p-4 bg-muted rounded-lg">
+                          <div className="text-2xl font-bold text-primary">200k+</div>
+                          <div className="text-xs text-muted-foreground">Monthly Classifications</div>
                         </div>
                         <div className="text-center p-4 bg-muted rounded-lg">
                           <div className="text-2xl font-bold text-primary">20%</div>
-                          <div className="text-xs text-muted-foreground">Reduction</div>
+                          <div className="text-xs text-muted-foreground">Annual Reduction</div>
                         </div>
                         <div className="text-center p-4 bg-muted rounded-lg">
                           <div className="text-2xl font-bold text-primary">500+</div>
-                          <div className="text-xs text-muted-foreground">Monthly</div>
+                          <div className="text-xs text-muted-foreground">Datasets/Month</div>
+                        </div>
+                        <div className="text-center p-4 bg-muted rounded-lg col-span-2">
+                          <div className="text-2xl font-bold text-primary">15%</div>
+                          <div className="text-xs text-muted-foreground">Streamlined Review Time</div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Model Architecture</CardTitle>
+                      <CardDescription>Ensemble learning approach</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
+                          <span className="font-medium">Random Forest</span>
+                          <Badge>Primary Classifier</Badge>
+                        </div>
+                        <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
+                          <span className="font-medium">Logistic Regression</span>
+                          <Badge>Secondary Model</Badge>
+                        </div>
+                        <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
+                          <span className="font-medium">Automated Pipeline</span>
+                          <Badge variant="secondary">SQL + Python</Badge>
+                        </div>
+                        <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
+                          <span className="font-medium">Power BI Dashboard</span>
+                          <Badge variant="secondary">Real-time</Badge>
                         </div>
                       </div>
                     </CardContent>

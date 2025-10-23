@@ -40,24 +40,26 @@ const ProjectsSection = () => {
       id: 2,
       title: "Student Application Risk Assessment",
       subtitle: "Automated Anomaly Detection for Educational Services",
-      description: "Developed an automated system to identify high-risk student applications using machine learning, processing 500+ datasets monthly.",
-      problem: "EduGuide needed to efficiently identify potentially fraudulent student applications while maintaining a smooth legitimate application process.",
+      description: "Engineered ML-powered anomaly detection models classifying 200k+ high-risk applications monthly with automated scoring pipelines, achieving 25% enhanced accuracy.",
+      problem: "Educational institutions needed to efficiently process and identify potentially fraudulent applications from massive volumes while maintaining compliance and reducing review time.",
       methodology: [
-        "Engineered anomaly detection models using Python and SQL",
-        "Applied Random Forest and Logistic Regression for risk classification",
-        "Created automated scoring pipelines for real-time assessment",
-        "Integrated with existing admissions workflow"
+        "Engineered anomaly detection models in Python (Random Forest, Logistic Regression)",
+        "Developed automated scoring pipelines processing 200k+ applications monthly",
+        "Analyzed 500+ payment datasets monthly using SQL and Python",
+        "Designed and automated Power BI dashboards for real-time monitoring",
+        "Delivered prescriptive recommendations to admissions, compliance, and IT teams"
       ],
       results: [
-        "Reduced suspicious applications by 20% annually",
-        "Improved fraud detection accuracy by 25%",
-        "Streamlined review process for admissions teams",
-        "Safeguarded digital payment flows"
+        "Enhanced fraud detection accuracy by 25%",
+        "Reduced suspicious student applications by 20% annually",
+        "Streamlined review time by 15% via automated dashboards",
+        "Successfully classified 200k+ high-risk transactions monthly",
+        "Analyzed 500+ payment datasets monthly for pattern recognition"
       ],
       technologies: ["Python", "SQL", "Random Forest", "Logistic Regression", "Power BI", "Automation"],
       icon: Target,
       color: "from-blue-500 to-cyan-500",
-      metrics: { improvement: "25%", reduction: "20%", processed: "500+/month" },
+      metrics: { accuracy: "25%", classifications: "200k+/month", reduction: "20%", datasets: "500+/month" },
       github: "https://github.com/shaneeza-hasnani/student-risk-assessment",
       model: "/student-risk-model"
     },
