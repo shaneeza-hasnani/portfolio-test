@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from "recharts";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, Sector } from "recharts";
 import { TrendingUp, Target, DollarSign, Shield } from "lucide-react";
 
 const PerformanceCharts = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const fraudDetectionMetrics = [
     { month: 'Jan', accuracy: 95.2, precision: 89.1, recall: 91.5, falsePositives: 2.1 },
     { month: 'Feb', accuracy: 96.1, precision: 90.3, recall: 92.8, falsePositives: 1.9 },
@@ -23,11 +25,54 @@ const PerformanceCharts = () => {
   ];
 
   const projectImpactData = [
-    { name: 'Credit Card Fraud Detection', value: 35, color: '#3b82f6' },
-    { name: 'Student Risk Assessment', value: 28, color: '#06b6d4' },
-    { name: 'Wire Transfer Monitoring', value: 22, color: '#10b981' },
-    { name: 'Medicaid Fraud Analysis', value: 15, color: '#f59e0b' }
+    { name: 'Credit Card Fraud Detection', value: 35, color: '#3b82f6', gradient: 'from-blue-500 to-blue-600' },
+    { name: 'Student Risk Assessment', value: 28, color: '#06b6d4', gradient: 'from-cyan-500 to-cyan-600' },
+    { name: 'Wire Transfer Monitoring', value: 22, color: '#10b981', gradient: 'from-green-500 to-green-600' },
+    { name: 'Real-time Dashboard', value: 15, color: '#f59e0b', gradient: 'from-orange-500 to-orange-600' }
   ];
+
+  const renderActiveShape = (props: any) => {
+    const { cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill, payload, value } = props;
+    
+    return (
+      <g>
+        <text x={cx} y={cy - 10} textAnchor="middle" className="fill-foreground text-2xl font-bold">
+          {value}%
+        </text>
+        <text x={cx} y={cy + 20} textAnchor="middle" className="fill-muted-foreground text-sm">
+          {payload.name}
+        </text>
+        <Sector
+          cx={cx}
+          cy={cy}
+          innerRadius={innerRadius}
+          outerRadius={outerRadius + 10}
+          startAngle={startAngle}
+          endAngle={endAngle}
+          fill={fill}
+          className="drop-shadow-lg"
+        />
+        <Sector
+          cx={cx}
+          cy={cy}
+          startAngle={startAngle}
+          endAngle={endAngle}
+          innerRadius={outerRadius + 12}
+          outerRadius={outerRadius + 16}
+          fill={fill}
+          opacity={0.3}
+        />
+      </g>
+    );
+  };
+
+  const onPieEnter = (_: any, index: number) => {
+    setActiveIndex(index);
+  };
+
+  const onPieLeave = () => {
+    setActiveIndex(null);
+  };
 
   const automationMetrics = [
     { process: 'Manual Review Time', before: 45, after: 12, improvement: 73 },
@@ -138,43 +183,96 @@ const PerformanceCharts = () => {
 
           {/* Project Impact Distribution */}
           <div className="grid lg:grid-cols-2 gap-8">
-            <Card className="border-0 bg-gradient-card shadow-soft">
+            <Card className="border-0 bg-gradient-card shadow-soft overflow-hidden">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Target className="w-5 h-5 text-primary" />
                   Project Impact Distribution
                 </CardTitle>
                 <p className="text-sm text-muted-foreground">
-                  Relative impact across different fraud detection projects
+                  Hover over segments to explore project contributions
                 </p>
               </CardHeader>
               <CardContent>
-                <ResponsiveContainer width="100%" height={300}>
-                  <PieChart>
-                    <Pie
-                      data={projectImpactData}
-                      cx="50%"
-                      cy="50%"
-                      outerRadius={100}
-                      dataKey="value"
-                      label={false}
-                      labelLine={false}
-                    >
-                      {projectImpactData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.color} />
-                      ))}
-                    </Pie>
-                    <Tooltip 
-                      formatter={(value: number, name: string) => [`${value}%`, name]}
-                      labelFormatter={(label) => `Project: ${label}`}
-                      contentStyle={{ 
-                        backgroundColor: 'hsl(var(--card))', 
-                        border: '1px solid hsl(var(--border))',
-                        borderRadius: '8px'
-                      }}
-                    />
-                  </PieChart>
-                </ResponsiveContainer>
+                <div className="flex flex-col items-center">
+                  <ResponsiveContainer width="100%" height={320}>
+                    <PieChart>
+                      <defs>
+                        {projectImpactData.map((entry, index) => (
+                          <linearGradient key={`gradient-${index}`} id={`gradient-${index}`} x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stopColor={entry.color} stopOpacity={1} />
+                            <stop offset="100%" stopColor={entry.color} stopOpacity={0.7} />
+                          </linearGradient>
+                        ))}
+                      </defs>
+                      <Pie
+                        data={projectImpactData}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={60}
+                        outerRadius={90}
+                        dataKey="value"
+                        onMouseEnter={onPieEnter}
+                        onMouseLeave={onPieLeave}
+                        activeIndex={activeIndex ?? undefined}
+                        activeShape={renderActiveShape}
+                        animationBegin={0}
+                        animationDuration={800}
+                        className="cursor-pointer transition-all"
+                      >
+                        {projectImpactData.map((entry, index) => (
+                          <Cell 
+                            key={`cell-${index}`} 
+                            fill={`url(#gradient-${index})`}
+                            stroke="hsl(var(--background))"
+                            strokeWidth={3}
+                            className="transition-all duration-300 hover:opacity-90"
+                          />
+                        ))}
+                      </Pie>
+                      <Tooltip 
+                        formatter={(value: number) => [`${value}%`, 'Impact']}
+                        contentStyle={{ 
+                          backgroundColor: 'hsl(var(--card))', 
+                          border: '1px solid hsl(var(--border))',
+                          borderRadius: '8px',
+                          boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
+                        }}
+                      />
+                    </PieChart>
+                  </ResponsiveContainer>
+                  
+                  {/* Interactive Legend */}
+                  <div className="w-full grid grid-cols-2 gap-3 mt-6">
+                    {projectImpactData.map((entry, index) => (
+                      <div
+                        key={index}
+                        className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-300 cursor-pointer group
+                          ${activeIndex === index 
+                            ? 'bg-primary/10 scale-105 shadow-md' 
+                            : 'hover:bg-muted/50 hover:scale-102'
+                          }`}
+                        onMouseEnter={() => setActiveIndex(index)}
+                        onMouseLeave={() => setActiveIndex(null)}
+                      >
+                        <div 
+                          className={`w-4 h-4 rounded-full flex-shrink-0 transition-all duration-300 ${
+                            activeIndex === index ? 'scale-125 shadow-lg' : ''
+                          }`}
+                          style={{ backgroundColor: entry.color }}
+                        />
+                        <div className="flex-1 min-w-0">
+                          <div className="text-xs font-medium truncate group-hover:text-primary transition-colors">
+                            {entry.name}
+                          </div>
+                          <div className="text-xs text-muted-foreground">
+                            {entry.value}%
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
