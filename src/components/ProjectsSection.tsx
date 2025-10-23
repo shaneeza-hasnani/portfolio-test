@@ -61,7 +61,7 @@ const ProjectsSection = () => {
       color: "from-blue-500 to-cyan-500",
       metrics: { accuracy: "25%", classifications: "200k+/month", reduction: "20%", datasets: "500+/month" },
       github: "https://github.com/shaneeza-hasnani/student-risk-assessment",
-      model: "/student-risk-model"
+      model: "/student-risk-showcase"
     },
     {
       id: 3,

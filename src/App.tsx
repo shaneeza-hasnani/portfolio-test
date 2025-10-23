@@ -7,6 +7,7 @@ import { ThemeProvider } from "next-themes";
 import Index from "./pages/Index";
 import FraudModel from "./pages/FraudModel";
 import StudentRiskModel from "./pages/StudentRiskModel";
+import StudentRiskShowcase from "./pages/StudentRiskShowcase";
 import WireTransferModel from "./pages/WireTransferModel";
 import NotFound from "./pages/NotFound";
 
@@ -23,6 +24,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/fraud-model" element={<FraudModel />} />
             <Route path="/student-risk-model" element={<StudentRiskModel />} />
+            <Route path="/student-risk-showcase" element={<StudentRiskShowcase />} />
             <Route path="/wire-transfer-model" element={<WireTransferModel />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
