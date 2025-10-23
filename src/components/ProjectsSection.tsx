@@ -10,28 +10,28 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "Credit Card Fraud Detection System",
-      subtitle: "Advanced ML Pipeline for Real-time Transaction Monitoring",
-      description: "Built a comprehensive fraud detection system using Random Forest and Decision Tree classifiers on 10,000+ real-time transactions.",
-      problem: "Financial institutions needed a reliable system to detect fraudulent credit card transactions with high accuracy while minimizing false positives that could inconvenience legitimate customers.",
+      title: "Credit-Card Transaction Fraud Model",
+      subtitle: "Advanced ML Classifiers for Real-time Fraud Detection",
+      description: "Engineered Random Forest and Decision Tree classifiers on 10,000+ real-time transactions achieving exceptional accuracy and recall for financial institutions.",
+      problem: "Financial institutions required a highly accurate fraud detection system that could identify fraudulent transactions in real-time while maintaining an extremely low false positive rate to avoid disrupting legitimate customer transactions.",
       methodology: [
-        "Implemented Random Forest and Decision Tree models with hyperparameter tuning",
-        "Applied advanced feature engineering on transaction patterns",
-        "Optimized recall to 77.9% while maintaining false positive rate under 0.02%",
-        "Deployed real-time scoring pipeline for instant transaction assessment"
+        "Engineered Random Forest and Decision Tree classifiers on 10,000+ real-time transactions",
+        "Optimized hyperparameters to elevate Random Forest recall to 77.9%",
+        "Applied advanced feature engineering and model tuning techniques",
+        "Regulated false positives under 0.02% enabling reliable deployment"
       ],
       results: [
-        "Achieved 99.96% overall accuracy on test dataset",
-        "97.25% recall for detecting fraudulent transactions",
-        "Reduced false positive rate to 0.02%",
-        "Enabled real-time fraud prevention for financial institutions"
+        "Attained 99.96% accuracy for transaction classification",
+        "Achieved 97.25% recall for abnormal payment detection",
+        "Maintained false positive rate under 0.02%",
+        "Enabled reliable deployment for financial institutions"
       ],
-      technologies: ["Python", "Scikit-learn", "Pandas", "Random Forest", "Decision Trees", "Feature Engineering"],
+      technologies: ["Python", "Random Forest", "Decision Trees", "Excel", "Scikit-learn", "Feature Engineering", "Hyperparameter Optimization"],
       icon: ShieldCheck,
       color: "from-red-500 to-orange-500",
-      metrics: { accuracy: "99.96%", recall: "97.25%", precision: "77.9%" },
-      github: "https://github.com/shaneeza-hasnani/fraud-detection",
-      demo: "https://fraud-detector-demo.streamlit.app"
+      metrics: { accuracy: "99.96%", recall: "97.25%", "false positives": "<0.02%" },
+      github: "https://github.com/shaneeza-hasnani/credit-card-fraud-model",
+      impact: "CUNY John Jay College of Criminal Justice - October 2024"
     },
     {
       id: 2,

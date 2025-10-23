@@ -39,17 +39,19 @@ const SkillsSection = () => {
   const skills = [
     {
       id: "programming",
-      title: "Python/R/SQL",
-      description: "Core programming languages for data science",
+      title: "Programming & Data",
+      description: "R, Python, SQL, C++, Scala, SAS, SPSS",
       icon: Code2,
-      level: 90,
+      level: 92,
       color: "from-blue-200 to-cyan-200",
       detailSkills: [
         { name: "Python", level: 95, libraries: "Pandas, NumPy, Scikit-learn" },
-        { name: "SQL", level: 95, databases: "PostgreSQL, MySQL" },
-        { name: "R", level: 85, focus: "Statistical analysis" },
-        { name: "Git/GitHub", level: 85, experience: "Version control" },
-        { name: "Data Processing", level: 90, scale: "Large datasets" }
+        { name: "R", level: 90, focus: "Statistical analysis" },
+        { name: "SQL", level: 95, experience: "3+ years production use" },
+        { name: "C++", level: 75, focus: "Algorithms and data structures" },
+        { name: "Scala", level: 70, use: "Big data processing" },
+        { name: "SAS", level: 75, focus: "Statistical analysis" },
+        { name: "SPSS", level: 75, use: "Quantitative research" }
       ]
     },
     {
@@ -68,50 +70,35 @@ const SkillsSection = () => {
       ]
     },
     {
-      id: "data-analysis",
-      title: "Data Analysis",
-      description: "Statistical analysis and insights extraction",
+      id: "visualization",
+      title: "Visualization & BI",
+      description: "Tableau, Microsoft Power BI, Excel (Advanced)",
       icon: BarChart3,
       level: 95,
       color: "from-green-200 to-emerald-200",
       detailSkills: [
-        { name: "Statistical Analysis", level: 95, tools: "Python/R" },
-        { name: "Data Visualization", level: 90, platforms: "Tableau/Power BI" },
-        { name: "SQL Querying", level: 95, experience: "3+ years" },
-        { name: "Excel Advanced", level: 95, focus: "Complex modeling" },
-        { name: "Report Generation", level: 90, automation: "Yes" }
+        { name: "Tableau", level: 90, experience: "Dashboard design & deployment" },
+        { name: "Microsoft Power BI", level: 95, focus: "Automated reporting" },
+        { name: "Excel (Advanced)", level: 95, features: "Pivot tables, macros, complex formulas" },
+        { name: "Data Storytelling", level: 90, impact: "Executive presentations" },
+        { name: "Dashboard Automation", level: 90, efficiency: "15% time reduction" }
       ]
     },
     {
       id: "machine-learning",
       title: "Machine Learning",
-      description: "Predictive modeling and algorithm development",
+      description: "Random Forest, Logistic Regression, Decision Trees, Anomaly Detection, Predictive Analysis",
       icon: Brain,
-      level: 90,
+      level: 93,
       color: "from-purple-200 to-pink-200",
       detailSkills: [
-        { name: "Random Forest", level: 95, projects: "5+" },
-        { name: "Logistic Regression", level: 90, projects: "4+" },
-        { name: "Decision Trees", level: 90, projects: "4+" },
-        { name: "Feature Engineering", level: 90, experience: "Advanced" },
-        { name: "Model Validation", level: 85, focus: "Cross-validation" }
+        { name: "Random Forest", level: 95, achievement: "99.96% accuracy achieved" },
+        { name: "Logistic Regression", level: 92, experience: "Production deployment" },
+        { name: "Decision Trees", level: 90, optimization: "Hyperparameter tuning" },
+        { name: "Anomaly Detection", level: 95, scale: "200K+ transactions monthly" },
+        { name: "Predictive Analysis", level: 90, impact: "25% accuracy improvement" }
       ]
     },
-    {
-      id: "cloud-deployment",
-      title: "Cloud & MLOps",
-      description: "AWS deployment and model operations",
-      icon: Cloud,
-      level: 75,
-      color: "from-indigo-200 to-blue-200",
-      detailSkills: [
-        { name: "AWS Services", level: 70, focus: "S3, EC2, Lambda" },
-        { name: "Docker", level: 65, use: "Model containerization" },
-        { name: "MLOps Pipeline", level: 70, automation: "CI/CD" },
-        { name: "Model Deployment", level: 75, platforms: "Cloud-based" },
-        { name: "Monitoring", level: 65, tools: "Performance tracking" }
-      ]
-    }
   ];
 
   const achievements = [
@@ -119,25 +106,25 @@ const SkillsSection = () => {
       title: "Certified Fraud Examiner (CFE)",
       year: "2025",
       description: "Professional certification demonstrating expertise in fraud prevention, detection, and deterrence",
-      link: "#" // CFE certificate link placeholder
+      link: "/Resume_Hasnani.pdf"
     },
     {
       title: "ACFE Ritchie-Jennings Memorial Scholarship",
       year: "2024", 
       description: "Prestigious scholarship recognizing excellence in fraud examination studies and commitment to the profession",
-      link: "#" // Scholarship received page PDF placeholder
+      link: "/Resume_Hasnani.pdf"
     },
     {
       title: "Cum Laude, Honors in Major", 
       year: "2025",
-      description: "Graduated with highest honors in Fraud Examination and Financial Forensics",
-      link: "#" // Diploma PDF placeholder
+      description: "Graduated with highest honors in Fraud Examination and Financial Forensics with 3.87 GPA",
+      link: "/Resume_Hasnani.pdf"
     },
     {
       title: "Dean's List Recognition",
       year: "2022-2025",
-      description: "Consistent academic excellence with 3.87 GPA throughout undergraduate studies",
-      link: "#" // Transcript placeholder
+      description: "Consistent academic excellence throughout undergraduate studies at CUNY John Jay College",
+      link: "/Resume_Hasnani.pdf"
     }
   ];
 

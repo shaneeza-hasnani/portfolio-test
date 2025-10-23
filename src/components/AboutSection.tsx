@@ -12,46 +12,52 @@ const AboutSection = () => {
 
   const workExperience = [
     {
-      period: "2021 - Present",
+      period: "June 2021 - Present",
       title: "Fraud Data Analyst",
       company: "EduGuide Overseas Pvt. Ltd.",
       location: "Mumbai, India",
-      description: "Lead fraud detection initiatives using advanced machine learning models to protect digital payment flows and enhance risk assessment accuracy.",
+      description: "Engineer anomaly detection models and analyze payment datasets to enhance fraud detection accuracy and reduce suspicious applications.",
       achievements: [
-        "Improved fraud detection accuracy by 25% through optimized ML pipelines",
-        "Reduced suspicious applications by 20% annually with automated scoring systems",
-        "Process 500+ datasets monthly using automated data pipelines",
-        "Built real-time anomaly detection systems for payment protection"
+        "Engineer anomaly detection models in Python (Random Forest, Logistic Regression)",
+        "Classify an average of 200k+ high-risk transactions monthly using self-developed model",
+        "Enhance fraud detection accuracy by 25%",
+        "Analyze 500+ payment datasets monthly using SQL and Python",
+        "Reduce suspicious student applications by 20% annually via automated scoring pipelines",
+        "Design and automate Power BI dashboards, streamlining review time by 15%",
+        "Deliver prescriptive, data-driven recommendations to admissions, compliance, and IT teams"
       ],
       icon: Briefcase,
       type: "work"
     },
     {
-      period: "2024",
-      title: "Financial Crime Intern",
-      company: "Guidehouse",
+      period: "June 2024 - August 2024",
+      title: "Financial Crime & Investigative Services Intern",
+      company: "Guidehouse, Inc.",
       location: "New York, NY",
-      description: "Developed advanced anomaly detection algorithms for wire transfer monitoring, delivering technical solutions that were adopted by senior leadership.",
+      description: "Developed and optimized fraud detection workflows for ACH/wire transfers using ML and feature engineering.",
       achievements: [
-        "Enhanced compliance monitoring capabilities by 30%",
-        "Analyzed 20,000+ ACH/wire transfer records using advanced ML techniques",
-        "Presented technical solutions to directors and senior management",
-        "Implemented pattern recognition algorithms for suspicious activity detection"
+        "Developed and optimized fraud detection workflows for 20,000+ ACH/wire transfers",
+        "Applied feature engineering and SQL-based data preparation",
+        "Detected 50+ high-risk transaction patterns",
+        "Presented capstone on wire transfer anomaly detection",
+        "Integrated ML and risk scoring to strengthen compliance monitoring by 30%",
+        "Influenced directors through technical presentations and solution adoption"
       ],
       icon: Briefcase,
       type: "work"
     },
     {
-      period: "2023",
+      period: "June 2023 - August 2023",
       title: "Fraud Audit Intern",
-      company: "NY State Attorney General",
+      company: "State of New York, Office of the Attorney General, Medicaid Fraud Control Unit",
       location: "Hauppauge, NY",
-      description: "Conducted comprehensive data analysis for Medicaid fraud investigations, providing statistical evidence that supported successful prosecutions.",
+      description: "Conducted data analysis on provider billing and claims transactions, collaborating across multiple Medicaid fraud investigations.",
       achievements: [
-        "Identified $500K+ in recovery anomalies through statistical analysis",
-        "Improved case resolution turnaround by 20% with streamlined workflows",
-        "Supported multiple successful fraud prosecutions with data evidence",
-        "Developed automated evidence review processes for investigators"
+        "Conducted data analysis on provider billing and claims transactions",
+        "Collaborated across four Medicaid fraud investigations",
+        "Identified $500K+ in recovery anomalies using SQL and statistical validation",
+        "Consulted with investigators to streamline evidence review",
+        "Leveraged prescriptive analytics to accelerate fraud case resolution by 20%"
       ],
       icon: Briefcase,
       type: "work"
@@ -60,31 +66,31 @@ const AboutSection = () => {
 
   const education = [
     {
-      period: "Aug 2025 - Dec 2026", 
-      title: "MS Business Analytics & AI",
-      company: "American University",
+      period: "August 2025 - December 2026", 
+      title: "Master of Science in Business Analytics & AI",
+      company: "American University, Kogod School of Business",
       location: "Washington, DC",
-      description: "Advanced graduate program focusing on artificial intelligence applications in business analytics.",
+      description: "Concentration in Data Science with coursework in Applied Managerial Statistics, Business Intelligence, Database and AI, Predictive Analytics and Machine Learning.",
       achievements: [
-        "Core focus on AI and machine learning applications in business contexts",
-        "Advanced coursework in predictive analytics and statistical modeling",
-        "Research emphasis on financial crime detection methodologies",
-        "Hands-on experience with cutting-edge AI tools and frameworks"
+        "Concentration: Data Science",
+        "Core coursework: Applied Managerial Statistics, Business Insights and Analytics",
+        "Advanced topics: Predictive Analytics and Machine Learning, Database and AI",
+        "Business focus: Managing Digital Organization, Quantitative Methods and Data Analysis"
       ],
       icon: GraduationCap,
       type: "education"
     },
     {
-      period: "Aug 2022 - May 2025",
-      title: "BS Fraud Examination & Financial Forensics",
-      company: "CUNY John Jay College",
+      period: "August 2022 - May 2025",
+      title: "Bachelor of Science in Fraud Examination and Financial Forensics",
+      company: "CUNY John Jay College of Criminal Justice",
       location: "New York, NY",
-      description: "Graduated Cum Laude with Honors in Major, maintaining a 3.87 GPA while consistently earning Dean's List recognition.",
+      description: "Graduated Cum Laude with Honors in Major, maintaining a 3.87 GPA while earning Dean's List recognition throughout undergraduate studies.",
       achievements: [
-        "3.87 GPA with consistent Dean's List recognition (2022-2025)",
-        "Computer Science Minor with programming and data analysis focus",
-        "Graduated Cum Laude with Honors in Major distinction",
-        "Comprehensive training in fraud investigation and financial forensics"
+        "Minor: Computer Science",
+        "GPA: 3.87 | Dean's List 2022-2025 | Cum Laude, Honors in Major",
+        "Key courses: Data Analytics for Fraud Examination, Digital Forensics Fraud, Databases and Data Mining",
+        "Programming: Introduction to Computer Programming, Advanced Data Structures, Computer Networking"
       ],
       icon: GraduationCap,
       type: "education"

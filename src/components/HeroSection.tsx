@@ -18,7 +18,7 @@ const HeroSection = () => {
     },
     {
       name: "Resume",
-      url: "/resume.pdf",
+      url: "/Resume_Hasnani.pdf",
       icon: FileText,
       label: "Download my resume"
     }
@@ -58,11 +58,11 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
             Hi, I'm{" "}
             <span className="text-primary">
-              Shaneeza Hasnani
+              Shaneeza Hasnani, CFE
             </span>
             <br />
             <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground mt-2 block">
-              Fraud Data Analyst → Data Scientist
+              Data Science & Fraud Analytics Specialist
             </span>
           </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl leading-relaxed">
