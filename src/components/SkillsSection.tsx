@@ -103,14 +103,14 @@ const SkillsSection = () => {
       title: "Dean's List Recognition - 2025",
       description: "Consistent academic excellence throughout undergraduate studies at CUNY John Jay College",
       url: "/Deans_List_JJAY.pdf",
-      label: "View my Certificate",
+      label: "Download my Certificate",
     },
     {
       title: "ACFE Ritchie-Jennings Memorial Scholarship - 2024",
       description:
         "Prestigious scholarship recognizing excellence in fraud examination studies and commitment to the profession",
       url: "/ACFE_Scholarship_2024.pdf",
-      label: "View the Fraud Magazine Snippet",
+      label: "Download the Fraud Magazine Snippet",
     },
   ];
 
@@ -247,12 +247,13 @@ const SkillsSection = () => {
                     href={achievement.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    {...(achievement.url.startsWith('/') && {
-                      download: achievement.url === '/Deans_List_JJAY.pdf' 
-                        ? 'Shaneeza_Hasnani_Deans_List.pdf'
-                        : achievement.url === '/ACFE_Scholarship_2024.pdf'
-                        ? 'Shaneeza_Hasnani_ACFE_Scholarship.pdf'
-                        : true
+                    {...(achievement.url.startsWith("/") && {
+                      download:
+                        achievement.url === "/Deans_List_JJAY.pdf"
+                          ? "Shaneeza_Hasnani_Deans_List.pdf"
+                          : achievement.url === "/ACFE_Scholarship_2024.pdf"
+                            ? "Shaneeza_Hasnani_ACFE_Scholarship.pdf"
+                            : true,
                     })}
                     className="inline-block w-full px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium"
                   >
