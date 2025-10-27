@@ -97,20 +97,20 @@ const SkillsSection = () => {
       title: "Certified Fraud Examiner (CFE) - 2025",
       description: "Professional certification demonstrating expertise in fraud prevention, detection, and deterrence",
       url: "https://www.credly.com/badges/e18001cd-3825-47cf-8018-d0ff83f6be8f/public_url",
-      label: "View my badge",
+      label: "View my Badge",
     },
     {
-      title: "Dean's List Recognition - 2022-2025",
+      title: "Dean's List Recognition - 2025",
       description: "Consistent academic excellence throughout undergraduate studies at CUNY John Jay College",
       url: "/Deans_List_JJAY.pdf",
-      label: "Download my certificate",
+      label: "View my Certificate",
     },
     {
       title: "ACFE Ritchie-Jennings Memorial Scholarship - 2024",
       description:
         "Prestigious scholarship recognizing excellence in fraud examination studies and commitment to the profession",
       url: "/ACFE_Scholarship_2024.pdf",
-      label: "View the fraud magazine newsletter",
+      label: "View the Fraud Magazine Snippet",
     },
   ];
 
