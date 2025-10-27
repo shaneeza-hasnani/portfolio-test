@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, BarChart3, ShieldCheck, Brain, TrendingUp, Zap, Target } from "lucide-react";
+import { ExternalLink, Github, BarChart3, ShieldCheck, TrendingUp, Zap } from "lucide-react";
 const ProjectsSection = () => {
   const navigate = useNavigate();
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -26,25 +26,6 @@ const ProjectsSection = () => {
     github: "https://github.com/shaneeza-hasnani/credit-card-fraud-model",
     model: "/fraud-model",
     impact: "CUNY John Jay College of Criminal Justice - October 2024"
-  }, {
-    id: 2,
-    title: "Student Application Risk Assessment",
-    subtitle: "Automated Anomaly Detection for Educational Services",
-    description: "Engineered ML-powered anomaly detection models classifying 200k+ high-risk applications monthly with automated scoring pipelines, achieving 25% enhanced accuracy.",
-    problem: "Educational institutions needed to efficiently process and identify potentially fraudulent applications from massive volumes while maintaining compliance and reducing review time.",
-    methodology: ["Engineered anomaly detection models in Python (Random Forest, Logistic Regression)", "Developed automated scoring pipelines processing 200k+ applications monthly", "Analyzed 500+ payment datasets monthly using SQL and Python", "Designed and automated Power BI dashboards for real-time monitoring", "Delivered prescriptive recommendations to admissions, compliance, and IT teams"],
-    results: ["Enhanced fraud detection accuracy by 25%", "Reduced suspicious student applications by 20% annually", "Streamlined review time by 15% via automated dashboards", "Successfully classified 200k+ high-risk transactions monthly", "Analyzed 500+ payment datasets monthly for pattern recognition"],
-    technologies: ["Python", "SQL", "Random Forest", "Logistic Regression", "Power BI", "Automation"],
-    icon: Target,
-    color: "from-blue-500 to-cyan-500",
-    metrics: {
-      accuracy: "25%",
-      classifications: "200k+/month",
-      reduction: "20%",
-      datasets: "500+/month"
-    },
-    github: "https://github.com/shaneeza-hasnani/student-risk-assessment",
-    model: "/student-risk-showcase"
   }, {
     id: 3,
     title: "Wire Transfer Anomaly Detection",
@@ -80,23 +61,6 @@ const ProjectsSection = () => {
       automation: "Real-time"
     },
     demo: "https://powerbi-fraud-dashboard.demo"
-  }, {
-    id: 6,
-    title: "Predictive Risk Modeling Framework",
-    subtitle: "Advanced Analytics for Proactive Fraud Prevention",
-    description: "Developed a comprehensive framework combining multiple ML algorithms for predictive risk assessment and early fraud detection.",
-    problem: "Organizations needed to move from reactive fraud detection to proactive risk prevention using predictive modeling techniques.",
-    methodology: ["Combined ensemble methods with neural networks", "Implemented time-series analysis for trend detection", "Created risk scoring algorithms with confidence intervals", "Built interpretable model explanations for stakeholders"],
-    results: ["Achieved early fraud detection capabilities", "Reduced false positive rates significantly", "Improved model interpretability for business users", "Enabled proactive risk management strategies"],
-    technologies: ["Ensemble Methods", "Neural Networks", "Time Series", "Risk Modeling", "Model Interpretability"],
-    icon: Brain,
-    color: "from-indigo-500 to-purple-500",
-    metrics: {
-      prediction: "Early detection",
-      accuracy: "High confidence",
-      interpretability: "Business-friendly"
-    },
-    github: "https://github.com/shaneeza-hasnani/predictive-risk-framework"
   }];
   const ProjectModal = ({
     project
