@@ -1,7 +1,6 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import MetricsSection from "@/components/MetricsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import FraudSimulator from "@/components/FraudSimulator";
 import PerformanceCharts from "@/components/PerformanceCharts";
@@ -17,7 +16,6 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
-        <MetricsSection />
         <AboutSection />
         <ProjectsSection />
         <FraudSimulator />
