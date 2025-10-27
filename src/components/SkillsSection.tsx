@@ -102,7 +102,7 @@ const SkillsSection = () => {
     {
       title: "Dean's List Recognition - 2022-2025",
       description: "Consistent academic excellence throughout undergraduate studies at CUNY John Jay College",
-      url: "/Dean's List - JJAY.pdf",
+      url: "/Deans_List_JJAY.pdf",
       label: "Download my certificate",
     },
     {
