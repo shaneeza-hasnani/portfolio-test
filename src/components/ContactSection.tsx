@@ -105,7 +105,7 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="border-0 shadow-medium animate-slide-up">
+            <Card className="border-0 shadow-none bg-transparent animate-slide-up">
               
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
