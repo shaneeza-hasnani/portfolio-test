@@ -46,7 +46,7 @@ const AboutSection = () => {
     icon: GraduationCap,
     type: "education"
   }, {
-    period: "August 2022 - May 2025",
+    period: "May 2025",
     title: "Bachelor of Science in Fraud Examination and Financial Forensics",
     company: "CUNY John Jay College of Criminal Justice",
     location: "New York, NY",
