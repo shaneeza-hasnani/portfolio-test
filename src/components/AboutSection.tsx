@@ -155,30 +155,7 @@ Fraud Data Analyst @EduGuide </p>
         </div>
 
           {/* Sidebar */}
-          <div className="space-y-8">
-            {/* Values */}
-            <InteractiveValues />
-
-            {/* Languages */}
-            <Card className="border-0 bg-gradient-card shadow-soft animate-scale-in">
-              <CardHeader>
-                <CardTitle className="text-xl flex items-center gap-2">
-                  <Globe className="w-5 h-5 text-primary" />
-                  Languages
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  {languages.map(lang => <div key={lang.name} className="flex items-center justify-between">
-                      <span className="font-medium">{lang.name}</span>
-                      <Badge variant="secondary" className="text-xs">
-                        {lang.level}
-                      </Badge>
-                    </div>)}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          
         </div>
       </div>
     </section>;
