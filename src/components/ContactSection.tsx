@@ -113,9 +113,9 @@ const ContactSection = () => {
           <div className="lg:col-span-2">
             <Card className="border-0 shadow-medium animate-slide-up">
               <CardHeader>
-                <CardTitle className="text-2xl">Send me a message</CardTitle>
+                <CardTitle className="text-2xl">Let's Collaborate</CardTitle>
                 <CardDescription>
-                  I typically respond within 24 hours. Let's start a conversation about your data science needs.
+                  Interested in discussing fraud detection, machine learning solutions, or data analytics projects? I respond within 24 hours.
                 </CardDescription>
               </CardHeader>
               <CardContent>
