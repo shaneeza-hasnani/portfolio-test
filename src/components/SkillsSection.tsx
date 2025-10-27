@@ -112,7 +112,7 @@ const SkillsSection = () => {
       title: "ACFE Ritchie-Jennings Memorial Scholarship",
       year: "2024", 
       description: "Prestigious scholarship recognizing excellence in fraud examination studies and commitment to the profession",
-      link: "/CFE_Certificate.pdf"
+      link: "/scholarship-certificate.pdf"
     },
     {
       title: "Cum Laude, Honors in Major", 
