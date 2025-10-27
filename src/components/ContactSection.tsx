@@ -181,14 +181,7 @@ const ContactSection = () => {
 
             {/* Response Time */}
             <Card className="border-0 shadow-soft bg-gradient-accent/10 animate-scale-in">
-              <CardContent className="pt-6">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">24 Hours</div>
-                  <div className="text-sm text-muted-foreground">
-                    Average response time for new inquiries
-                  </div>
-                </div>
-              </CardContent>
+              
             </Card>
 
             {/* Quick Actions */}
