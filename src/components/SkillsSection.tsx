@@ -110,7 +110,7 @@ const SkillsSection = () => {
       year: "2024",
       description:
         "Prestigious scholarship recognizing excellence in fraud examination studies and commitment to the profession",
-      link: "/ACFE_scholarship.pdf",
+      url: "/ACFE_scholarship.pdf",
     },
   ];
 
