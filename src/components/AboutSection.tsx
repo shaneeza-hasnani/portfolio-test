@@ -37,7 +37,7 @@ const AboutSection = () => {
     type: "work"
   }];
   const education = [{
-    period: "August 2025 - December 2026",
+    period: "December 2026",
     title: "Master of Science in Business Analytics & AI",
     company: "American University, Kogod School of Business",
     location: "Washington, DC",
