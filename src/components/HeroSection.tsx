@@ -1,13 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, FileText, Mail, ExternalLink, Sparkles } from "lucide-react";
+import { Linkedin, FileText, Mail, ExternalLink, Sparkles } from "lucide-react";
 import headshotImage from "@/assets/shaneeza-new-headshot.jpg";
 const HeroSection = () => {
   const socialLinks = [{
-    name: "GitHub",
-    url: "https://github.com/shaneeza-hasnani",
-    icon: Github,
-    label: "View my code and projects"
-  }, {
     name: "LinkedIn",
     url: "https://linkedin.com/in/shasnani",
     icon: Linkedin,
