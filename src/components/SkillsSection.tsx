@@ -2,16 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { 
-  Code2, 
-  BarChart3, 
-  Shield, 
-  Brain, 
-  Cloud,
-  Award,
-  ChevronDown,
-  ChevronRight
-} from "lucide-react";
+import { Code2, BarChart3, Shield, Brain, Cloud, Award, ChevronDown, ChevronRight } from "lucide-react";
 
 const SkillsSection = () => {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
@@ -26,7 +17,7 @@ const SkillsSection = () => {
           setSkillsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     if (skillsRef.current) {
@@ -51,8 +42,8 @@ const SkillsSection = () => {
         { name: "C++", level: 75, focus: "Algorithms and data structures" },
         { name: "Scala", level: 70, use: "Big data processing" },
         { name: "SAS", level: 75, focus: "Statistical analysis" },
-        { name: "SPSS", level: 75, use: "Quantitative research" }
-      ]
+        { name: "SPSS", level: 75, use: "Quantitative research" },
+      ],
     },
     {
       id: "fraud-detection",
@@ -66,8 +57,8 @@ const SkillsSection = () => {
         { name: "Financial Forensics", level: 90, certification: "CFE 2025" },
         { name: "Risk Assessment", level: 90, impact: "$500K+ recovery" },
         { name: "Pattern Recognition", level: 95, scale: "20K+ records" },
-        { name: "Compliance Monitoring", level: 85, focus: "AML/BSA" }
-      ]
+        { name: "Compliance Monitoring", level: 85, focus: "AML/BSA" },
+      ],
     },
     {
       id: "visualization",
@@ -81,8 +72,8 @@ const SkillsSection = () => {
         { name: "Microsoft Power BI", level: 95, focus: "Automated reporting" },
         { name: "Excel (Advanced)", level: 95, features: "Pivot tables, macros, complex formulas" },
         { name: "Data Storytelling", level: 90, impact: "Executive presentations" },
-        { name: "Dashboard Automation", level: 90, efficiency: "15% time reduction" }
-      ]
+        { name: "Dashboard Automation", level: 90, efficiency: "15% time reduction" },
+      ],
     },
     {
       id: "machine-learning",
@@ -96,8 +87,8 @@ const SkillsSection = () => {
         { name: "Logistic Regression", level: 92, experience: "Production deployment" },
         { name: "Decision Trees", level: 90, optimization: "Hyperparameter tuning" },
         { name: "Anomaly Detection", level: 95, scale: "200K+ transactions monthly" },
-        { name: "Predictive Analysis", level: 90, impact: "25% accuracy improvement" }
-      ]
+        { name: "Predictive Analysis", level: 90, impact: "25% accuracy improvement" },
+      ],
     },
   ];
 
@@ -106,26 +97,21 @@ const SkillsSection = () => {
       title: "Certified Fraud Examiner (CFE)",
       year: "2025",
       description: "Professional certification demonstrating expertise in fraud prevention, detection, and deterrence",
-      link: "https://www.credly.com/badges/e18001cd-3825-47cf-8018-d0ff83f6be8f/public_url"
-    },
-    {
-      title: "ACFE Ritchie-Jennings Memorial Scholarship",
-      year: "2024", 
-      description: "Prestigious scholarship recognizing excellence in fraud examination studies and commitment to the profession",
-      link: "/scholarship-certificate.pdf"
-    },
-    {
-      title: "Cum Laude, Honors in Major", 
-      year: "2025",
-      description: "Graduated with highest honors in Fraud Examination and Financial Forensics with 3.87 GPA",
-      link: "/Resume_Hasnani.pdf"
+      link: "https://www.credly.com/badges/e18001cd-3825-47cf-8018-d0ff83f6be8f/public_url",
     },
     {
       title: "Dean's List Recognition",
       year: "2022-2025",
       description: "Consistent academic excellence throughout undergraduate studies at CUNY John Jay College",
-      link: "/Resume_Hasnani.pdf"
-    }
+      link: "/Dean's List - JJAY.pdf",
+    },
+    {
+      title: "ACFE Ritchie-Jennings Memorial Scholarship",
+      year: "2024",
+      description:
+        "Prestigious scholarship recognizing excellence in fraud examination studies and commitment to the profession",
+      link: "/ACFE scholarship.pdf",
+    },
   ];
 
   const toggleSkillExpansion = (skillId: string) => {
@@ -140,14 +126,15 @@ const SkillsSection = () => {
             Skills & <span className="text-primary">Expertise</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Specialized in fraud detection and data science with hands-on experience in machine learning and financial forensics
+            Specialized in fraud detection and data science with hands-on experience in machine learning and financial
+            forensics
           </p>
         </div>
 
         {/* Skills Grid */}
         <div ref={skillsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
           {skills.map((skill, index) => (
-            <Card 
+            <Card
               key={skill.id}
               className="group relative overflow-hidden border-0 bg-card hover:shadow-hover transition-all duration-300 cursor-pointer animate-scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -159,7 +146,9 @@ const SkillsSection = () => {
                 {/* Header with expand icon */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-4">
-                    <div className={`p-3 rounded-xl bg-gradient-to-r ${skill.color} transform transition-transform duration-300 ${hoveredSkill === skill.id ? 'scale-110' : ''}`}>
+                    <div
+                      className={`p-3 rounded-xl bg-gradient-to-r ${skill.color} transform transition-transform duration-300 ${hoveredSkill === skill.id ? "scale-110" : ""}`}
+                    >
                       <skill.icon className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
@@ -183,10 +172,10 @@ const SkillsSection = () => {
                     <span className="text-xs font-bold text-primary">{skill.level}%</span>
                   </div>
                   <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
-                    <div 
+                    <div
                       className={`h-full bg-gradient-to-r ${skill.color} transition-all duration-1000 ease-out`}
-                      style={{ 
-                        width: skillsVisible ? `${skill.level}%` : '0%'
+                      style={{
+                        width: skillsVisible ? `${skill.level}%` : "0%",
                       }}
                     />
                   </div>
@@ -219,7 +208,7 @@ const SkillsSection = () => {
                           {detailSkill.scale && `Scale: ${detailSkill.scale}`}
                         </div>
                         <div className="w-full h-1 bg-muted rounded-full overflow-hidden">
-                          <div 
+                          <div
                             className={`h-full bg-gradient-to-r ${skill.color} transition-all duration-700 ease-out`}
                             style={{ width: `${detailSkill.level}%` }}
                           />
@@ -238,14 +227,14 @@ const SkillsSection = () => {
           <h3 className="text-2xl font-bold text-center mb-8">
             Awards & <span className="text-primary">Recognition</span>
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {achievements.map((achievement, index) => (
-              <Card 
+              <Card
                 key={achievement.title}
                 className="text-center hover:shadow-hover transition-all duration-300 border-0 bg-gradient-to-br from-card to-card/50 animate-scale-in cursor-pointer hover-lift"
                 style={{ animationDelay: `${index * 0.1}s` }}
-                onClick={() => window.open(achievement.link, '_blank')}
+                onClick={() => window.open(achievement.link, "_blank")}
               >
                 <CardHeader className="pb-3">
                   <div className="w-12 h-12 mx-auto bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center mb-3">
@@ -257,9 +246,7 @@ const SkillsSection = () => {
                   </Badge>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {achievement.description}
-                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{achievement.description}</p>
                 </CardContent>
               </Card>
             ))}
