@@ -116,8 +116,11 @@ const HeroSection = () => {
               <div className="absolute -inset-4 bg-gradient-accent rounded-3xl opacity-20 blur-lg" />
               <img
                 src={headshotImage}
-                alt="Shaneeza Hasnani - Certified Fraud Examiner & Fraud Data Analyst"
+                alt="Shaneeza Hasnani, CFE - Certified Fraud Examiner specializing in fraud analytics and AI-powered risk modeling"
                 className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-medium hover-lift"
+                loading="lazy"
+                width="384"
+                height="384"
               />
             </div>
           </div>
