@@ -8,42 +8,48 @@ const TimelineExperience = () => {
 
   const experiences = [
     {
-      period: "2021 - Present",
+      period: "June 2021 - Present",
       title: "Fraud Data Analyst",
       company: "EduGuide Overseas Pvt. Ltd.",
       location: "Mumbai, India",
-      description: "Leading fraud detection initiatives using advanced ML models to protect digital payment flows.",
+      description: "Engineer anomaly detection models and analyze payment datasets to enhance fraud detection accuracy and reduce suspicious applications.",
       achievements: [
-        "Improved fraud detection accuracy by 25% through optimized ML pipelines",
-        "Reduced suspicious applications by 20% annually with automated scoring systems", 
-        "Process 500+ datasets monthly using automated data pipelines",
-        "Built real-time anomaly detection systems for payment protection"
+        "Engineer anomaly detection models in Python (Random Forest, Logistic Regression)",
+        "Classify an average of 200k+ high-risk transactions monthly using a self-developed model",
+        "Enhance fraud detection accuracy by 25%",
+        "Analyze 500+ payment datasets monthly using SQL and Python",
+        "Reduce suspicious student applications by 20% annually via automated scoring pipelines",
+        "Design and automate Power BI dashboards, streamlining review time by 15%",
+        "Deliver prescriptive, data-driven recommendations to admissions, compliance, and IT teams"
       ]
     },
     {
-      period: "2024",
-      title: "Financial Crime Intern", 
-      company: "Guidehouse",
+      period: "June 2024 - August 2024",
+      title: "Financial Crime & Investigative Services Intern", 
+      company: "Guidehouse, Inc.",
       location: "New York, NY",
-      description: "Developed advanced anomaly detection algorithms for wire transfer monitoring.",
+      description: "Developed and optimized fraud detection workflows for ACH/wire transfers using ML and feature engineering.",
       achievements: [
-        "Enhanced compliance monitoring capabilities by 30%",
-        "Analyzed 20,000+ ACH/wire transfer records using advanced ML techniques",
-        "Presented technical solutions to directors and senior management", 
-        "Implemented pattern recognition algorithms for suspicious activity detection"
+        "Developed and optimized fraud detection workflows for 20,000+ ACH/wire transfers",
+        "Applied feature engineering and SQL-based data preparation",
+        "Detected 50+ high-risk transaction patterns",
+        "Presented capstone on wire transfer anomaly detection",
+        "Integrated ML and risk scoring to strengthen compliance monitoring by 30%",
+        "Influenced directors through technical presentations and solution adoption"
       ]
     },
     {
-      period: "2023",
+      period: "June 2023 - August 2023",
       title: "Fraud Audit Intern",
-      company: "NY State Attorney General", 
+      company: "State of New York, Office of the Attorney General, Medicaid Fraud Control Unit", 
       location: "Hauppauge, NY",
-      description: "Conducted comprehensive data analysis for Medicaid fraud investigations.",
+      description: "Conducted data analysis on provider billing and claims transactions, collaborating across multiple Medicaid fraud investigations.",
       achievements: [
-        "Identified $500K+ in recovery anomalies through statistical analysis",
-        "Improved case resolution turnaround by 20% with streamlined workflows",
-        "Supported multiple successful fraud prosecutions with data evidence",
-        "Developed automated evidence review processes for investigators"
+        "Conducted data analysis on provider billing and claims transactions",
+        "Collaborated across four Medicaid fraud investigations",
+        "Identified $500K+ in recovery anomalies using SQL and statistical validation",
+        "Consulted with investigators to streamline evidence review",
+        "Leveraged prescriptive analytics to accelerate fraud case resolution by 20%"
       ]
     }
   ];
