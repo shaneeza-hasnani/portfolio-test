@@ -133,8 +133,7 @@ const AboutSection = () => {
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
             About <span className="text-primary">Me</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Graduate Business Analytics and AI Student @American University
-Fraud Data Analyst @EduGuide </p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Graduate Business Analytics and AI Student @American University | Fraud Data Analyst @EduGuide </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-12">
