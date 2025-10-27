@@ -34,6 +34,54 @@ const InteractiveStory = () => {
     highlight: "Models that matter",
     color: "from-green-500 to-emerald-500"
   }];
-  return;
+  
+  return (
+    <Card className="animate-slide-up">
+      <CardHeader>
+        <CardTitle className="font-heading text-2xl">My Journey</CardTitle>
+        <CardDescription>From fraud examination to data science</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+          {storyStages.map((stage, index) => {
+            const StageIcon = stage.icon;
+            return (
+              <Button
+                key={index}
+                variant={activeStage === index ? "default" : "outline"}
+                size="sm"
+                onClick={() => setActiveStage(index)}
+                className="h-auto py-2 px-3"
+              >
+                <StageIcon className="w-4 h-4 mr-2" />
+                <span className="text-xs">{stage.subtitle}</span>
+              </Button>
+            );
+          })}
+        </div>
+        
+        <div className="space-y-4">
+          {(() => {
+            const ActiveIcon = storyStages[activeStage].icon;
+            return (
+              <div className={`bg-gradient-to-r ${storyStages[activeStage].color} p-4 rounded-lg text-white`}>
+                <div className="flex items-center gap-3 mb-2">
+                  <ActiveIcon className="w-6 h-6" />
+                  <h4 className="font-bold text-lg">{storyStages[activeStage].title}</h4>
+                </div>
+            <Badge variant="secondary" className="mb-3">
+              {storyStages[activeStage].highlight}
+            </Badge>
+            <p className="text-white/90 leading-relaxed">
+              {storyStages[activeStage].description}
+            </p>
+          </div>
+            );
+          })()}
+        </div>
+      </CardContent>
+    </Card>
+  );
 };
+
 export default InteractiveStory;
