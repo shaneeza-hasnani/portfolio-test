@@ -106,7 +106,7 @@ const SkillsSection = () => {
       title: "Certified Fraud Examiner (CFE)",
       year: "2025",
       description: "Professional certification demonstrating expertise in fraud prevention, detection, and deterrence",
-      link: "/Resume_Hasnani.pdf"
+      link: "https://www.credly.com/badges/e18001cd-3825-47cf-8018-d0ff83f6be8f/public_url"
     },
     {
       title: "ACFE Ritchie-Jennings Memorial Scholarship",
