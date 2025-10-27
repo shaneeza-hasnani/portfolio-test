@@ -189,9 +189,6 @@ const SkillsSection = () => {
                       <div key={idx} className="space-y-2">
                         <div className="flex items-center justify-between">
                           <span className="text-sm font-medium">{detailSkill.name}</span>
-                          <Badge variant="secondary" className="text-xs">
-                            {detailSkill.level}%
-                          </Badge>
                         </div>
                         <div className="text-xs text-muted-foreground">
                           {detailSkill.experience && `Experience: ${detailSkill.experience}`}
