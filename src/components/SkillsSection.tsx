@@ -247,6 +247,13 @@ const SkillsSection = () => {
                     href={achievement.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    {...(achievement.url.startsWith('/') && {
+                      download: achievement.url === '/Deans_List_JJAY.pdf' 
+                        ? 'Shaneeza_Hasnani_Deans_List.pdf'
+                        : achievement.url === '/ACFE_Scholarship_2024.pdf'
+                        ? 'Shaneeza_Hasnani_ACFE_Scholarship.pdf'
+                        : true
+                    })}
                     className="inline-block w-full px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium"
                   >
                     {achievement.label}
