@@ -106,10 +106,7 @@ const ContactSection = () => {
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <Card className="border-0 shadow-medium animate-slide-up">
-              <CardHeader>
-                <CardTitle className="text-2xl">Let's Collaborate</CardTitle>
-                <CardDescription>Interested in discussing fraud detection, machine learning solutions, or data analytics projects? I typically respond within 24 hours.</CardDescription>
-              </CardHeader>
+              
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
