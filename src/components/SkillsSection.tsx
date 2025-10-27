@@ -94,23 +94,23 @@ const SkillsSection = () => {
 
   const achievements = [
     {
-      name: "Certified Fraud Examiner (CFE) - 2025",
+      title: "Certified Fraud Examiner (CFE) - 2025",
       description: "Professional certification demonstrating expertise in fraud prevention, detection, and deterrence",
       url: "https://www.credly.com/badges/e18001cd-3825-47cf-8018-d0ff83f6be8f/public_url",
       label: "View my badge",
     },
     {
-      name: "Dean's List Recognition - 2022-2025",
+      title: "Dean's List Recognition - 2022-2025",
       description: "Consistent academic excellence throughout undergraduate studies at CUNY John Jay College",
       url: "/Dean's List - JJAY.pdf",
-      label: "Download my cerificate",
+      label: "Download my certificate",
     },
     {
-      name: "ACFE Ritchie-Jennings Memorial Scholarship - 2024",
+      title: "ACFE Ritchie-Jennings Memorial Scholarship - 2024",
       description:
         "Prestigious scholarship recognizing excellence in fraud examination studies and commitment to the profession",
       url: "/scholarship-certificate.pdf",
-      label: "View the fraud magazine newseletter",
+      label: "View the fraud magazine newsletter",
     },
   ];
 
@@ -228,25 +228,29 @@ const SkillsSection = () => {
             Awards & <span className="text-primary">Recognition</span>
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {achievements.map((achievement, index) => (
               <Card
                 key={achievement.title}
-                className="text-center hover:shadow-hover transition-all duration-300 border-0 bg-gradient-to-br from-card to-card/50 animate-scale-in cursor-pointer hover-lift"
+                className="text-center hover:shadow-hover transition-all duration-300 border-0 bg-gradient-to-br from-card to-card/50 animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
-                onClick={() => window.open(achievement.link, "_blank")}
               >
                 <CardHeader className="pb-3">
                   <div className="w-12 h-12 mx-auto bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center mb-3">
                     <Award className="w-6 h-6 text-white" />
                   </div>
                   <CardTitle className="text-lg leading-tight">{achievement.title}</CardTitle>
-                  <Badge variant="outline" className="w-fit mx-auto">
-                    {achievement.year}
-                  </Badge>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="space-y-4">
                   <p className="text-sm text-muted-foreground leading-relaxed">{achievement.description}</p>
+                  <a
+                    href={achievement.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block w-full px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium"
+                  >
+                    {achievement.label}
+                  </a>
                 </CardContent>
               </Card>
             ))}
