@@ -12,6 +12,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import FraudSimulator from "@/components/FraudSimulator";
 interface AnalysisResult {
   fraud_risk: "Low" | "Medium" | "High" | "Critical";
   confidence: number;
@@ -138,12 +139,9 @@ const FraudModel = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Input Form */}
-            
-
-            {/* Results Panel */}
-            
+          {/* Interactive Fraud Detection Simulator */}
+          <div className="mt-8">
+            <FraudSimulator />
           </div>
         </div>
       </div>
