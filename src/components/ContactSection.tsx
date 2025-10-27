@@ -194,16 +194,10 @@ const ContactSection = () => {
             {/* Quick Actions */}
             <div className="space-y-3 animate-scale-in">
               <Button asChild className="w-full" variant="outline">
-                <a href="mailto:hasnani.shaneeza@gmail.com">
-                  <Mail className="w-4 h-4 mr-2" />
-                  Quick Email
-                </a>
+                
               </Button>
               <Button asChild className="w-full" variant="outline">
-                <a href="https://linkedin.com/in/shasnani" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="w-4 h-4 mr-2" />
-                  Connect on LinkedIn
-                </a>
+                
               </Button>
             </div>
           </div>
