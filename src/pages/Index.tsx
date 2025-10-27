@@ -9,10 +9,8 @@ import SkillsSection from "@/components/SkillsSection";
 import CaseStudyDownload from "@/components/CaseStudyDownload";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navigation />
       <main>
         <HeroSection />
@@ -20,12 +18,10 @@ const Index = () => {
         <SkillsSection />
         <ProjectsSection />
         <FraudSimulator />
-        <PerformanceCharts />
+        
         <ContactSection />
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
