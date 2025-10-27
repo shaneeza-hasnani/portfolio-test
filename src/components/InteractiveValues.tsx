@@ -37,11 +37,19 @@ const InteractiveValues = () => {
     }
   ];
 
-  const topSkills = [
-    { name: "Python/R/SQL", icon: Code2, proficiency: 90 },
-    { name: "Fraud Detection", icon: Shield, proficiency: 98 },
-    { name: "Data Analysis", icon: BarChart3, proficiency: 92 },
-    { name: "Machine Learning", icon: Brain, proficiency: 95 }
+  const skillCategories = [
+    {
+      title: "Programming & Data",
+      skills: ["R", "Python", "SQL", "C++", "Scala", "SAS", "SPSS"]
+    },
+    {
+      title: "Visualization & BI",
+      skills: ["Tableau", "Microsoft Power BI", "Excel (Advanced)"]
+    },
+    {
+      title: "Machine Learning",
+      skills: ["Random Forest", "Logistic Regression", "Decision Trees", "Anomaly Detection", "Predictive Analysis"]
+    }
   ];
 
   return (
@@ -102,39 +110,34 @@ const InteractiveValues = () => {
         </CardContent>
       </Card>
 
-      {/* Top Skills Highlight */}
+      {/* Skills and Expertise */}
       <Card className="border-0 bg-gradient-card shadow-soft">
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <Brain className="w-5 h-5 text-primary" />
-            Core Data Science Skills
+            <Code2 className="w-5 h-5 text-primary" />
+            Skills and Expertise
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="space-y-3">
-            {topSkills.map((skill, index) => {
-              const IconComponent = skill.icon;
-              return (
-                <div 
-                  key={index}
-                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/30 transition-colors"
-                >
-                  <IconComponent className="w-4 h-4 text-primary flex-shrink-0" />
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="font-medium text-sm">{skill.name}</span>
-                      <span className="text-xs text-muted-foreground">{skill.proficiency}%</span>
-                    </div>
-                    <div className="w-full bg-muted rounded-full h-1.5">
-                      <div 
-                        className="bg-primary h-1.5 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${skill.proficiency}%` }}
-                      />
-                    </div>
-                  </div>
+          <div className="space-y-4">
+            {skillCategories.map((category, catIndex) => (
+              <div key={catIndex}>
+                <h4 className="font-semibold text-sm mb-2 text-muted-foreground">
+                  {category.title}
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, skillIndex) => (
+                    <Badge 
+                      key={skillIndex}
+                      variant="secondary"
+                      className="text-xs"
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </CardContent>
       </Card>
