@@ -170,7 +170,7 @@ const ProjectsSection = () => {
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
             Featured <span className="text-primary">Projects</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-muted-foreground max-w-3xl mx-auto text-base font-semibold">
             Real-world applications of machine learning and data analytics in fraud detection, 
             risk assessment, and financial crime prevention.
           </p>

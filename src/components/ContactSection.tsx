@@ -92,7 +92,7 @@ const ContactSection = () => {
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
             Let's <span className="text-primary">Connect</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-muted-foreground max-w-3xl mx-auto text-base font-semibold">
             Ready to discuss how data science can solve your fraud detection challenges? 
             I'd love to hear about your project and explore how we can work together.
           </p>
@@ -155,35 +155,17 @@ const ContactSection = () => {
                 <CardDescription>Multiple ways to connect</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                {contactInfo.map(info => (
-                  info.href ? (
-                    <Button
-                      key={info.label}
-                      asChild
-                      variant="outline"
-                      className="w-full justify-start gap-3 h-auto py-3 hover:bg-primary/5 hover:border-primary transition-all"
-                    >
-                      <a
-                        href={info.href}
-                        target={info.href.startsWith('http') ? '_blank' : undefined}
-                        rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      >
+                {contactInfo.map(info => info.href ? <Button key={info.label} asChild variant="outline" className="w-full justify-start gap-3 h-auto py-3 hover:bg-primary/5 hover:border-primary transition-all">
+                      <a href={info.href} target={info.href.startsWith('http') ? '_blank' : undefined} rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
                         <div className="p-2 rounded-lg bg-primary/10 flex-shrink-0">
                           <info.icon className="w-4 h-4 text-primary" />
                         </div>
                         <div className="text-left">
                           <div className="font-medium text-sm">{info.label}</div>
-                          {info.description && (
-                            <div className="text-xs text-muted-foreground">{info.description}</div>
-                          )}
+                          {info.description && <div className="text-xs text-muted-foreground">{info.description}</div>}
                         </div>
                       </a>
-                    </Button>
-                  ) : (
-                    <div
-                      key={info.label}
-                      className="flex items-center gap-3 p-3 rounded-lg border border-border bg-background"
-                    >
+                    </Button> : <div key={info.label} className="flex items-center gap-3 p-3 rounded-lg border border-border bg-background">
                       <div className="p-2 rounded-lg bg-primary/10 flex-shrink-0">
                         <info.icon className="w-4 h-4 text-primary" />
                       </div>
@@ -191,9 +173,7 @@ const ContactSection = () => {
                         <div className="font-medium text-sm">{info.label}</div>
                         <div className="text-xs text-muted-foreground">{info.value}</div>
                       </div>
-                    </div>
-                  )
-                ))}
+                    </div>)}
               </CardContent>
             </Card>
 
