@@ -55,23 +55,6 @@ const ProjectsSection = () => {
     },
     github: "https://github.com/shaneeza-hasnani/wire-transfer-anomaly",
     model: "/wire-transfer-model"
-  }, {
-    id: 5,
-    title: "Real-time Fraud Monitoring Dashboard",
-    subtitle: "Interactive Business Intelligence for Risk Management",
-    description: "Designed and automated comprehensive Power BI dashboards for real-time fraud monitoring and team collaboration.",
-    problem: "Multiple departments needed unified, real-time visibility into fraud metrics and trends to make informed decisions quickly.",
-    methodology: ["Integrated multiple data sources into unified dashboard", "Automated data refresh and alert systems", "Created role-based access and views", "Implemented drill-down capabilities for detailed analysis"],
-    results: ["Reduced review time by 15%", "Improved cross-team collaboration", "Enabled data-driven decision making", "Streamlined reporting processes"],
-    technologies: ["Power BI", "Dashboard Design", "Data Integration", "Automation", "Business Intelligence"],
-    icon: Zap,
-    color: "from-yellow-500 to-orange-500",
-    metrics: {
-      efficiency: "15%",
-      teams: "Multi-department",
-      automation: "Real-time"
-    },
-    demo: "https://powerbi-fraud-dashboard.demo"
   }];
   const ProjectModal = ({
     project
@@ -164,12 +147,6 @@ const ProjectsSection = () => {
       }}>
             <BarChart3 className="w-4 h-4 mr-2" />
             Explore System
-          </Button>}
-        {project.demo && <Button asChild size="sm" className="bg-primary hover:bg-primary/90">
-            <a href={project.demo} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="w-4 h-4 mr-2" />
-              Live Demo
-            </a>
           </Button>}
       </CardFooter>
     </Card>;
