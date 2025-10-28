@@ -32,9 +32,9 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-[1fr_auto] gap-16 items-center max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Content */}
-          <div className="space-y-8 animate-fade-in flex flex-col justify-center">
+          <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-sm font-medium text-foreground/80">
                 <Sparkles className="w-4 h-4" />
@@ -71,7 +71,7 @@ const HeroSection = () => {
           <div className="flex justify-center lg:justify-end animate-scale-in">
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-accent rounded-3xl opacity-20 blur-lg" />
-              <img src={headshotImage} alt="Shaneeza Hasnani, CFE - Certified Fraud Examiner specializing in fraud analytics and AI-powered risk modeling" className="relative w-72 h-72 lg:w-[420px] lg:h-[420px] object-cover rounded-3xl shadow-medium hover-lift" loading="lazy" width="420" height="420" />
+              <img src={headshotImage} alt="Shaneeza Hasnani, CFE - Certified Fraud Examiner specializing in fraud analytics and AI-powered risk modeling" className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-medium hover-lift" loading="lazy" width="384" height="384" />
             </div>
           </div>
         </div>
