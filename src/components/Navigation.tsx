@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Home, User, Briefcase, Code, Mail, BookOpen, Shield } from "lucide-react";
+import { Menu, X, Home, User, Briefcase, Code, Mail, BookOpen, Shield, FolderKanban } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +16,7 @@ const Navigation = () => {
   }, {
     id: "projects",
     label: "Projects",
-    icon: Briefcase
+    icon: FolderKanban
   }, {
     id: "awards",
     label: "Awards",
