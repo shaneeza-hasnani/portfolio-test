@@ -158,21 +158,46 @@ const ContactSection = () => {
                 <CardTitle className="text-xl">Get in Touch</CardTitle>
                 <CardDescription>Multiple ways to connect</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                {contactInfo.map(info => <div key={info.label} className="flex items-start gap-3">
-                    <div className="p-2 rounded-lg bg-primary/10 flex-shrink-0">
-                      <info.icon className="w-4 h-4 text-primary" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="font-medium text-sm">{info.label}</div>
-                      {info.href ? <a href={info.href} target={info.href.startsWith('http') ? '_blank' : undefined} rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-sm text-primary hover:text-primary/80 transition-colors break-all">
-                          {info.value}
-                        </a> : <div className="text-sm text-muted-foreground">{info.value}</div>}
-                      <div className="text-xs text-muted-foreground mt-1">
-                        {info.description}
+              <CardContent className="space-y-3">
+                {contactInfo.map(info => (
+                  info.href ? (
+                    <Button
+                      key={info.label}
+                      asChild
+                      variant="outline"
+                      className="w-full justify-start gap-3 h-auto py-3 hover:bg-primary/5 hover:border-primary transition-all"
+                    >
+                      <a
+                        href={info.href}
+                        target={info.href.startsWith('http') ? '_blank' : undefined}
+                        rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      >
+                        <div className="p-2 rounded-lg bg-primary/10 flex-shrink-0">
+                          <info.icon className="w-4 h-4 text-primary" />
+                        </div>
+                        <div className="text-left">
+                          <div className="font-medium text-sm">{info.label}</div>
+                          {info.description && (
+                            <div className="text-xs text-muted-foreground">{info.description}</div>
+                          )}
+                        </div>
+                      </a>
+                    </Button>
+                  ) : (
+                    <div
+                      key={info.label}
+                      className="flex items-center gap-3 p-3 rounded-lg border border-border bg-background"
+                    >
+                      <div className="p-2 rounded-lg bg-primary/10 flex-shrink-0">
+                        <info.icon className="w-4 h-4 text-primary" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-sm">{info.label}</div>
+                        <div className="text-xs text-muted-foreground">{info.value}</div>
                       </div>
                     </div>
-                  </div>)}
+                  )
+                ))}
               </CardContent>
             </Card>
 
