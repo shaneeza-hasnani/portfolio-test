@@ -1,12 +1,23 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, BarChart3, ShieldCheck, TrendingUp, Zap } from "lucide-react";
 const ProjectsSection = () => {
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
+
+  // Auto-open project modal from URL parameter
+  useEffect(() => {
+    const projectId = searchParams.get('project');
+    if (projectId) {
+      setSelectedProject(Number(projectId));
+      // Remove the parameter after opening
+      setSearchParams({});
+    }
+  }, [searchParams, setSearchParams]);
   const projects = [{
     id: 1,
     title: "Credit-Card Transaction Fraud Model",

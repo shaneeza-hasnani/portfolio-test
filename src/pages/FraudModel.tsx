@@ -109,15 +109,10 @@ const FraudModel = () => {
       
       <div className="container mx-auto px-6 py-24">
         <Button variant="ghost" onClick={() => {
-        navigate("/");
-        setTimeout(() => {
-          document.getElementById('projects')?.scrollIntoView({
-            behavior: 'smooth'
-          });
-        }, 100);
+        navigate("/?project=1#projects");
       }} className="mb-6">
           <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Portfolio
+          Back to Case Study
         </Button>
 
         <div className="max-w-6xl mx-auto">
