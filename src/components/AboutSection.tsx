@@ -21,7 +21,7 @@ const AboutSection = () => {
             {/* Content */}
             <div className="space-y-6 animate-fade-in">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a <span className="text-primary font-semibold">Certified Fraud Examiner (CFE)</span> and graduate student in Business Analytics and AI at American University, specializing in fraud detection and predictive modeling. Currently working as a Fraud Data Analyst at EduGuide, I combine my expertise in data science with a deep understanding of fraud patterns to build intelligent systems that protect organizations and their customers.
+                As a <span className="text-primary font-semibold">Certified Fraud Examiner</span> and graduate student in Business Analytics and AI at American University, I live at the intersection of data science and digital defense—where every anomaly tells a story and every model is a shield. At EduGuide, I design intelligent systems that detect fraud in real time and anticipate risk before it strikes, translating complex data into strategic action through machine learning and predictive analytics. Whether I'm building AI-powered tools, mentoring future analysts, or decoding the latest trends in fraud prevention, my work is driven by a singular mission: to turn patterns into protection and insights into impact.
               </p>
               
               
