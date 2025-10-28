@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Linkedin, Github, MapPin, Phone, Send, Calendar } from "lucide-react";
+import { Mail, Linkedin, Github, Phone, Send, Calendar } from "lucide-react";
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -79,10 +79,6 @@ const ContactSection = () => {
     value: "https://github.com/shaneeza-hasnani",
     href: "https://github.com/shaneeza-hasnani",
     description: "Code repositories"
-  }, {
-    icon: MapPin,
-    label: "Location",
-    value: "Washington, DC"
   }, {
     icon: Phone,
     label: "Phone",
