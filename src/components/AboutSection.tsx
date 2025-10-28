@@ -126,36 +126,32 @@ const AboutSection = () => {
           </ul>
         </CardContent>}
     </Card>;
-  return <section id="about" className="py-12 bg-muted/30">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
-            About <span className="text-primary">Me</span>
-          </h2>
-          <div className="text-xl text-muted-foreground max-w-3xl mx-auto space-y-1">
-            <p className="text-base font-semibold">Graduate Business Analytics and AI Student @American University</p>
-            <p className="font-semibold text-base">Fraud Data Analyst @EduGuide</p>
+  return <div className="animate-fade-in">
+      <Card className="bg-card/50 border">
+        <CardHeader>
+          <CardTitle className="text-lg">About Me</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-2">
+            <p className="text-sm font-semibold text-muted-foreground">Graduate Business Analytics and AI Student</p>
+            <p className="text-sm text-muted-foreground">@American University</p>
           </div>
-        </div>
-
-        <div className="grid lg:grid-cols-3 gap-12">
-        <div className="lg:col-span-2 space-y-8">
-          {/* Professional Experience */}
-          <TimelineExperience />
-
-          {/* Education */}
-          <div className="animate-slide-up">
-            <h3 className="font-heading text-2xl font-bold mb-6">Education</h3>
-            <div className="space-y-4">
-              {education.map((item, index) => <ExperienceCard key={`edu-${index}`} item={item} index={index} expanded={expandedEducation} setExpanded={setExpandedEducation} items={education} />)}
+          <div className="space-y-2">
+            <p className="text-sm font-semibold text-muted-foreground">Fraud Data Analyst</p>
+            <p className="text-sm text-muted-foreground">@EduGuide</p>
+          </div>
+          <div className="pt-4 border-t">
+            <p className="text-xs font-semibold text-muted-foreground mb-2">Languages</p>
+            <div className="flex flex-wrap gap-2">
+              {languages.map((lang, idx) => (
+                <Badge key={idx} variant="secondary" className="text-xs">
+                  {lang.name}
+                </Badge>
+              ))}
             </div>
           </div>
-        </div>
-
-          {/* Sidebar */}
-          
-        </div>
-      </div>
-    </section>;
+        </CardContent>
+      </Card>
+    </div>;
 };
 export default AboutSection;
