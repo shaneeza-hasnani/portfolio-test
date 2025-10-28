@@ -6,6 +6,7 @@ import FraudSimulator from "@/components/FraudSimulator";
 import PerformanceCharts from "@/components/PerformanceCharts";
 import BlogSection from "@/components/BlogSection";
 import SkillsSection from "@/components/SkillsSection";
+import AwardsSection from "@/components/AwardsSection";
 import CaseStudyDownload from "@/components/CaseStudyDownload";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -17,6 +18,7 @@ const Index = () => {
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
+        <AwardsSection />
         
         
         <ContactSection />

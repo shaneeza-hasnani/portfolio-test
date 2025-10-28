@@ -6,10 +6,6 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
   const navItems = [{
-    id: "hero",
-    label: "Home",
-    icon: Home
-  }, {
     id: "about",
     label: "About",
     icon: User
@@ -35,7 +31,7 @@ const Navigation = () => {
       const sections = navItems.map(item => item.id);
       const scrollPosition = window.scrollY + 100;
       for (const sectionId of sections) {
-        const element = document.getElementById(sectionId === "hero" ? "" : sectionId);
+        const element = document.getElementById(sectionId);
         if (element) {
           const {
             offsetTop,
@@ -52,7 +48,7 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId === "hero" ? "" : sectionId);
+    const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({
         behavior: "smooth"
