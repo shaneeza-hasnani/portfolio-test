@@ -52,6 +52,14 @@ const HeroSection = () => {
               
             </div>
 
+            {/* Social Links */}
+            <div className="flex flex-wrap gap-4">
+              {socialLinks.map(link => <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" download={link.name === "Resume" ? "Shaneeza_Hasnani_Resume.pdf" : undefined} className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card/50 border border-border hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover-lift group" aria-label={link.label}>
+                  <link.icon className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  <span className="text-sm font-medium">{link.name}</span>
+                </a>)}
+            </div>
+
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mt-8">
               <Button size="lg" onClick={scrollToProjects} className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-medium hover:shadow-hover transition-all duration-300 group">
@@ -62,14 +70,6 @@ const HeroSection = () => {
                 <Mail className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                 Let's Talk
               </Button>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex flex-wrap gap-4">
-              {socialLinks.map(link => <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" download={link.name === "Resume" ? "Shaneeza_Hasnani_Resume.pdf" : undefined} className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card/50 border border-border hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover-lift group" aria-label={link.label}>
-                  <link.icon className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm font-medium">{link.name}</span>
-                </a>)}
             </div>
           </div>
 
