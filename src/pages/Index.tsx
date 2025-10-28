@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import FraudSimulator from "@/components/FraudSimulator";
 import PerformanceCharts from "@/components/PerformanceCharts";
@@ -14,12 +15,13 @@ const Index = () => {
   return <div className="min-h-screen">
       <Navigation />
       <main>
-        <section className="container mx-auto px-6 py-12">
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
+        <section className="container mx-auto px-6 py-16">
+          <div className="grid lg:grid-cols-[1.5fr_1fr] gap-12 items-start">
             <HeroSection />
             <AboutSection />
           </div>
         </section>
+        <ExperienceSection />
         <SkillsSection />
         <ProjectsSection />
         <AwardsSection />
