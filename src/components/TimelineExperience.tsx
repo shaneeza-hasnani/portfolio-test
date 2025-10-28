@@ -139,7 +139,7 @@ const TimelineExperience = () => {
             {/* Logo Section */}
             <div className="flex-shrink-0 w-32 h-32 lg:w-40 lg:h-40 flex items-center justify-center p-4 bg-background rounded-lg shadow-medium hover:shadow-hover transition-shadow duration-300">
               <img 
-                src={exp.logo} 
+                src={`${exp.logo}?v=${Date.now()}`}
                 alt={`${exp.company} logo`}
                 className="w-full h-full object-contain"
               />
