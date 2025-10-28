@@ -45,18 +45,17 @@ const TimelineExperience = () => {
                 <Card className="cursor-pointer hover-lift transition-all duration-300 border-l-4 border-l-primary/50 hover:border-l-primary" onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}>
                   <CardHeader className="pb-3">
                     <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <CardTitle className="text-lg font-semibold">{exp.title}</CardTitle>
-                          <Badge variant="secondary" className="text-xs px-2 py-1 bg-transparent">
-                            {exp.period}
-                          </Badge>
+                      <div className="flex-1 space-y-2">
+                        <CardTitle className="text-xl font-bold">
+                          {exp.title} @ {exp.company}
+                        </CardTitle>
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <span className="font-medium">{exp.period}</span>
+                          <span>•</span>
+                          <span>{exp.location}</span>
                         </div>
-                        <CardDescription className="font-medium text-base">
-                          {exp.company} • {exp.location}
-                        </CardDescription>
                       </div>
-                      {expandedIndex === index ? <ChevronUp className="w-5 h-5 text-muted-foreground" /> : <ChevronDown className="w-5 h-5 text-muted-foreground" />}
+                      {expandedIndex === index ? <ChevronUp className="w-5 h-5 text-muted-foreground flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />}
                     </div>
                     <p className="text-muted-foreground text-sm leading-relaxed mt-2">
                       {exp.description}

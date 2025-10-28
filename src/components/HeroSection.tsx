@@ -44,9 +44,15 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
             Hi, I'm{" "}
             <span className="text-primary">Shaneeza Hasnani</span>
-            <br />
-            <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground mt-2 block">A CFE, Fraud Data Analyst and an Aspiring Data Scientist</span>
           </h1>
+          <div className="space-y-2">
+            <p className="text-xl md:text-2xl font-medium text-muted-foreground">
+              Graduate Business Analytics and AI student @American University
+            </p>
+            <p className="text-xl md:text-2xl font-medium text-muted-foreground">
+              Fraud Data Analyst @ EduGuide
+            </p>
+          </div>
               <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl leading-relaxed">
                 <span className="opacity-90 text-base text-inherit font-normal text-left">I build machine learning systems that create dashboards, detect financial fraud, and turn complex data into clear insights that drive decisions.</span>
               </p>
