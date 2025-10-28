@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { GraduationCap, ChevronDown, ChevronRight } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { GraduationCap, ChevronDown, ChevronUp } from "lucide-react";
 
 const EducationSection = () => {
-  const [expandedEducation, setExpandedEducation] = useState<number | null>(null);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const education = [
     {
@@ -12,84 +11,32 @@ const EducationSection = () => {
       title: "Master of Science in Business Analytics & AI",
       company: "American University, Kogod School of Business",
       location: "Washington, DC",
-      description: "Concentration in Data Science with coursework in Applied Managerial Statistics, Business Intelligence, Database and AI, Predictive Analytics and Machine Learning.",
-      achievements: [
-        "Concentration: Data Science",
-        "Core coursework: Applied Managerial Statistics, Business Insights and Analytics",
-        "Advanced topics: Predictive Analytics and Machine Learning, Database and AI",
-        "Business focus: Managing Digital Organization, Quantitative Methods and Data Analysis"
+      concentration: "Concentration: Data Science",
+      description: "Advanced graduate program focusing on the intersection of business analytics and artificial intelligence.",
+      skills: [
+        "Statistical Analysis & Business Intelligence",
+        "Machine Learning & Predictive Modeling",
+        "Database Design & AI Integration",
+        "Data-Driven Decision Making",
+        "Quantitative Analysis & Optimization"
       ],
-      icon: GraduationCap,
     },
     {
       period: "May 2025",
       title: "Bachelor of Science in Fraud Examination and Financial Forensics",
       company: "CUNY John Jay College of Criminal Justice",
       location: "New York, NY",
-      description: "Graduated Cum Laude with Honors in Major, maintaining a 3.87 GPA while earning Dean's List recognition throughout undergraduate studies.",
-      achievements: [
-        "Minor: Computer Science",
-        "GPA: 3.87 | Dean's List 2022-2025 | Cum Laude, Honors in Major",
-        "Key courses: Data Analytics for Fraud Examination, Digital Forensics Fraud, Databases and Data Mining",
-        "Programming: Introduction to Computer Programming, Advanced Data Structures, Computer Networking"
+      concentration: "Minor: Computer Science",
+      description: "Specialized undergraduate program combining fraud detection expertise with technical computer science skills.",
+      skills: [
+        "Fraud Detection & Financial Forensics",
+        "Data Analytics & Digital Forensics",
+        "Database Management & Data Mining",
+        "Python & Advanced Data Structures",
+        "Computer Networking & Security"
       ],
-      icon: GraduationCap,
     }
   ];
-
-  const ExperienceCard = ({
-    item,
-    index,
-    expanded,
-    setExpanded,
-  }: {
-    item: typeof education[0];
-    index: number;
-    expanded: number | null;
-    setExpanded: (index: number | null) => void;
-  }) => (
-    <Card className="border-l-4 border-l-accent hover-lift bg-card/50 cursor-pointer transition-all duration-300">
-      <CardHeader className="pb-3" onClick={() => setExpanded(expanded === index ? null : index)}>
-        <div className="flex items-start gap-4">
-          <div className="p-2 rounded-lg bg-accent text-accent-foreground">
-            <item.icon className="w-5 h-5" />
-          </div>
-          <div className="flex-1">
-            <div className="flex items-start justify-between gap-4 mb-1">
-              <CardTitle className="text-lg">{item.title}</CardTitle>
-              <div className="flex items-center gap-2">
-                <Badge variant="outline" className="text-xs bg-transparent border-0 whitespace-nowrap">
-                  {item.period}
-                </Badge>
-                {expanded === index ? (
-                  <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                ) : (
-                  <ChevronRight className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                )}
-              </div>
-            </div>
-            <CardDescription className="font-medium">
-              {item.company} • {item.location}
-            </CardDescription>
-          </div>
-        </div>
-      </CardHeader>
-      
-      {expanded === index && (
-        <CardContent className="animate-fade-in">
-          <p className="text-muted-foreground mb-4 leading-relaxed">{item.description}</p>
-          <ul className="space-y-2">
-            {item.achievements.map((achievement, idx) => (
-              <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                <span>{achievement}</span>
-              </li>
-            ))}
-          </ul>
-        </CardContent>
-      )}
-    </Card>
-  );
 
   return (
     <section id="education" className="py-20 bg-muted/30">
@@ -102,16 +49,72 @@ const EducationSection = () => {
             Building a strong foundation in data science and fraud analytics
           </p>
         </div>
-        <div className="max-w-4xl mx-auto space-y-4">
-          {education.map((item, index) => (
-            <ExperienceCard
-              key={`edu-${index}`}
-              item={item}
-              index={index}
-              expanded={expandedEducation}
-              setExpanded={setExpandedEducation}
-            />
-          ))}
+
+        <div className="max-w-4xl mx-auto">
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-primary/30"></div>
+            
+            <div className="space-y-6">
+              {education.map((edu, index) => (
+                <div key={index} className="relative flex gap-6 group">
+                  {/* Timeline dot */}
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-medium group-hover:shadow-hover transition-all duration-300 relative z-10">
+                    <GraduationCap className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="flex-1 pb-6">
+                    <Card 
+                      className="cursor-pointer hover-lift transition-all duration-300 border-l-4 border-l-primary/50 hover:border-l-primary"
+                      onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
+                    >
+                      <CardHeader className="pb-3">
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1 space-y-2">
+                            <CardTitle className="text-xl font-bold">
+                              {edu.title}
+                            </CardTitle>
+                            <div className="text-sm text-muted-foreground space-y-1">
+                              <div className="font-semibold">{edu.company}</div>
+                              <div className="flex items-center gap-2">
+                                <span className="font-semibold">{edu.period}</span>
+                                <span>•</span>
+                                <span className="font-semibold">{edu.location}</span>
+                              </div>
+                              <div className="text-primary font-medium">{edu.concentration}</div>
+                            </div>
+                          </div>
+                          {expandedIndex === index ? (
+                            <ChevronUp className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                          ) : (
+                            <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                          )}
+                        </div>
+                        <p className="text-muted-foreground text-sm leading-relaxed mt-2">
+                          {edu.description}
+                        </p>
+                      </CardHeader>
+                      
+                      {expandedIndex === index && (
+                        <CardContent className="animate-fade-in pt-0">
+                          <div className="space-y-2">
+                            <h4 className="font-semibold text-sm mb-3">Key Skills:</h4>
+                            {edu.skills.map((skill, idx) => (
+                              <div key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                                <span>{skill}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </CardContent>
+                      )}
+                    </Card>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
