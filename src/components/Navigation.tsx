@@ -63,7 +63,7 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${activeSection === item.id ? "text-primary bg-primary/10" : "text-muted-foreground hover:text-foreground hover:bg-muted/50"}`}>
+            {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${activeSection === item.id ? "text-primary bg-primary/10" : "text-muted-foreground hover:text-foreground hover:bg-muted/50"}`}>
                 <item.icon className="w-4 h-4" />
                 {item.label}
               </button>)}
@@ -86,7 +86,7 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && <div className="md:hidden py-4 border-t border-border">
             <div className="space-y-2">
-              {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`flex items-center gap-3 w-full px-3 py-3 rounded-lg text-sm font-medium transition-colors ${activeSection === item.id ? "text-primary bg-primary/10" : "text-muted-foreground hover:text-foreground hover:bg-muted/50"}`}>
+              {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`flex items-center gap-3 w-full px-3 py-3 rounded-lg text-sm font-semibold transition-colors ${activeSection === item.id ? "text-primary bg-primary/10" : "text-muted-foreground hover:text-foreground hover:bg-muted/50"}`}>
                   <item.icon className="w-4 h-4" />
                   {item.label}
                 </button>)}
