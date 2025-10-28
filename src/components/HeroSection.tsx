@@ -49,9 +49,7 @@ const HeroSection = () => {
             <p className="text-xl text-muted-foreground md:text-2xl font-semibold">Certified Fraud Examiner | Aspiring Data Scientist</p>
             
           </div>
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl leading-relaxed">
-                <span className="opacity-90 text-base text-inherit font-normal text-left">I build machine learning systems that create dashboards, detect financial fraud, and turn complex data into clear insights that drive decisions.</span>
-              </p>
+              
             </div>
 
             {/* CTA Buttons */}
