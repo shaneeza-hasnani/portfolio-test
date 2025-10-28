@@ -26,6 +26,21 @@ const HeroSection = () => {
   return <section className="min-h-[85vh] flex items-center justify-center hero-gradient relative overflow-hidden pt-24 pb-12">
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+          {/* Headshot */}
+          <div className="flex justify-center mb-6">
+            <div className="relative">
+              <div className="absolute -inset-2 bg-gradient-accent rounded-full opacity-30 blur-md" />
+              <img 
+                src={headshotImage} 
+                alt="Shaneeza Hasnani" 
+                className="relative w-48 h-48 object-cover rounded-full shadow-elegant hover-lift" 
+                loading="eager"
+                width="192"
+                height="192"
+              />
+            </div>
+          </div>
+
           {/* Heading */}
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight">
