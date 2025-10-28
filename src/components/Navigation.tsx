@@ -7,7 +7,7 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState("hero");
   const navItems = [{
     id: "about",
-    label: "About",
+    label: "About Me",
     icon: User
   }, {
     id: "skills",
