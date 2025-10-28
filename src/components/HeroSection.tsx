@@ -26,9 +26,9 @@ const HeroSection = () => {
   return <section className="min-h-screen flex items-center justify-center hero-gradient relative overflow-hidden pt-20">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-32 h-32 rounded-full bg-primary animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-24 h-24 rounded-full bg-accent animate-pulse delay-1000" />
-        <div className="absolute top-1/2 right-10 w-16 h-16 rounded-full bg-melon animate-pulse delay-500" />
+        <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-primary animate-pulse" />
+        <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-accent animate-pulse delay-1000" />
+        <div className="absolute top-1/3 right-20 w-16 h-16 rounded-full bg-melon animate-pulse delay-500" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
