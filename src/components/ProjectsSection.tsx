@@ -75,9 +75,6 @@ const ProjectsSection = () => {
             </div>
             <div>
               <CardTitle className="text-xl">{project.title}</CardTitle>
-              <CardDescription className="text-sm font-medium text-primary">
-                {project.subtitle}
-              </CardDescription>
             </div>
           </div>
           <Button variant="ghost" size="sm" onClick={() => setSelectedProject(null)} className="text-muted-foreground hover:text-foreground">
