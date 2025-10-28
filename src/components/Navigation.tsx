@@ -73,7 +73,7 @@ const Navigation = () => {
           <div className="hidden md:flex items-center gap-3">
             <ThemeToggle />
             <Button onClick={() => scrollToSection("contact")} className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Hire Me
+              Let's Connect
             </Button>
           </div>
 
@@ -96,7 +96,7 @@ const Navigation = () => {
                   <ThemeToggle />
                 </div>
                 <Button onClick={() => scrollToSection("contact")} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                  Hire Me
+                  Let's Connect
                 </Button>
               </div>
             </div>
