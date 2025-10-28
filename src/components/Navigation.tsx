@@ -21,10 +21,6 @@ const Navigation = () => {
     id: "awards",
     label: "Awards",
     icon: BookOpen
-  }, {
-    id: "contact",
-    label: "Let's Connect",
-    icon: Mail
   }];
   useEffect(() => {
     const handleScroll = () => {
