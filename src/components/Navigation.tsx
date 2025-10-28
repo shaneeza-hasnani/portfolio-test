@@ -58,7 +58,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="font-heading font-bold text-xl">
             <span className="text-primary font-extrabold text-base">Shaneeza Hasnani, CFE</span>
-            <span className="text-muted-foreground">.</span>
+            
           </div>
 
           {/* Desktop Navigation */}

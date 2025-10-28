@@ -48,7 +48,7 @@ const Footer = () => {
             <div className="flex items-center gap-2">
               <div className="font-heading font-bold text-2xl">
                 <span className="text-primary">Shaneeza Hasnani</span>
-                <span className="text-muted-foreground">.</span>
+                
               </div>
             </div>
             <p className="text-muted-foreground max-w-md leading-relaxed">
