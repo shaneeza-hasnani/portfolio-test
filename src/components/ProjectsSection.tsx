@@ -178,53 +178,55 @@ const ProjectsSection = () => {
             </div>
           </div>}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => <Card key={project.id} className="project-card cursor-pointer group animate-slide-up hover:shadow-hover transition-all duration-300 border-0 bg-gradient-card relative overflow-hidden" style={{
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {projects.map((project, index) => <Card key={project.id} className="project-card cursor-pointer group animate-slide-up hover:shadow-2xl transition-all duration-500 border bg-card relative overflow-hidden" style={{
           animationDelay: `${index * 0.1}s`
         }} onClick={() => setSelectedProject(project.id)}>
               {/* Animated background gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${project.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+              <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
               
-              <CardHeader className="relative">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className={`p-2 rounded-lg bg-gradient-to-r ${project.color} group-hover:scale-110 transition-transform duration-300`}>
-                    <project.icon className="w-5 h-5 text-white" />
+              <CardHeader className="relative pb-4">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className={`p-3 rounded-xl bg-gradient-to-br ${project.color} group-hover:scale-110 transition-transform duration-500 shadow-lg`}>
+                    <project.icon className="w-7 h-7 text-white" />
                   </div>
-                  <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300">
-                    {project.title}
-                  </CardTitle>
+                  <div className="flex-1">
+                    <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">
+                      {project.title}
+                    </CardTitle>
+                    <CardDescription className="text-sm mt-1 group-hover:text-foreground transition-colors duration-300 font-medium">
+                      {project.subtitle}
+                    </CardDescription>
+                  </div>
                 </div>
-                <CardDescription className="group-hover:text-foreground transition-colors duration-300">
-                  {project.subtitle}
-                </CardDescription>
               </CardHeader>
 
-              <CardContent className="relative">
-                <p className="text-muted-foreground mb-4 line-clamp-3 group-hover:text-foreground transition-colors duration-300">
+              <CardContent className="relative space-y-5">
+                <p className="text-muted-foreground leading-relaxed line-clamp-3 group-hover:text-foreground transition-colors duration-300">
                   {project.description}
                 </p>
                 
-                <div className="flex flex-wrap gap-1 mb-4">
-                  {project.technologies.slice(0, 3).map(tech => <Badge key={tech} variant="secondary" className="text-xs group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.slice(0, 3).map(tech => <Badge key={tech} variant="secondary" className="text-xs px-3 py-1 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-sm">
                       {tech}
                     </Badge>)}
-                  {project.technologies.length > 3 && <Badge variant="secondary" className="text-xs group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                  {project.technologies.length > 3 && <Badge variant="secondary" className="text-xs px-3 py-1 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-sm">
                       +{project.technologies.length - 3} more
                     </Badge>}
                 </div>
                 
-                <div className="grid grid-cols-2 gap-2 text-sm">
-                  {Object.entries(project.metrics).slice(0, 2).map(([key, value]) => <div key={key} className="text-center p-2 bg-muted/50 rounded group-hover:bg-primary/10 transition-colors duration-300">
-                      <div className="font-semibold text-primary">{value}</div>
-                      <div className="text-xs text-muted-foreground capitalize">
+                <div className="grid grid-cols-2 gap-3 pt-2">
+                  {Object.entries(project.metrics).slice(0, 2).map(([key, value]) => <div key={key} className="text-center p-4 bg-muted/50 rounded-lg group-hover:bg-primary/10 transition-all duration-300 border border-transparent group-hover:border-primary/20">
+                      <div className="text-2xl font-bold text-primary mb-1">{value}</div>
+                      <div className="text-xs text-muted-foreground capitalize font-medium">
                         {key.replace(/([A-Z])/g, ' $1')}
                       </div>
                     </div>)}
                 </div>
               </CardContent>
 
-              <CardFooter className="relative">
-                <Button className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 transform group-hover:scale-105" variant="outline">
+              <CardFooter className="relative pt-4">
+                <Button className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 transform group-hover:scale-105 shadow-sm group-hover:shadow-md" variant="outline">
                   View Case Study
                   <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
