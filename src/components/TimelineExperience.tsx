@@ -50,9 +50,9 @@ const TimelineExperience = () => {
                           {exp.title} @ {exp.company}
                         </CardTitle>
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <span className="font-medium">{exp.period}</span>
+                          <span className="font-semibold">{exp.period}</span>
                           <span>•</span>
-                          <span>{exp.location}</span>
+                          <span className="font-semibold">{exp.location}</span>
                         </div>
                       </div>
                       {expandedIndex === index ? <ChevronUp className="w-5 h-5 text-muted-foreground flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />}
