@@ -104,7 +104,7 @@ const AboutSection = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 mb-1">
                 <CardTitle className="text-lg">{item.title}</CardTitle>
-                <Badge variant="outline" className="text-xs">
+                <Badge variant="outline" className="text-xs bg-transparent">
                   {item.period}
                 </Badge>
               </div>
