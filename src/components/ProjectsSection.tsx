@@ -86,6 +86,17 @@ const ProjectsSection = () => {
         </div>
       </CardHeader>
 
+      {/* Catchy Hook - Only for Credit Card Fraud Model */}
+      {project.id === 1 && (
+        <div className="px-6 pt-6 pb-2">
+          <div className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-950/20 dark:to-orange-950/20 border border-red-200/50 dark:border-red-800/50 rounded-lg p-4">
+            <p className="text-lg font-semibold text-center text-foreground leading-relaxed">
+              Every second counts when $8.8 billion is at stake—meet the model that catches fraud in real-time
+            </p>
+          </div>
+        </div>
+      )}
+
       <CardContent className="space-y-6">
         <div>
           <h4 className="font-semibold text-foreground mb-2">Problem & Motivation</h4>
