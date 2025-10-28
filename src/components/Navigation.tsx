@@ -23,7 +23,7 @@ const Navigation = () => {
     icon: BookOpen
   }, {
     id: "contact",
-    label: "Contact",
+    label: "Let's Connect",
     icon: Mail
   }];
   useEffect(() => {
