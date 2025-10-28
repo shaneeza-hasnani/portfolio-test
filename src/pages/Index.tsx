@@ -14,13 +14,15 @@ const Index = () => {
   return <div className="min-h-screen">
       <Navigation />
       <main>
-        <HeroSection />
-        <AboutSection />
+        <section className="container mx-auto px-6 py-12">
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+            <HeroSection />
+            <AboutSection />
+          </div>
+        </section>
         <SkillsSection />
         <ProjectsSection />
         <AwardsSection />
-        
-        
         <ContactSection />
       </main>
       <Footer />
