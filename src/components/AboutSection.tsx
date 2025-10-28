@@ -100,14 +100,14 @@ const AboutSection = () => {
             <item.icon className="w-5 h-5" />
           </div>
           <div className="flex-1">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 mb-1">
-                <CardTitle className="text-lg">{item.title}</CardTitle>
-                <Badge variant="outline" className="text-xs bg-transparent border-0">
+            <div className="flex items-start justify-between gap-4 mb-1">
+              <CardTitle className="text-lg">{item.title}</CardTitle>
+              <div className="flex items-center gap-2">
+                <Badge variant="outline" className="text-xs bg-transparent border-0 whitespace-nowrap">
                   {item.period}
                 </Badge>
+                {expanded === index ? <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" /> : <ChevronRight className="w-5 h-5 text-muted-foreground flex-shrink-0" />}
               </div>
-              {expanded === index ? <ChevronDown className="w-5 h-5 text-muted-foreground" /> : <ChevronRight className="w-5 h-5 text-muted-foreground" />}
             </div>
             <CardDescription className="font-medium">
               {item.company} • {item.location}
