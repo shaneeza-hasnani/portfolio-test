@@ -23,7 +23,7 @@ const HeroSection = () => {
       behavior: 'smooth'
     });
   };
-  return <div className="relative">
+  return <section className="min-h-[85vh] flex items-center justify-center hero-gradient relative overflow-hidden pt-24 pb-12">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-primary animate-pulse" />
@@ -31,19 +31,26 @@ const HeroSection = () => {
         <div className="absolute top-1/3 right-20 w-16 h-16 rounded-full bg-melon animate-pulse delay-500" />
       </div>
 
-      <div className="relative z-10">
-        <div className="space-y-6 animate-fade-in">
-            <div className="flex items-center gap-2 text-sm font-medium text-foreground/80">
-              <Sparkles className="w-4 h-4" />
-              <span className="font-semibold">Available for opportunities</span>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          {/* Content */}
+          <div className="space-y-8 animate-fade-in">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2 text-sm font-medium text-foreground/80">
+                <Sparkles className="w-4 h-4" />
+                <span className="font-semibold">Available for opportunities</span>
+              </div>
+              
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
+            Hi, I'm{" "}
+            <span className="text-primary">Shaneeza Hasnani</span>
+          </h1>
+          <div className="space-y-2">
+            <p className="text-xl text-muted-foreground md:text-2xl font-semibold">Certified Fraud Examiner | Aspiring Data Scientist</p>
+            
+          </div>
+              
             </div>
-            
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight">
-              Hi, I'm{" "}
-              <span className="text-primary">Shaneeza Hasnani</span>
-            </h1>
-            
-            <p className="text-lg text-muted-foreground md:text-xl font-semibold">Certified Fraud Examiner | Aspiring Data Scientist</p>
 
             {/* Social Links */}
             <div className="flex flex-wrap gap-4">
@@ -53,15 +60,22 @@ const HeroSection = () => {
                 </a>)}
             </div>
 
-            {/* Image */}
-            <div className="flex justify-center lg:justify-start mt-8">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-accent rounded-3xl opacity-20 blur-lg" />
-                <img src={headshotImage} alt="Shaneeza Hasnani, CFE - Certified Fraud Examiner specializing in fraud analytics and AI-powered risk modeling" className="relative w-64 h-64 lg:w-80 lg:h-80 object-cover rounded-3xl shadow-medium hover-lift" loading="lazy" width="320" height="320" />
-              </div>
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-4 mt-8">
+              
+              
+            </div>
+          </div>
+
+          {/* Image */}
+          <div className="flex justify-center lg:justify-end animate-scale-in">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-accent rounded-3xl opacity-20 blur-lg" />
+              <img src={headshotImage} alt="Shaneeza Hasnani, CFE - Certified Fraud Examiner specializing in fraud analytics and AI-powered risk modeling" className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-medium hover-lift" loading="lazy" width="384" height="384" />
             </div>
           </div>
         </div>
-      </div>;
+      </div>
+    </section>;
 };
 export default HeroSection;

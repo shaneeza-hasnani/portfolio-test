@@ -14,14 +14,8 @@ const Index = () => {
   return <div className="min-h-screen">
       <Navigation />
       <main>
-        <section className="pt-24 pb-12">
-          <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
-              <HeroSection />
-              <AboutSection />
-            </div>
-          </div>
-        </section>
+        <HeroSection />
+        <AboutSection />
         <SkillsSection />
         <ProjectsSection />
         <AwardsSection />

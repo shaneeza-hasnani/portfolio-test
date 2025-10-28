@@ -126,18 +126,20 @@ const AboutSection = () => {
           </ul>
         </CardContent>}
     </Card>;
-  return <div className="space-y-8 animate-fade-in">
-        <div className="text-center lg:text-left">
+  return <section id="about" className="py-12 bg-muted/30">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
             About <span className="text-primary">Me</span>
           </h2>
-          <div className="text-muted-foreground space-y-1">
+          <div className="text-xl text-muted-foreground max-w-3xl mx-auto space-y-1">
             <p className="text-base font-semibold">Graduate Business Analytics and AI Student @American University</p>
             <p className="font-semibold text-base">Fraud Data Analyst @EduGuide</p>
           </div>
         </div>
 
-        <div className="space-y-6">
+        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="lg:col-span-2 space-y-8">
           {/* Professional Experience */}
           <TimelineExperience />
 
@@ -149,6 +151,11 @@ const AboutSection = () => {
             </div>
           </div>
         </div>
-      </div>;
+
+          {/* Sidebar */}
+          
+        </div>
+      </div>
+    </section>;
 };
 export default AboutSection;
