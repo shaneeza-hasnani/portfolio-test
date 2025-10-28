@@ -28,18 +28,18 @@ const AwardsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {achievements.map((achievement, index) => <Card key={achievement.title} className="text-center hover:shadow-hover transition-all duration-300 border-0 bg-gradient-to-br from-card to-card/50 animate-scale-in flex flex-col h-full" style={{
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
+          {achievements.map((achievement, index) => <Card key={achievement.title} className="text-center hover:shadow-hover transition-all duration-300 border-0 bg-gradient-to-br from-card to-card/50 animate-scale-in flex flex-col" style={{
           animationDelay: `${index * 0.1}s`
         }}>
-              <CardHeader className="pb-3">
+              <CardHeader className="pb-3 flex-shrink-0">
                 <div className="w-12 h-12 mx-auto bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center mb-3">
                   <Award className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle className="text-lg leading-tight font-bold text-center">{achievement.title}</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 flex flex-col flex-grow">
-                <p className="text-sm text-muted-foreground leading-relaxed">{achievement.description}</p>
+              <CardContent className="flex flex-col flex-grow pt-0">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-grow">{achievement.description}</p>
                 <a href={achievement.url} target="_blank" rel="noopener noreferrer" {...achievement.url.startsWith("/") && {
               download: achievement.url === "/Deans_List_JJAY.pdf" ? "Shaneeza_Hasnani_Deans_List.pdf" : achievement.url === "/ACFE_Scholarship_2024.pdf" ? "Shaneeza_Hasnani_ACFE_Scholarship.pdf" : true
             }} className="inline-block w-full px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium mt-auto">
