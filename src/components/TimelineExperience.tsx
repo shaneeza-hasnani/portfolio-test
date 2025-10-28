@@ -27,7 +27,7 @@ const TimelineExperience = () => {
     achievements: ["Conducted data analysis on provider billing and claims transactions", "Collaborated across four Medicaid fraud investigations", "Identified $500K+ in recovery anomalies using SQL and statistical validation", "Consulted with investigators to streamline evidence review", "Leveraged prescriptive analytics to accelerate fraud case resolution by 20%"]
   }];
   return <div className="space-y-8">
-      <h3 className="font-heading text-2xl font-bold mb-6">Professional Experience</h3>
+      
       
       <div className="relative">
         {/* Timeline line */}
