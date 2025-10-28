@@ -10,16 +10,20 @@ const Navigation = () => {
     label: "About Me",
     icon: User
   }, {
-    id: "skills",
-    label: "Skills",
-    icon: Code
+    id: "experience",
+    label: "Work Experience",
+    icon: Briefcase
   }, {
     id: "projects",
     label: "Projects",
     icon: FolderKanban
   }, {
-    id: "awards",
-    label: "Awards",
+    id: "skills",
+    label: "Skills",
+    icon: Code
+  }, {
+    id: "education",
+    label: "Education",
     icon: BookOpen
   }];
   useEffect(() => {
