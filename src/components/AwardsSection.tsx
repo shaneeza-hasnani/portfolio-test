@@ -36,7 +36,7 @@ const AwardsSection = () => {
                 <div className="w-12 h-12 mx-auto bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center mb-3">
                   <Award className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle className="text-lg leading-tight">{achievement.title}</CardTitle>
+                <CardTitle className="text-lg leading-tight font-bold text-center">{achievement.title}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-sm text-muted-foreground leading-relaxed">{achievement.description}</p>
