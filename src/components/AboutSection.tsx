@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Briefcase, Globe, Heart, Target, Users, ChevronDown, ChevronRight } from "lucide-react";
 import TimelineExperience from "./TimelineExperience";
-import InteractiveStory from "./InteractiveStory";
 import InteractiveValues from "./InteractiveValues";
 const AboutSection = () => {
   const [expandedEducation, setExpandedEducation] = useState<number | null>(null);
@@ -138,9 +137,6 @@ const AboutSection = () => {
 
         <div className="grid lg:grid-cols-3 gap-12">
         <div className="lg:col-span-2 space-y-8">
-          {/* Personal Story */}
-          <InteractiveStory />
-
           {/* Professional Experience */}
           <TimelineExperience />
 

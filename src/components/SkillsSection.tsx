@@ -77,9 +77,9 @@ const SkillsSection = () => {
 
         {/* Awards & Recognition Section */}
         <div className="animate-fade-in">
-          <h3 className="text-center mb-8 text-2xl font-bold">
+          <h2 className="text-center mb-8 text-2xl font-bold">
             Awards & <span className="text-primary">Recognition</span>
-          </h3>
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {achievements.map((achievement, index) => <Card key={achievement.title} className="text-center hover:shadow-hover transition-all duration-300 border-0 bg-gradient-to-br from-card to-card/50 animate-scale-in" style={{
