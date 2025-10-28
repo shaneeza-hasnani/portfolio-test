@@ -59,21 +59,22 @@ const HeroSection = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 pt-2">
+            <div className="flex flex-wrap gap-4 mt-8">
               <Button 
                 size="lg" 
                 onClick={scrollToProjects} 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 px-8"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-medium hover:shadow-hover transition-all duration-300 group"
               >
-                <Briefcase className="w-5 h-5 mr-2" />
+                <Briefcase className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                 See My Work
               </Button>
               <Button 
                 size="lg" 
-                onClick={scrollToContact} 
-                className="bg-background border-2 border-primary/20 text-foreground hover:border-primary hover:bg-primary/5 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 px-8"
+                onClick={scrollToContact}
+                variant="outline"
+                className="border-2 border-border hover:bg-primary hover:text-primary-foreground hover:border-primary shadow-medium hover:shadow-hover transition-all duration-300 group"
               >
-                <Mail className="w-5 h-5 mr-2" />
+                <Mail className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                 Let's Talk
               </Button>
             </div>
