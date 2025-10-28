@@ -76,7 +76,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Awards & Recognition Section */}
-        <div className="animate-fade-in">
+        <div id="awards" className="animate-fade-in">
           <h2 className="text-center mb-8 text-2xl font-bold">
             Awards & <span className="text-primary">Recognition</span>
           </h2>

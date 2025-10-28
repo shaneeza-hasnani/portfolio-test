@@ -14,13 +14,17 @@ const Navigation = () => {
     label: "About",
     icon: User
   }, {
+    id: "skills",
+    label: "Skills",
+    icon: Code
+  }, {
     id: "projects",
     label: "Projects",
     icon: Briefcase
   }, {
-    id: "skills",
-    label: "Skills",
-    icon: Code
+    id: "awards",
+    label: "Awards",
+    icon: BookOpen
   }, {
     id: "contact",
     label: "Contact",
