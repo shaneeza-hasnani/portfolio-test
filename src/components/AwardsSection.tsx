@@ -29,7 +29,7 @@ const AwardsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {achievements.map((achievement, index) => <Card key={achievement.title} className="text-center hover:shadow-hover transition-all duration-300 border-0 bg-gradient-to-br from-card to-card/50 animate-scale-in flex flex-col" style={{
+          {achievements.map((achievement, index) => <Card key={achievement.title} className="text-center hover:shadow-hover transition-all duration-300 border-0 bg-gradient-to-br from-card to-card/50 animate-scale-in flex flex-col h-full" style={{
           animationDelay: `${index * 0.1}s`
         }}>
               <CardHeader className="pb-3">
