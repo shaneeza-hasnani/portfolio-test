@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Linkedin, FileText, Mail, ExternalLink, Sparkles } from "lucide-react";
+import { Linkedin, FileText, Mail, ExternalLink, Sparkles, Briefcase } from "lucide-react";
 import headshotImage from "@/assets/shaneeza-new-headshot.jpg";
 const HeroSection = () => {
   const socialLinks = [{
@@ -54,7 +54,8 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" onClick={scrollToProjects} className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-medium hover:shadow-hover transition-all duration-300">
+              <Button size="lg" onClick={scrollToProjects} className="bg-background border-2 border-primary text-primary hover:bg-primary/5 shadow-medium hover:shadow-hover transition-all duration-300">
+                <Briefcase className="w-5 h-5 mr-2" />
                 See My Work
               </Button>
               <Button variant="outline" size="lg" onClick={scrollToContact} className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300">
