@@ -36,7 +36,7 @@ const HeroSection = () => {
           {/* Content */}
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
-              <div className="flex items-center gap-2 text-sm font-medium text-primary">
+              <div className="flex items-center gap-2 text-sm font-medium text-foreground/80">
                 <Sparkles className="w-4 h-4" />
                 <span>Available for opportunities</span>
               </div>
