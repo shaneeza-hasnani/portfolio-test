@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Home, User, Briefcase, Code, Mail, BookOpen } from "lucide-react";
+import { Menu, X, Home, User, Briefcase, Code, Mail, BookOpen, Shield } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,7 +56,8 @@ const Navigation = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="font-heading font-bold text-xl">
+          <div className="font-heading font-bold text-xl flex items-center gap-2">
+            <Shield className="w-5 h-5 text-primary" />
             <span className="text-primary font-extrabold text-base">Shaneeza Hasnani, CFE</span>
             
           </div>
