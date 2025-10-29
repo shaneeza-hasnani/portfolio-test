@@ -51,7 +51,7 @@ const ProjectsSection = () => {
     metrics: {
       anomalies: "847",
       falsePositives: "<5%",
-      enhancement: "30%"
+      amlViolations: "Zero"
     },
     github: "https://github.com/shaneeza-hasnani/wire-transfer-anomaly",
     model: "/wire-transfer-model"
