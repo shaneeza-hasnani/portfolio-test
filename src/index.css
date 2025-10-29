@@ -2,189 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ──────────────────────────────────────────────
-   🎨 DESIGN SYSTEM
-   Warm, minimal aesthetic for Shaneeza Hasnani Portfolio
-────────────────────────────────────────────── */
+/* --- Minimal, seamless global design --- */
+/* Warm palette: Old Rose, Melon, Powder Blue, Tea Green */
 
 @layer base {
   :root {
-    /* Backgrounds & Foregrounds */
     --background: 209 36% 97%;
     --foreground: 229 10% 34%;
-
-    /* Cards */
-    --card: 0 0% 100%;
-    --card-foreground: 229 10% 34%;
-
-    /* Popovers */
-    --popover: 0 0% 100%;
-    --popover-foreground: 229 10% 34%;
-
-    /* Primary Accent - Old Rose */
     --primary: 18 45% 63%;
-    --primary-foreground: 0 0% 100%;
-
-    /* Secondary Accent - Powder Blue */
     --secondary: 209 36% 70%;
-    --secondary-foreground: 229 10% 34%;
-
-    /* Muted tones */
-    --muted: 209 36% 90%;
-    --muted-foreground: 229 10% 50%;
-
-    /* Accent - Melon */
     --accent: 9 100% 81%;
-    --accent-foreground: 229 10% 34%;
-
-    /* Other */
+    --muted: 209 36% 90%;
     --border: 229 10% 85%;
-    --input: 229 10% 85%;
-    --ring: 18 45% 63%;
-
-    /* Custom Colors */
-    --old-rose: 18 45% 63%;
-    --powder-blue: 209 36% 70%;
-    --tea-green: 125 63% 87%;
-    --davys-gray: 229 10% 34%;
-    --melon: 9 100% 81%;
-
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--powder-blue)), hsl(var(--tea-green)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
-    --gradient-accent: linear-gradient(90deg, hsl(var(--old-rose)), hsl(var(--melon)));
-
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(var(--davys-gray) / 0.1);
-    --shadow-hover: 0 12px 40px -10px hsl(var(--old-rose) / 0.2);
-
-    /* Transition Timing */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-    --radius: 0.75rem;
+    --radius: 0.6rem;
   }
 
-  /* 🌙 Dark Mode */
-  .dark {
-    --background: 229 15% 12%;
-    --foreground: 209 36% 90%;
-    --card: 229 12% 15%;
-    --card-foreground: 209 36% 90%;
-    --primary: 18 45% 65%;
-    --primary-foreground: 229 15% 12%;
-    --muted: 229 10% 20%;
-    --muted-foreground: 209 20% 65%;
-    --accent: 9 100% 75%;
-    --accent-foreground: 229 15% 12%;
-    --border: 229 10% 25%;
-  }
-
-  /* Smooth Scrolling */
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-transparent text-foreground;
-    font-feature-settings:
-      "rlig" 1,
-      "calt" 1;
+    @apply bg-background text-foreground;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-  }
-
-  /* Scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-thumb {
-    @apply bg-primary rounded-full;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-accent;
+    text-rendering: optimizeLegibility;
   }
 }
 
-/* ──────────────────────────────────────────────
-   🪄 COMPONENTS & EFFECTS
-────────────────────────────────────────────── */
-
+/* --- Live background animation --- */
 @layer components {
-  /* 🌈 Live Animated Background - seamless & smooth */
   .animated-background {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     z-index: -1;
-    overflow: hidden;
     pointer-events: none;
     background:
-      radial-gradient(circle at 30% 50%, hsl(var(--powder-blue) / 0.25), transparent 70%),
-      radial-gradient(circle at 70% 40%, hsl(var(--melon) / 0.25), transparent 75%),
-      radial-gradient(circle at 50% 80%, hsl(var(--old-rose) / 0.25), transparent 80%);
+      radial-gradient(circle at 20% 30%, hsl(var(--powder-blue) / 0.25), transparent 60%),
+      radial-gradient(circle at 80% 70%, hsl(var(--melon) / 0.25), transparent 65%),
+      radial-gradient(circle at 50% 100%, hsl(var(--old-rose, 18 45% 63%) / 0.25), transparent 70%);
+    background-blend-mode: overlay;
     background-size: 200% 200%;
-    animation: floatGradient 30s ease-in-out infinite alternate;
-    will-change: background-position, transform, opacity;
+    animation: subtleFlow 25s ease-in-out infinite alternate;
   }
 
-  /* Hover interactions */
-  .hover-lift {
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-  .hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
+  @keyframes subtleFlow {
+    0% {
+      background-position: 50% 50%;
+      filter: hue-rotate(0deg);
+    }
+    50% {
+      background-position: 55% 45%;
+      filter: hue-rotate(5deg);
+    }
+    100% {
+      background-position: 50% 55%;
+      filter: hue-rotate(0deg);
+    }
   }
 
-  /* Subtle fade animation */
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-out;
+  /* --- Layout consistency --- */
+  section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
-  /* Contact cards / CTAs unified style */
-  .contact-card {
-    @apply rounded-2xl border border-border bg-card/60 backdrop-blur-sm;
-    box-shadow: var(--shadow-soft);
+  .container {
+    @apply px-6 mx-auto max-w-6xl;
+  }
+
+  /* --- Smooth card + button design --- */
+  .card {
+    background: hsl(var(--background) / 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    box-shadow: 0 4px 16px hsl(var(--foreground) / 0.05);
     transition: all 0.3s ease;
   }
-  .contact-card:hover {
-    background: hsl(var(--primary) / 0.05);
+
+  .card:hover {
+    box-shadow: 0 8px 20px hsl(var(--primary) / 0.15);
+  }
+
+  button,
+  .btn {
+    @apply px-5 py-2 rounded-lg font-medium transition-all duration-300;
+    background: hsl(var(--primary));
+    color: white;
+  }
+
+  button:hover,
+  .btn:hover {
+    background: hsl(var(--primary) / 0.85);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-hover);
   }
-}
 
-/* ──────────────────────────────────────────────
-   🔁 ANIMATIONS
-────────────────────────────────────────────── */
+  /* --- Remove harsh section breaks --- */
+  main > section {
+    border-top: 1px solid hsl(var(--border) / 0.1);
+  }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes floatGradient {
-  0% {
-    background-position: 50% 50%;
-    transform: scale(1);
-  }
-  50% {
-    background-position: 55% 45%;
-    transform: scale(1.05);
-  }
-  100% {
-    background-position: 45% 55%;
-    transform: scale(1);
+  /* --- Parallax smoothing --- */
+  .parallax-element {
+    transition: transform 0.25s ease-out;
   }
 }

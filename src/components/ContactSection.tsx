@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -16,23 +16,25 @@ const ContactSection = () => {
     subject: "",
     message: "",
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
     try {
       const { error } = await supabase.functions.invoke("send-contact-email", {
         body: formData,
       });
-
       if (error) throw error;
 
       toast({
         title: "Message sent successfully!",
-        description: "Thank you for reaching out. I’ll get back to you within 24 hours.",
+        description: "I'll get back to you within 24 hours.",
       });
+
       setFormData({
         name: "",
         email: "",
@@ -44,7 +46,7 @@ const ContactSection = () => {
       console.error("Error sending email:", error);
       toast({
         title: "Failed to send message",
-        description: "Please try again or contact me directly at hasnani.shaneeza@gmail.com",
+        description: "Please try again or email me directly at hasnani.shaneeza@gmail.com",
         variant: "destructive",
       });
     } finally {
@@ -63,51 +65,50 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: "Email",
+      value: "hasnani.shaneeza@gmail.com",
       href: "mailto:hasnani.shaneeza@gmail.com",
-      description: "Best way to reach me",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
+      value: "linkedin.com/in/shasnani",
       href: "https://linkedin.com/in/shasnani",
-      description: "Professional network",
     },
     {
       icon: Github,
       label: "GitHub",
+      value: "github.com/shaneeza-hasnani",
       href: "https://github.com/shaneeza-hasnani",
-      description: "Code repositories",
     },
     {
       icon: Phone,
       label: "Phone",
+      value: "210-935-7217",
       href: "tel:+12109357217",
-      description: "Call for urgent matters",
     },
   ];
 
   return (
-    <section id="contact" className="py-16 md:py-20 bg-transparent relative overflow-hidden">
-      <div className="container mx-auto px-6 max-w-6xl">
-        {/* Header */}
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+    <section id="contact" className="py-20 relative z-10">
+      <div className="container">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold">
             Let’s <span className="text-primary">Connect</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Whether it’s collaborating on a project, exploring new ideas, or discussing data-driven fraud detection —
-            I’d love to hear from you.
+          <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
+            Interested in collaborating or discussing an opportunity? Feel free to drop me a message — I’d love to hear
+            from you.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-10 items-start">
+        <div className="grid lg:grid-cols-3 gap-10">
           {/* Form */}
-          <div className="lg:col-span-2 animate-slide-up">
-            <Card className="border-none shadow-none bg-transparent">
+          <div className="lg:col-span-2">
+            <Card className="card shadow-soft bg-white/70 backdrop-blur-md border border-border">
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
+                    <div>
                       <Label htmlFor="name">Full Name *</Label>
                       <Input
                         id="name"
@@ -118,8 +119,8 @@ const ContactSection = () => {
                         required
                       />
                     </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email Address *</Label>
+                    <div>
+                      <Label htmlFor="email">Email *</Label>
                       <Input
                         id="email"
                         name="email"
@@ -133,17 +134,17 @@ const ContactSection = () => {
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="company">Company / Organization</Label>
+                    <div>
+                      <Label htmlFor="company">Company</Label>
                       <Input
                         id="company"
                         name="company"
-                        placeholder="Optional"
+                        placeholder="Your company name"
                         value={formData.company}
                         onChange={handleInputChange}
                       />
                     </div>
-                    <div className="space-y-2">
+                    <div>
                       <Label htmlFor="subject">Subject *</Label>
                       <Input
                         id="subject"
@@ -156,17 +157,16 @@ const ContactSection = () => {
                     </div>
                   </div>
 
-                  <div className="space-y-2">
+                  <div>
                     <Label htmlFor="message">Message *</Label>
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Tell me about your project or how I can help..."
+                      rows={5}
+                      placeholder="Tell me more about your project or question..."
                       value={formData.message}
                       onChange={handleInputChange}
-                      rows={6}
                       required
-                      className="resize-none"
                     />
                   </div>
 
@@ -174,11 +174,11 @@ const ContactSection = () => {
                     type="submit"
                     size="lg"
                     disabled={isSubmitting}
-                    className="w-full rounded-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-sm hover:shadow-md transition-all duration-300"
+                    className="w-full rounded-lg shadow-sm bg-primary hover:bg-primary/90 transition-all"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center gap-2">
-                        <div className="w-4 h-4 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin" />
+                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                         Sending...
                       </div>
                     ) : (
@@ -193,34 +193,25 @@ const ContactSection = () => {
             </Card>
           </div>
 
-          {/* Contact Sidebar */}
-          <div className="space-y-6 animate-scale-in">
-            <Card className="border-none bg-transparent shadow-none">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-xl font-semibold">Get in Touch</CardTitle>
-                <CardDescription>Multiple ways to connect</CardDescription>
-              </CardHeader>
-
-              <CardContent className="space-y-4">
-                {contactInfo.map((info) => (
-                  <a
-                    key={info.label}
-                    href={info.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contact-card flex items-center gap-4 p-4 w-full hover-lift transition-all"
-                  >
-                    <div className="p-2 rounded-lg bg-primary/10 flex-shrink-0">
-                      <info.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <div className="flex flex-col text-left">
-                      <span className="font-medium">{info.label}</span>
-                      <span className="text-sm text-muted-foreground">{info.description}</span>
-                    </div>
-                  </a>
-                ))}
-              </CardContent>
-            </Card>
+          {/* Info */}
+          <div className="space-y-4">
+            {contactInfo.map((info) => (
+              <a
+                key={info.label}
+                href={info.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-lg border border-border bg-white/60 backdrop-blur-sm hover:bg-primary/10 transition-all"
+              >
+                <div className="p-2 rounded-lg bg-primary/10">
+                  <info.icon className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <div className="font-semibold">{info.label}</div>
+                  <div className="text-sm text-muted-foreground">{info.value}</div>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </div>
