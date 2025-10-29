@@ -9,18 +9,21 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
-  return <div className="min-h-screen">
-      <Navigation />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <ExperienceSection />
-        <ProjectsSection />
-        <SkillsSection />
-        <EducationSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>;
+  return <>
+      <div className="animated-background" />
+      <div className="min-h-screen relative z-10">
+        <Navigation />
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <ExperienceSection />
+          <ProjectsSection />
+          <SkillsSection />
+          <EducationSection />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
+    </>;
 };
 export default Index;

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,6 +8,26 @@ const ProjectsSection = () => {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  // Scroll-triggered animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll('.scroll-fade-in');
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   // Auto-open project modal from URL parameter
   useEffect(() => {
@@ -178,14 +198,14 @@ const ProjectsSection = () => {
       behavior: 'smooth'
     });
   };
-  return <section id="projects" className="py-12 bg-background">
+  return <section id="projects" className="py-12 bg-background" ref={sectionRef}>
       <div className="container mx-auto px-6">
         {/* Call to Action for Fraud Simulator */}
         <div className="text-center mb-12 animate-fade-in">
           
         </div>
 
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-16 scroll-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
             Featured <span className="text-primary">Projects</span>
           </h2>
@@ -202,8 +222,8 @@ const ProjectsSection = () => {
           </div>}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {projects.map((project, index) => <Card key={project.id} className="h-full flex flex-col project-card cursor-pointer group animate-slide-up transition-all duration-500 border bg-card relative overflow-hidden hover:border-primary/50 hover:shadow-[0_0_30px_rgba(var(--primary),0.15)]" style={{
-          animationDelay: `${index * 0.1}s`
+          {projects.map((project, index) => <Card key={project.id} className="h-full flex flex-col project-card cursor-pointer group scroll-fade-in transition-all duration-500 border bg-card relative overflow-hidden hover:border-primary/50 hover:shadow-[0_0_30px_rgba(var(--primary),0.15)]" style={{
+          transitionDelay: `${index * 0.1}s`
         }} onClick={() => setSelectedProject(project.id)}>
               
               {/* Full-width gradient header banner */}

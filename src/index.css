@@ -176,9 +176,45 @@ Portfolio Color Palette:
 }
 
 @layer components {
+  /* Animated Background - Continuous gradient flow */
+  .animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--powder-blue) / 0.08),
+      hsl(var(--tea-green) / 0.08),
+      hsl(var(--old-rose) / 0.08),
+      hsl(var(--melon) / 0.08),
+      hsl(var(--powder-blue) / 0.08)
+    );
+    background-size: 400% 400%;
+    animation: warmGradientFlow 25s ease infinite;
+  }
+
+  .animated-background::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      45deg,
+      hsl(var(--old-rose) / 0.05),
+      transparent,
+      hsl(var(--tea-green) / 0.05),
+      transparent
+    );
+    background-size: 300% 300%;
+    animation: warmGradientFlow 35s ease-in-out infinite reverse;
+  }
+
   /* Hero section styles */
   .hero-gradient {
     background: var(--gradient-hero);
+    position: relative;
   }
 
   .card-gradient {
@@ -187,6 +223,19 @@ Portfolio Color Palette:
 
   .accent-gradient {
     background: var(--gradient-accent);
+  }
+
+  /* Scroll-triggered animations */
+  .scroll-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   /* Animation utilities */
@@ -202,49 +251,60 @@ Portfolio Color Palette:
     animation: scaleIn 0.5s ease-out;
   }
 
-  /* Interactive hover effects */
+  /* Enhanced interactive hover effects */
   .hover-lift {
-    transition: var(--transition-smooth);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .hover-lift:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-hover);
   }
 
   .hover-glow {
     transition: var(--transition-smooth);
+    position: relative;
   }
 
   .hover-glow:hover {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.4);
+    animation: pulseGlow 2s ease-in-out infinite;
   }
 
-  /* Project card styles */
+  /* Project card styles with enhanced effects */
   .project-card {
     background: var(--gradient-card);
     border: 1px solid hsl(var(--border));
     box-shadow: var(--shadow-soft);
-    transition: var(--transition-smooth);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
   }
 
   .project-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-medium);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-hover);
   }
 
-  /* Skill badge styles */
+  /* Skill badge styles with micro-interactions */
   .skill-badge {
     background: hsl(var(--muted));
     color: hsl(var(--foreground));
     border: 1px solid hsl(var(--border));
-    transition: var(--transition-smooth);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .skill-badge:hover {
     background: hsl(var(--primary));
     color: hsl(var(--primary-foreground));
-    transform: scale(1.05);
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: 0 4px 12px hsl(var(--primary) / 0.3);
+  }
+
+  /* Parallax container */
+  .parallax-element {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
   }
 }
 
@@ -278,5 +338,24 @@ Portfolio Color Palette:
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* New animations for live background */
+@keyframes warmGradientFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.5);
   }
 }
