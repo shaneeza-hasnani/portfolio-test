@@ -199,8 +199,8 @@ Portfolio Color Palette:
     top: 0;
     left: 0;
     right: 0;
-    height: 10%;
-    background: linear-gradient(to bottom, transparent, hsl(var(--background)));
+    height: 15%;
+    background: linear-gradient(to bottom, hsl(var(--background)), transparent);
     pointer-events: none;
     z-index: 1;
   }
@@ -215,8 +215,8 @@ Portfolio Color Palette:
     bottom: 0;
     left: 0;
     right: 0;
-    height: 10%;
-    background: linear-gradient(to top, transparent, hsl(var(--background)));
+    height: 15%;
+    background: linear-gradient(to top, hsl(var(--background)), transparent);
     pointer-events: none;
     z-index: 1;
   }
