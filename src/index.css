@@ -25,9 +25,9 @@
     @apply text-foreground;
     background: linear-gradient(
       135deg,
-      hsl(var(--powder-blue) / 0.18),
-      hsl(var(--tea-green) / 0.15),
-      hsl(var(--old-rose, 18 45% 63%) / 0.1)
+      hsl(var(--secondary) / 0.15),
+      hsl(var(--accent) / 0.12),
+      hsl(var(--primary) / 0.1)
     );
     background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
@@ -63,7 +63,7 @@
     box-shadow: 0 8px 22px hsl(var(--primary) / 0.15);
   }
 
-  /* --- Button design --- */
+  /* --- General button design --- */
   button,
   .btn {
     @apply px-5 py-2 rounded-lg font-medium transition-all duration-300;
@@ -75,6 +75,37 @@
   .btn:hover {
     background: hsl(var(--primary) / 0.85);
     transform: translateY(-2px);
+  }
+
+  /* --- Navigation cleanup (removes filled boxes) --- */
+  nav button {
+    background: transparent !important;
+    border: none !important;
+    color: hsl(var(--foreground)) !important;
+    font-weight: 500;
+    border-radius: 0;
+    padding: 0.25rem 0.5rem;
+    transition: color 0.3s ease;
+  }
+
+  nav button:hover {
+    color: hsl(var(--primary)) !important;
+  }
+
+  nav button.active {
+    color: hsl(var(--primary)) !important;
+    position: relative;
+  }
+
+  nav button.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px;
+    width: 100%;
+    background: hsl(var(--primary));
+    border-radius: 2px;
   }
 
   /* --- Parallax smoothing --- */
