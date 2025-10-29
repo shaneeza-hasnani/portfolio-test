@@ -106,26 +106,24 @@
   }
 
   /* --- CTA button (Let’s Connect) --- */
+  nav .cta-button {
+    background: hsl(var(--primary));
+    color: #ffffff;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
 
-  @layer components {
-    nav .cta-button {
-      @apply bg-[hsl(var(--primary))] text-white font-semibold rounded-xl transition-all duration-300;
-    }
+  nav .cta-button:hover {
+    background: hsl(var(--primary) / 0.9);
+    color: #ffffff !important;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px hsl(var(--primary) / 0.25);
+  }
 
-    nav .cta-button:hover {
-      @apply bg-[hsl(var(--primary)/0.9)] text-white shadow-md -translate-y-[1px];
-    }
-
-    nav .cta-button:focus,
-    nav .cta-button:active {
-      @apply text-white bg-[hsl(var(--primary)/0.9)];
-    }
-
-    /* Force white text — override all shadcn/ui variants */
-    nav .cta-button * {
-      color: #ffffff !important;
-      fill: #ffffff !important;
-    }
+  nav .cta-button:focus,
+  nav .cta-button:active {
+    color: #ffffff !important;
   }
 
   /* --- Parallax smoothing --- */
@@ -139,10 +137,23 @@
   }
 }
 
-/* --- Force CTA text color to stay white in all states --- */
+/* --- FORCE CTA TEXT COLOR FIX (cannot be overridden) --- */
+:root {
+  --cta-text-color: #ffffff;
+}
+
 nav .cta-button,
+nav .cta-button * {
+  color: var(--cta-text-color) !important;
+  fill: var(--cta-text-color) !important;
+  opacity: 1 !important;
+}
+
 nav .cta-button:hover,
+nav .cta-button:hover *,
 nav .cta-button:focus,
-nav .cta-button:active {
-  color: #ffffff !important;
+nav .cta-button:focus * {
+  color: var(--cta-text-color) !important;
+  fill: var(--cta-text-color) !important;
+  opacity: 1 !important;
 }
