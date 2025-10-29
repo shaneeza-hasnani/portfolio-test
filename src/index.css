@@ -74,12 +74,19 @@ Portfolio Color Palette:
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
+
     --sidebar-foreground: 240 5.3% 26.1%;
+
     --sidebar-primary: 240 5.9% 10%;
+
     --sidebar-primary-foreground: 0 0% 98%;
+
     --sidebar-accent: 240 4.8% 95.9%;
+
     --sidebar-accent-foreground: 240 5.9% 10%;
+
     --sidebar-border: 220 13% 91%;
+
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -147,10 +154,12 @@ Portfolio Color Palette:
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
   }
 
+  /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -169,6 +178,7 @@ Portfolio Color Palette:
 }
 
 @layer components {
+  /* Animated Background - Continuous gradient flow */
   .animated-background {
     position: fixed;
     top: 0;
@@ -203,9 +213,17 @@ Portfolio Color Palette:
     animation: warmGradientFlow 20s ease-in-out infinite reverse;
   }
 
+  /* Hero section styles */
   .hero-gradient {
-    background: var(--gradient-hero);
+    background: radial-gradient(
+      ellipse at top,
+      hsl(var(--background)),
+      hsl(var(--muted) / 0.25),
+      hsl(var(--background))
+    );
     position: relative;
+    transition: background 0.6s ease-in-out;
+    animation: subtleGlow 18s ease-in-out infinite alternate;
   }
 
   .card-gradient {
@@ -216,6 +234,7 @@ Portfolio Color Palette:
     background: var(--gradient-accent);
   }
 
+  /* Scroll-triggered animations */
   .scroll-fade-in {
     opacity: 0;
     transform: translateY(50px);
@@ -229,6 +248,7 @@ Portfolio Color Palette:
     transform: translateY(0);
   }
 
+  /* Animation utilities */
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out;
   }
@@ -241,6 +261,7 @@ Portfolio Color Palette:
     animation: scaleIn 0.5s ease-out;
   }
 
+  /* Enhanced interactive hover effects */
   .hover-lift {
     transition:
       transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
@@ -262,6 +283,7 @@ Portfolio Color Palette:
     animation: pulseGlow 2s ease-in-out infinite;
   }
 
+  /* Project card styles with enhanced effects */
   .project-card {
     background: var(--gradient-card);
     border: 1px solid hsl(var(--border));
@@ -275,6 +297,7 @@ Portfolio Color Palette:
     box-shadow: var(--shadow-hover);
   }
 
+  /* Skill badge styles with micro-interactions */
   .skill-badge {
     background: hsl(var(--muted));
     color: hsl(var(--foreground));
@@ -289,6 +312,7 @@ Portfolio Color Palette:
     box-shadow: 0 4px 12px hsl(var(--primary) / 0.3);
   }
 
+  /* Parallax container */
   .parallax-element {
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform;
@@ -328,6 +352,7 @@ Portfolio Color Palette:
   }
 }
 
+/* New animations for live background */
 @keyframes warmGradientFlow {
   0%,
   100% {
@@ -348,20 +373,17 @@ Portfolio Color Palette:
   }
 }
 
-/* --- Global spacing cleanup --- */
-@layer base {
-  section {
-    @apply py-12 md:py-16; /* tighter vertical spacing for all sections */
+@keyframes subtleGlow {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.95;
   }
-
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply mb-4 font-semibold tracking-tight;
+  50% {
+    background-position: 100% 50%;
+    opacity: 1;
   }
-
-  p {
-    @apply mb-3 leading-relaxed;
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.95;
   }
 }
