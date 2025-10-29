@@ -1,32 +1,23 @@
-/* ========== GLOBAL CONTAINER ========== */
 #root {
-  max-width: 1440px; /* allow more natural width for large screens */
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem; /* reduced from 2rem for tighter, cleaner spacing */
+  padding: 2rem;
   text-align: center;
-  transition: all 0.3s ease-in-out;
 }
 
-/* ========== LOGO ========== */
 .logo {
-  height: 5.5em; /* slightly smaller for balance */
-  padding: 0.75em; /* reduced for a neater look */
-  will-change: filter, transform;
-  transition:
-    filter 0.25s ease-in-out,
-    transform 0.25s ease-in-out;
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
 }
-
 .logo:hover {
-  filter: drop-shadow(0 0 1.25em #646cffaa);
-  transform: translateY(-2px) scale(1.02);
+  filter: drop-shadow(0 0 2em #646cffaa);
 }
-
 .logo.react:hover {
-  filter: drop-shadow(0 0 1.25em #61dafbaa);
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-/* ========== LOGO SPIN ANIMATION ========== */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -38,52 +29,14 @@
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 18s linear;
+    animation: logo-spin infinite 20s linear;
   }
 }
 
-/* ========== CARD COMPONENTS ========== */
 .card {
-  padding: 1.25em;
-  border-radius: 0.5rem;
-  background: hsl(var(--card, 0 0% 100%));
-  box-shadow: 0 4px 16px hsl(229 10% 34% / 0.1);
-  transition:
-    transform 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out;
-  will-change: transform, box-shadow;
+  padding: 2em;
 }
 
-.card:hover {
-  transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 8px 24px hsl(229 10% 34% / 0.15);
-}
-
-/* ========== TEXT UTILITY ========== */
 .read-the-docs {
   color: #888;
-  font-size: 0.95rem;
-  margin-top: 0.5rem;
-  transition: color 0.25s ease-in-out;
-}
-
-.read-the-docs:hover {
-  color: #555;
-}
-
-/* ========== SMOOTH ENTRANCE FADE ========== */
-@keyframes fadeInSoft {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-soft {
-  opacity: 0;
-  animation: fadeInSoft 0.6s ease-in-out forwards;
 }

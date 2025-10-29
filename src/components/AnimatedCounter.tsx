@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from 'react';
 
 interface AnimatedCounterProps {
   endValue: number;
@@ -8,12 +8,12 @@ interface AnimatedCounterProps {
   className?: string;
 }
 
-const AnimatedCounter = ({
-  endValue,
-  duration = 2000,
-  prefix = "",
-  suffix = "",
-  className = "",
+const AnimatedCounter = ({ 
+  endValue, 
+  duration = 2000, 
+  prefix = '', 
+  suffix = '', 
+  className = '' 
 }: AnimatedCounterProps) => {
   const [currentValue, setCurrentValue] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -26,7 +26,7 @@ const AnimatedCounter = ({
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0.1 }
     );
 
     if (counterRef.current) {
@@ -45,11 +45,11 @@ const AnimatedCounter = ({
     const updateCounter = () => {
       const elapsed = Date.now() - startTime;
       const progress = Math.min(elapsed / duration, 1);
-
+      
       // Easing function for smooth animation
       const easeOutCubic = 1 - Math.pow(1 - progress, 3);
       const newValue = Math.floor(startValue + (endValue - startValue) * easeOutCubic);
-
+      
       setCurrentValue(newValue);
 
       if (progress < 1) {
@@ -62,9 +62,7 @@ const AnimatedCounter = ({
 
   return (
     <div ref={counterRef} className={className}>
-      {prefix}
-      {currentValue.toLocaleString()}
-      {suffix}
+      {prefix}{currentValue.toLocaleString()}{suffix}
     </div>
   );
 };
