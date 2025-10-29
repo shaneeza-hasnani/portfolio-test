@@ -37,7 +37,7 @@ const ProjectsSection = () => {
     results: ["Attained 99.96% accuracy for transaction classification", "Achieved 97.25% recall for abnormal payment detection", "Maintained false positive rate under 0.02%", "Enabled reliable deployment for financial institutions"],
     technologies: ["Python", "Random Forest", "Decision Trees", "Excel", "Scikit-learn", "Feature Engineering", "Hyperparameter Optimization"],
     icon: ShieldCheck,
-    color: "from-red-500 to-orange-500",
+    color: "from-rose-300 to-orange-300",
     metrics: {
       accuracy: "99.96%",
       recall: "97.25%",
@@ -56,7 +56,7 @@ const ProjectsSection = () => {
     results: ["Enhanced compliance monitoring by 30%", "Successfully identified high-risk transaction patterns", "Adopted by directors following technical presentations", "Strengthened anti-money laundering capabilities"],
     technologies: ["Machine Learning", "Feature Engineering", "SQL", "Risk Scoring", "Compliance", "Pattern Recognition"],
     icon: TrendingUp,
-    color: "from-green-500 to-emerald-500",
+    color: "from-teal-300 to-cyan-300",
     metrics: {
       anomalies: "847",
       falsePositives: "<5%",
@@ -207,13 +207,13 @@ const ProjectsSection = () => {
         }} onClick={() => setSelectedProject(project.id)}>
               
               {/* Full-width gradient header banner */}
-              <div className={`relative h-32 bg-gradient-to-br ${project.color} flex items-center justify-center group-hover:h-36 transition-all duration-500`}>
+              <div className={`relative h-24 bg-gradient-to-br ${project.color} flex items-center justify-center group-hover:h-28 transition-all duration-500`}>
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-500" />
-                <project.icon className="w-16 h-16 text-white drop-shadow-lg relative z-10 group-hover:scale-110 transition-transform duration-500" />
+                <project.icon className="w-12 h-12 text-white drop-shadow-lg relative z-10 group-hover:scale-110 transition-transform duration-500" />
               </div>
               
               <CardHeader className="relative pb-3 pt-6">
-                <CardTitle className="text-2xl font-bold group-hover:text-primary transition-colors duration-300 text-center">
+                <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors duration-300 text-center">
                   {project.title}
                 </CardTitle>
                 <CardDescription className="text-sm text-center font-medium group-hover:text-foreground transition-colors duration-300">
@@ -221,7 +221,7 @@ const ProjectsSection = () => {
                 </CardDescription>
               </CardHeader>
 
-              <CardContent className="flex-1 relative space-y-4 px-8">
+              <CardContent className="flex-1 relative space-y-3 px-8">
                 {/* Punchy one-liner hook */}
                 <p className="text-center text-base font-semibold text-foreground leading-snug">
                   {project.id === 1 
@@ -230,8 +230,8 @@ const ProjectsSection = () => {
                 </p>
                 
                 {/* Single hero metric */}
-                <div className="text-center py-6 px-4 bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl border border-primary/20 group-hover:border-primary/40 transition-all duration-300">
-                  <div className="text-5xl font-black text-primary mb-2">
+                <div className="text-center py-4 px-4 bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl border border-primary/20 group-hover:border-primary/40 transition-all duration-300">
+                  <div className="text-3xl font-black text-primary mb-2">
                     {Object.values(project.metrics)[0]}
                   </div>
                   <div className="text-sm text-muted-foreground font-semibold uppercase tracking-wider">
@@ -240,8 +240,8 @@ const ProjectsSection = () => {
                 </div>
               </CardContent>
 
-              <CardFooter className="relative pt-4 pb-6 px-8">
-                <Button className={`w-full bg-gradient-to-r ${project.color} text-white hover:shadow-lg hover:scale-[1.02] transition-all duration-300 font-semibold text-base h-12 border-0`}>
+              <CardFooter className="relative pt-3 pb-4 px-8">
+                <Button className={`w-full bg-gradient-to-r ${project.color} text-white hover:shadow-lg hover:scale-[1.02] transition-all duration-300 font-semibold text-sm h-10 border-0`}>
                   {project.id === 1 ? "See How It Detects Fraud" : "Explore the System"}
                   <ExternalLink className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
