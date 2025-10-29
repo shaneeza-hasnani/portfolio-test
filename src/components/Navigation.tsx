@@ -50,7 +50,7 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-3">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeSection === item.id;
@@ -61,8 +61,8 @@ const Navigation = () => {
                   className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300
                     ${
                       isActive
-                        ? "bg-primary/10 text-primary"
-                        : "text-muted-foreground hover:text-primary hover:bg-muted/40"
+                        ? "bg-white/70 text-primary shadow-sm backdrop-blur-sm"
+                        : "text-muted-foreground hover:text-primary hover:bg-white/40"
                     }`}
                 >
                   <Icon className="w-4 h-4" />
@@ -102,8 +102,8 @@ const Navigation = () => {
                   className={`flex items-center gap-3 w-full px-3 py-3 rounded-lg text-sm font-medium transition-all
                     ${
                       isActive
-                        ? "bg-primary/10 text-primary"
-                        : "text-muted-foreground hover:text-primary hover:bg-muted/40"
+                        ? "bg-white/70 text-primary shadow-sm backdrop-blur-sm"
+                        : "text-muted-foreground hover:text-primary hover:bg-white/40"
                     }`}
                 >
                   <Icon className="w-4 h-4" />
