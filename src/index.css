@@ -186,14 +186,14 @@ Portfolio Color Palette:
     z-index: 0;
     background: linear-gradient(
       135deg,
-      hsl(var(--powder-blue) / 0.08),
-      hsl(var(--tea-green) / 0.08),
-      hsl(var(--old-rose) / 0.08),
-      hsl(var(--melon) / 0.08),
-      hsl(var(--powder-blue) / 0.08)
+      hsl(var(--powder-blue) / 0.15),
+      hsl(var(--tea-green) / 0.12),
+      hsl(var(--old-rose) / 0.15),
+      hsl(var(--melon) / 0.12),
+      hsl(var(--powder-blue) / 0.15)
     );
     background-size: 400% 400%;
-    animation: warmGradientFlow 25s ease infinite;
+    animation: warmGradientFlow 15s ease infinite;
   }
 
   .animated-background::before {
@@ -202,13 +202,13 @@ Portfolio Color Palette:
     inset: 0;
     background: linear-gradient(
       45deg,
-      hsl(var(--old-rose) / 0.05),
+      hsl(var(--old-rose) / 0.1),
       transparent,
-      hsl(var(--tea-green) / 0.05),
+      hsl(var(--tea-green) / 0.1),
       transparent
     );
     background-size: 300% 300%;
-    animation: warmGradientFlow 35s ease-in-out infinite reverse;
+    animation: warmGradientFlow 20s ease-in-out infinite reverse;
   }
 
   /* Hero section styles */
@@ -228,9 +228,9 @@ Portfolio Color Palette:
   /* Scroll-triggered animations */
   .scroll-fade-in {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(50px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .scroll-fade-in.visible {
