@@ -178,7 +178,7 @@ const ProjectsSection = () => {
       behavior: 'smooth'
     });
   };
-  return <section id="projects" className="py-12 bg-muted/30">
+  return <section id="projects" className="py-12 bg-background">
       <div className="container mx-auto px-6">
         {/* Call to Action for Fraud Simulator */}
         <div className="text-center mb-12 animate-fade-in">
