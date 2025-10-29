@@ -198,7 +198,7 @@ const ProjectsSection = () => {
       behavior: 'smooth'
     });
   };
-  return <section id="projects" className="py-16 md:py-24 bg-background section-fade-top section-fade-bottom" ref={sectionRef}>
+  return <section id="projects" className="py-12 bg-background" ref={sectionRef}>
       <div className="container mx-auto px-6">
         {/* Call to Action for Fraud Simulator */}
         <div className="text-center mb-12 animate-fade-in">
