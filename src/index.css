@@ -2,34 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design system inspired by warm, professional portfolio aesthetics 
-Portfolio Color Palette:
-- Old Rose: #CD8B76 (18 45% 63%)
-- Powder Blue: #95B8D1 (209 36% 70%) 
-- Tea Green: #C4F4C7 (125 63% 87%)
-- Davy's Gray: #4D5061 (229 10% 34%)
-- Melon: #FFA69E (9 100% 81%)
-*/
+/* ──────────────────────────────────────────────
+   🎨 DESIGN SYSTEM
+   Warm, minimal aesthetic for Shaneeza Hasnani Portfolio
+────────────────────────────────────────────── */
 
 @layer base {
   :root {
-    /* Main backgrounds - soft powder blue tints */
+    /* Backgrounds & Foregrounds */
     --background: 209 36% 97%;
     --foreground: 229 10% 34%;
 
-    /* Card styling */
+    /* Cards */
     --card: 0 0% 100%;
     --card-foreground: 229 10% 34%;
 
-    /* Popover styling */
+    /* Popovers */
     --popover: 0 0% 100%;
     --popover-foreground: 229 10% 34%;
 
-    /* Primary - Old Rose */
+    /* Primary Accent - Old Rose */
     --primary: 18 45% 63%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Powder Blue */
+    /* Secondary Accent - Powder Blue */
     --secondary: 209 36% 70%;
     --secondary-foreground: 229 10% 34%;
 
@@ -41,16 +37,12 @@ Portfolio Color Palette:
     --accent: 9 100% 81%;
     --accent-foreground: 229 10% 34%;
 
-    /* Destructive */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    /* Borders and inputs */
+    /* Other */
     --border: 229 10% 85%;
     --input: 229 10% 85%;
     --ring: 18 45% 63%;
 
-    /* Custom portfolio colors */
+    /* Custom Colors */
     --old-rose: 18 45% 63%;
     --powder-blue: 209 36% 70%;
     --tea-green: 125 63% 87%;
@@ -64,119 +56,62 @@ Portfolio Color Palette:
 
     /* Shadows */
     --shadow-soft: 0 4px 20px -4px hsl(var(--davys-gray) / 0.1);
-    --shadow-medium: 0 8px 30px -8px hsl(var(--davys-gray) / 0.15);
     --shadow-hover: 0 12px 40px -10px hsl(var(--old-rose) / 0.2);
 
-    /* Transitions */
+    /* Transition Timing */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --radius: 0.75rem;
   }
 
+  /* 🌙 Dark Mode */
   .dark {
-    /* Dark theme with warm undertones */
     --background: 229 15% 12%;
     --foreground: 209 36% 90%;
-
     --card: 229 12% 15%;
     --card-foreground: 209 36% 90%;
-
-    --popover: 229 12% 15%;
-    --popover-foreground: 209 36% 90%;
-
     --primary: 18 45% 65%;
     --primary-foreground: 229 15% 12%;
-
-    --secondary: 229 10% 22%;
-    --secondary-foreground: 209 36% 85%;
-
     --muted: 229 10% 20%;
     --muted-foreground: 209 20% 65%;
-
     --accent: 9 100% 75%;
     --accent-foreground: 229 15% 12%;
-
-    --destructive: 0 75% 55%;
-    --destructive-foreground: 209 36% 90%;
-
     --border: 229 10% 25%;
-    --input: 229 10% 25%;
-    --ring: 18 45% 65%;
-
-    /* Custom dark portfolio colors */
-    --old-rose: 18 45% 65%;
-    --powder-blue: 209 36% 75%;
-    --tea-green: 125 50% 80%;
-    --davys-gray: 229 10% 80%;
-    --melon: 9 100% 75%;
-
-    /* Dark gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(229 12% 18%));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
-    --gradient-accent: linear-gradient(90deg, hsl(var(--old-rose)), hsl(var(--melon)));
-
-    /* Dark shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
-    --shadow-medium: 0 8px 30px -8px hsl(0 0% 0% / 0.4);
-    --shadow-hover: 0 12px 40px -10px hsl(var(--old-rose) / 0.3);
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  /* Smooth scrolling */
+  /* Smooth Scrolling */
   html {
     scroll-behavior: smooth;
   }
 
-  /* Custom scrollbar */
+  body {
+    @apply bg-transparent text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
   }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-muted;
-  }
-
   ::-webkit-scrollbar-thumb {
     @apply bg-primary rounded-full;
   }
-
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-accent;
   }
 }
 
+/* ──────────────────────────────────────────────
+   🪄 COMPONENTS & EFFECTS
+────────────────────────────────────────────── */
+
 @layer components {
-  /* 🌈 Live Animated Background - smooth & seamless */
+  /* 🌈 Live Animated Background - seamless & smooth */
   .animated-background {
     position: fixed;
     top: 0;
@@ -186,128 +121,47 @@ Portfolio Color Palette:
     z-index: -1;
     overflow: hidden;
     pointer-events: none;
-
-    /* Smooth gradient cloud motion */
-    background: radial-gradient(circle at 30% 50%, hsl(var(--powder-blue) / 0.25), transparent 70%),
-                radial-gradient(circle at 70% 40%, hsl(var(--melon) / 0.25), transparent 75%),
-                radial-gradient(circle at 50% 80%, hsl(var(--old-rose) / 0.25), transparent 80%);
+    background:
+      radial-gradient(circle at 30% 50%, hsl(var(--powder-blue) / 0.25), transparent 70%),
+      radial-gradient(circle at 70% 40%, hsl(var(--melon) / 0.25), transparent 75%),
+      radial-gradient(circle at 50% 80%, hsl(var(--old-rose) / 0.25), transparent 80%);
     background-size: 200% 200%;
     animation: floatGradient 30s ease-in-out infinite alternate;
     will-change: background-position, transform, opacity;
   }
 
-  @keyframes floatGradient {
-    0% {
-      background-position: 50% 50%;
-      transform: scale(1);
-    }
-    50% {
-      background-position: 55% 45%;
-      transform: scale(1.05);
-    }
-    100% {
-      background-position: 45% 55%;
-      transform: scale(1);
-    }
-  }
-}
-
-  /* Hero section styles */
-  .hero-gradient {
-    background: var(--gradient-hero);
-    position: relative;
-  }
-
-  .card-gradient {
-    background: var(--gradient-card);
-  }
-
-  .accent-gradient {
-    background: var(--gradient-accent);
-  }
-
-  /* Scroll-triggered animations */
-  .scroll-fade-in {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .scroll-fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Animation utilities */
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out;
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.8s ease-out;
-  }
-
-  .animate-scale-in {
-    animation: scaleIn 0.5s ease-out;
-  }
-
-  /* Enhanced interactive hover effects */
+  /* Hover interactions */
   .hover-lift {
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
-
   .hover-lift:hover {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
   }
 
-  .hover-glow {
-    transition: var(--transition-smooth);
-    position: relative;
+  /* Subtle fade animation */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out;
   }
 
-  .hover-glow:hover {
-    box-shadow: 0 0 30px hsl(var(--primary) / 0.4);
-    animation: pulseGlow 2s ease-in-out infinite;
-  }
-
-  /* Project card styles with enhanced effects */
-  .project-card {
-    background: var(--gradient-card);
-    border: 1px solid hsl(var(--border));
+  /* Contact cards / CTAs unified style */
+  .contact-card {
+    @apply rounded-2xl border border-border bg-card/60 backdrop-blur-sm;
     box-shadow: var(--shadow-soft);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform;
+    transition: all 0.3s ease;
   }
-
-  .project-card:hover {
-    transform: translateY(-8px) scale(1.02);
+  .contact-card:hover {
+    background: hsl(var(--primary) / 0.05);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
-  }
-
-  /* Skill badge styles with micro-interactions */
-  .skill-badge {
-    background: hsl(var(--muted));
-    color: hsl(var(--foreground));
-    border: 1px solid hsl(var(--border));
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .skill-badge:hover {
-    background: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
-    transform: scale(1.08) rotate(-2deg);
-    box-shadow: 0 4px 12px hsl(var(--primary) / 0.3);
-  }
-
-  /* Parallax container */
-  .parallax-element {
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform;
   }
 }
+
+/* ──────────────────────────────────────────────
+   🔁 ANIMATIONS
+────────────────────────────────────────────── */
 
 @keyframes fadeIn {
   from {
@@ -320,43 +174,17 @@ Portfolio Color Palette:
   }
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
+@keyframes floatGradient {
+  0% {
+    background-position: 50% 50%;
     transform: scale(1);
   }
-}
-
-/* New animations for live background */
-@keyframes warmGradientFlow {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
   50% {
-    background-position: 100% 50%;
+    background-position: 55% 45%;
+    transform: scale(1.05);
   }
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px hsl(var(--primary) / 0.5);
+  100% {
+    background-position: 45% 55%;
+    transform: scale(1);
   }
 }
