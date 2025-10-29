@@ -48,7 +48,7 @@ const HeroSection = () => {
 
       {/* Text */}
       <h1 className="text-4xl md:text-5xl font-bold leading-tight text-foreground">
-        Hey! I’m <span className="text-primary">Shaneeza Hasnani</span>
+        Hey there! I am <span className="text-primary">Shaneeza Hasnani</span>
       </h1>
       <p className="text-lg md:text-xl text-muted-foreground mt-3 font-medium">
         Certified Fraud Examiner (CFE) • Fraud Data Analyst • Graduate Student in Business Analytics & AI
