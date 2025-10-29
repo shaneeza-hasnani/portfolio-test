@@ -117,7 +117,7 @@ const ProjectsSection = () => {
         "Pattern Recognition",
       ],
       icon: TrendingUp,
-      color: "from-teal-300 to-cyan-300",
+      color: "from-rose-300 to-orange-300",
       metrics: {
         anomalies: "847",
         falsePositives: "<5%",
