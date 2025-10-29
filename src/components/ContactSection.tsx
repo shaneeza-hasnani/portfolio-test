@@ -86,7 +86,7 @@ const ContactSection = () => {
     href: "tel:+12109357217",
     description: "Call for urgent matters"
   }];
-  return <section id="contact" className="py-12 bg-background">
+  return <section id="contact" className="py-16 bg-transparent section-fade-top">
       <div className="container mx-auto px-6">
         <div className="text-center mb-6 animate-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">

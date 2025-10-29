@@ -9,7 +9,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
-  return <div className="min-h-screen">
+  return <div className="min-h-screen animated-warm-gradient">
       <Navigation />
       <main>
         <HeroSection />

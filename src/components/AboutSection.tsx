@@ -1,5 +1,5 @@
 const AboutSection = () => {
-  return <section id="about" className="py-20 bg-background">
+  return <section id="about" className="py-16 bg-transparent section-fade-top section-fade-bottom">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
           <p className="text-lg text-muted-foreground leading-relaxed">

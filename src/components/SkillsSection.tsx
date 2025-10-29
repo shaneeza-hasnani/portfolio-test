@@ -8,27 +8,27 @@ const SkillsSection = () => {
     title: "Programming & Data",
     subtitle: "R, Python, SQL, C++, Scala, SAS, SPSS",
     icon: Code2,
-    color: "from-blue-200/70 to-cyan-200/70"
+    color: "from-[#CD8B76]/20 to-[#FFA69E]/20"
   }, {
     id: "machine-learning",
     title: "Machine Learning",
     subtitle: "Random Forest, Logistic Regression, Decision Trees, Anomaly Detection",
     icon: Brain,
-    color: "from-purple-200/70 to-pink-200/70"
+    color: "from-[#FFA69E]/20 to-[#CD8B76]/20"
   }, {
     id: "visualization",
     title: "Visualization & BI",
     subtitle: "Tableau, Microsoft Power BI, Excel (Advanced)",
     icon: BarChart3,
-    color: "from-emerald-200/70 to-teal-200/70"
+    color: "from-[#C4F4C7]/20 to-[#95B8D1]/20"
   }, {
     id: "fraud-detection",
     title: "Fraud Detection",
     subtitle: "Advanced anomaly detection and pattern recognition",
     icon: Shield,
-    color: "from-rose-200/70 to-orange-200/70"
+    color: "from-[#CD8B76]/20 to-[#FFA69E]/20"
   }];
-  return <section id="skills" className="py-12 bg-background">
+  return <section id="skills" className="py-16 bg-transparent section-fade-top section-fade-bottom">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">

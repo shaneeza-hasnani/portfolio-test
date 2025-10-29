@@ -1,6 +1,6 @@
 import TimelineExperience from "./TimelineExperience";
 const ExperienceSection = () => {
-  return <section id="experience" className="py-20 bg-background">
+  return <section id="experience" className="py-16 bg-transparent section-fade-top section-fade-bottom">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
