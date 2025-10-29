@@ -1,6 +1,28 @@
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Heart, ArrowUp } from "lucide-react";
+
 const Footer = () => {
+  const footerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   const currentYear = new Date().getFullYear();
   const socialLinks = [{
     name: "GitHub",
@@ -40,7 +62,7 @@ const Footer = () => {
     name: "Contact",
     href: "#contact"
   }];
-  return <footer className="bg-card border-t border-border">
+  return <footer ref={footerRef} className="bg-card border-t border-border scroll-fade-in">
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}

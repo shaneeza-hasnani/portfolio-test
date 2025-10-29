@@ -1,8 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Code2, BarChart3, Shield, Brain } from "lucide-react";
+
 const SkillsSection = () => {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll('.scroll-fade-in');
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
   const skills = [{
     id: "programming",
     title: "Programming & Data",
@@ -28,9 +48,9 @@ const SkillsSection = () => {
     icon: Shield,
     color: "from-rose-200/70 to-orange-200/70"
   }];
-  return <section id="skills" className="py-12 bg-background">
+  return <section ref={sectionRef} id="skills" className="py-16 md:py-24 bg-background section-fade-top section-fade-bottom">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-16 scroll-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
             Skills & <span className="text-primary">Expertise</span>
           </h2>
@@ -42,8 +62,8 @@ const SkillsSection = () => {
 
         {/* Skills Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {skills.map((skill, index) => <Card key={skill.id} className="group relative overflow-hidden border bg-card hover:shadow-lg transition-all duration-300 animate-scale-in" style={{
-          animationDelay: `${index * 0.1}s`
+          {skills.map((skill, index) => <Card key={skill.id} className="group relative overflow-hidden border bg-card hover:shadow-lg transition-all duration-300 scroll-fade-in" style={{
+          transitionDelay: `${index * 0.1}s`
         }} onMouseEnter={() => setHoveredSkill(skill.id)} onMouseLeave={() => setHoveredSkill(null)}>
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">

@@ -36,7 +36,7 @@ const HeroSection = () => {
       behavior: 'smooth'
     });
   };
-  return <section className="min-h-[85vh] flex items-center justify-center hero-gradient relative overflow-hidden pt-24 pb-12">
+  return <section className="min-h-[85vh] flex items-center justify-center hero-gradient relative overflow-hidden pt-24 pb-16 section-fade-bottom">
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
           {/* Headshot with parallax */}

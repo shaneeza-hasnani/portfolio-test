@@ -1,9 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { GraduationCap, ChevronDown, ChevronUp } from "lucide-react";
 
 const EducationSection = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll('.scroll-fade-in');
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   const education = [
     {
@@ -39,9 +58,9 @@ const EducationSection = () => {
   ];
 
   return (
-    <section id="education" className="py-20 bg-background">
+    <section ref={sectionRef} id="education" className="py-16 md:py-24 bg-background section-fade-top section-fade-bottom">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12 animate-fade-in">
+        <div className="text-center mb-12 scroll-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
             <span className="text-primary">Education</span>
           </h2>
@@ -57,7 +76,7 @@ const EducationSection = () => {
             
             <div className="space-y-6">
               {education.map((edu, index) => (
-                <div key={index} className="relative flex gap-6 group">
+                <div key={index} className="relative flex gap-6 group scroll-fade-in" style={{ transitionDelay: `${index * 0.15}s` }}>
                   {/* Timeline dot */}
                   <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-medium group-hover:shadow-hover transition-all duration-300 relative z-10">
                     <GraduationCap className="w-6 h-6 text-primary-foreground" />

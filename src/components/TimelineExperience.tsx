@@ -34,7 +34,7 @@ const TimelineExperience = () => {
         <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-primary/30"></div>
         
         <div className="space-y-6">
-          {experiences.map((exp, index) => <div key={index} className="relative flex gap-6 group">
+          {experiences.map((exp, index) => <div key={index} className="relative flex gap-6 group scroll-fade-in" style={{ transitionDelay: `${index * 0.15}s` }}>
               {/* Timeline dot */}
               <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-medium group-hover:shadow-hover transition-all duration-300 relative z-10">
                 <Briefcase className="w-6 h-6 text-primary-foreground" />

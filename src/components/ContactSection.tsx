@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -7,7 +7,27 @@ import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Linkedin, Github, Phone, Send, Calendar } from "lucide-react";
+
 const ContactSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll('.scroll-fade-in');
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -86,9 +106,9 @@ const ContactSection = () => {
     href: "tel:+12109357217",
     description: "Call for urgent matters"
   }];
-  return <section id="contact" className="py-12 bg-background">
+  return <section ref={sectionRef} id="contact" className="py-16 md:py-24 bg-background section-fade-top">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-6 animate-fade-in">
+        <div className="text-center mb-6 scroll-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
             Let's <span className="text-primary">Connect</span>
           </h2>
@@ -99,8 +119,8 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <Card className="border-0 shadow-none bg-transparent animate-slide-up">
+          <div className="lg:col-span-2 scroll-fade-in" style={{ transitionDelay: '0.1s' }}>
+            <Card className="border-0 shadow-none bg-transparent">
               
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -148,7 +168,7 @@ const ContactSection = () => {
           {/* Contact Info Sidebar */}
           <div className="space-y-8">
             {/* Contact Details */}
-            <Card className="border-0 shadow-medium animate-scale-in">
+            <Card className="border-0 shadow-medium scroll-fade-in" style={{ transitionDelay: '0.2s' }}>
               <CardHeader>
                 <CardTitle className="text-xl">Get in Touch</CardTitle>
                 <CardDescription>Multiple ways to connect</CardDescription>
