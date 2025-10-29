@@ -77,9 +77,9 @@ const Navigation = () => {
             <ThemeToggle />
             <Button
               onClick={() => scrollToSection("contact")}
-              className="bg-primary hover:bg-primary/90 text-white rounded-xl px-5 py-2 font-semibold shadow-sm transition-all"
+              className="cta-button bg-[hsl(var(--primary))] hover:bg-[hsl(var(--primary)/0.9)] text-white hover:text-white transition-all duration-300"
             >
-              Let’s Connect
+              Let's Connect
             </Button>
           </div>
 

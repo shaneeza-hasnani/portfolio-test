@@ -157,3 +157,15 @@ nav .cta-button:focus * {
   fill: var(--cta-text-color) !important;
   opacity: 1 !important;
 }
+
+/* --- Ensure CTA text remains white --- */
+.cta-button,
+.cta-button *,
+.cta-button:hover,
+.cta-button:hover *,
+.cta-button:focus,
+.cta-button:focus * {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  opacity: 1 !important;
+}
