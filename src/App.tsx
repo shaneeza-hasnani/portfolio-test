@@ -19,8 +19,11 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        {/* Global live background */}
-        <div className="animated-background" />
+
+        {/* 🌈 Global animated live background */}
+        <div className="live-bg-blobs"></div>
+
+        {/* Main content (kept above background) */}
         <div className="relative z-10">
           <BrowserRouter>
             <Routes>
