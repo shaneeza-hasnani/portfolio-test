@@ -131,9 +131,30 @@
     transition: transform 0.25s ease-out;
   }
 
-  /* --- Subtle section blending --- */
+  /* --- Seamless section blending --- */
   main > section {
-    border-top: 1px solid hsl(var(--border) / 0.08);
+    border-top: none; /* remove visible dividers */
+    background: transparent;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    position: relative;
+  }
+
+  main > section::before {
+    content: "";
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    background: linear-gradient(to bottom, hsla(0, 0%, 100%, 0.25), hsla(0, 0%, 100%, 0));
+    pointer-events: none;
+  }
+
+  /* --- Subtle glass smoothing for continuity --- */
+  section {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
 }
 
