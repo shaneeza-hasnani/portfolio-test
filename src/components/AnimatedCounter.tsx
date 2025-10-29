@@ -24,14 +24,14 @@ const AnimatedCounter = ({
       ([entry]) => {
         if (entry.isIntersecting && !isVisible) {
           setIsVisible(true);
-          observer.disconnect(); // stop observing once triggered
         }
       },
-      { threshold: 0.2 }, // smoother trigger
+      { threshold: 0.1 },
     );
 
-    const element = counterRef.current;
-    if (element) observer.observe(element);
+    if (counterRef.current) {
+      observer.observe(counterRef.current);
+    }
 
     return () => observer.disconnect();
   }, [isVisible]);
@@ -39,14 +39,14 @@ const AnimatedCounter = ({
   useEffect(() => {
     if (!isVisible) return;
 
-    const startTime = performance.now();
+    const startTime = Date.now();
     const startValue = 0;
 
-    const updateCounter = (currentTime: number) => {
-      const elapsed = currentTime - startTime;
+    const updateCounter = () => {
+      const elapsed = Date.now() - startTime;
       const progress = Math.min(elapsed / duration, 1);
 
-      // Easing function for smooth acceleration/deceleration
+      // Easing function for smooth animation
       const easeOutCubic = 1 - Math.pow(1 - progress, 3);
       const newValue = Math.floor(startValue + (endValue - startValue) * easeOutCubic);
 
@@ -61,15 +61,7 @@ const AnimatedCounter = ({
   }, [isVisible, endValue, duration]);
 
   return (
-    <div
-      ref={counterRef}
-      className={`transition-all duration-300 ease-in-out opacity-0 translate-y-2 scale-95 ${
-        isVisible ? "opacity-100 translate-y-0 scale-100" : ""
-      } ${className}`}
-      style={{
-        willChange: "opacity, transform",
-      }}
-    >
+    <div ref={counterRef} className={className}>
       {prefix}
       {currentValue.toLocaleString()}
       {suffix}
