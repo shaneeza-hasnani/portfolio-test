@@ -178,7 +178,7 @@ const ProjectsSection = () => {
       behavior: 'smooth'
     });
   };
-  return <section id="projects" className="py-12 bg-muted/30">
+  return <section id="projects" className="py-12 bg-background">
       <div className="container mx-auto px-6">
         {/* Call to Action for Fraud Simulator */}
         <div className="text-center mb-12 animate-fade-in">
@@ -202,56 +202,48 @@ const ProjectsSection = () => {
           </div>}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {projects.map((project, index) => <Card key={project.id} className="h-full flex flex-col project-card cursor-pointer group animate-slide-up hover:shadow-2xl transition-all duration-500 border bg-card relative overflow-hidden" style={{
+          {projects.map((project, index) => <Card key={project.id} className="h-full flex flex-col project-card cursor-pointer group animate-slide-up transition-all duration-500 border bg-card relative overflow-hidden hover:border-primary/50 hover:shadow-[0_0_30px_rgba(var(--primary),0.15)]" style={{
           animationDelay: `${index * 0.1}s`
         }} onClick={() => setSelectedProject(project.id)}>
-              {/* Animated background gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
               
-              <CardHeader className="relative pb-4">
-                <div className="flex items-center gap-4 mb-3">
-                  <div className={`p-3 rounded-xl bg-gradient-to-br ${project.color} group-hover:scale-110 transition-transform duration-500 shadow-lg`}>
-                    <project.icon className="w-7 h-7 text-white" />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">
-                      {project.title}
-                    </CardTitle>
-                    <CardDescription className="text-sm mt-1 group-hover:text-foreground transition-colors duration-300 font-medium">
-                      {project.subtitle}
-                    </CardDescription>
-                  </div>
-                </div>
+              {/* Full-width gradient header banner */}
+              <div className={`relative h-32 bg-gradient-to-br ${project.color} flex items-center justify-center group-hover:h-36 transition-all duration-500`}>
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-500" />
+                <project.icon className="w-16 h-16 text-white drop-shadow-lg relative z-10 group-hover:scale-110 transition-transform duration-500" />
+              </div>
+              
+              <CardHeader className="relative pb-3 pt-6">
+                <CardTitle className="text-2xl font-bold group-hover:text-primary transition-colors duration-300 text-center">
+                  {project.title}
+                </CardTitle>
+                <CardDescription className="text-sm text-center font-medium group-hover:text-foreground transition-colors duration-300">
+                  {project.subtitle}
+                </CardDescription>
               </CardHeader>
 
-              <CardContent className="flex-1 relative space-y-5">
-                <p className="text-muted-foreground leading-relaxed line-clamp-3 group-hover:text-foreground transition-colors duration-300">
-                  {project.description}
+              <CardContent className="flex-1 relative space-y-4 px-8">
+                {/* Punchy one-liner hook */}
+                <p className="text-center text-base font-semibold text-foreground leading-snug">
+                  {project.id === 1 
+                    ? "Stops fraud before it costs millions" 
+                    : "Connects the dots across borders and shell companies"}
                 </p>
                 
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.slice(0, 3).map(tech => <Badge key={tech} variant="secondary" className="text-xs px-3 py-1 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-sm">
-                      {tech}
-                    </Badge>)}
-                  {project.technologies.length > 3 && <Badge variant="secondary" className="text-xs px-3 py-1 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-sm">
-                      +{project.technologies.length - 3} more
-                    </Badge>}
-                </div>
-                
-                <div className="grid grid-cols-2 gap-3 pt-2">
-                  {Object.entries(project.metrics).slice(0, 2).map(([key, value]) => <div key={key} className="text-center p-4 bg-muted/50 rounded-lg group-hover:bg-primary/10 transition-all duration-300 border border-transparent group-hover:border-primary/20">
-                      <div className="text-2xl font-bold text-primary mb-1">{value}</div>
-                      <div className="text-xs text-muted-foreground capitalize font-medium">
-                        {key.replace(/([A-Z])/g, ' $1')}
-                      </div>
-                    </div>)}
+                {/* Single hero metric */}
+                <div className="text-center py-6 px-4 bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl border border-primary/20 group-hover:border-primary/40 transition-all duration-300">
+                  <div className="text-5xl font-black text-primary mb-2">
+                    {Object.values(project.metrics)[0]}
+                  </div>
+                  <div className="text-sm text-muted-foreground font-semibold uppercase tracking-wider">
+                    {Object.keys(project.metrics)[0]}
+                  </div>
                 </div>
               </CardContent>
 
-              <CardFooter className="relative pt-4">
-                <Button className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 transform group-hover:scale-105 shadow-sm group-hover:shadow-md" variant="outline">
-                  View Case Study
-                  <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+              <CardFooter className="relative pt-4 pb-6 px-8">
+                <Button className={`w-full bg-gradient-to-r ${project.color} text-white hover:shadow-lg hover:scale-[1.02] transition-all duration-300 font-semibold text-base h-12 border-0`}>
+                  {project.id === 1 ? "See How It Detects Fraud" : "Explore the System"}
+                  <ExternalLink className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
               </CardFooter>
             </Card>)}
