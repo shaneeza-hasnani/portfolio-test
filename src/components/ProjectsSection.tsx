@@ -260,7 +260,11 @@ const ProjectsSection = () => {
     });
   };
   return (
-    <section id="projects" className="py-8 lg:py-12 bg-background/50 backdrop-blur-sm" ref={sectionRef}>
+    <section
+      id="projects"
+      className="py-12 lg:py-16 bg-gradient-to-b from-background via-muted/10 to-background"
+      ref={sectionRef}
+    >
       <div className="container mx-auto px-6">
         {/* Call to Action for Fraud Simulator */}
         <div className="text-center mb-12 animate-fade-in"></div>
@@ -283,11 +287,11 @@ const ProjectsSection = () => {
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {projects.map((project, index) => (
             <Card
               key={project.id}
-              className="h-full flex flex-col project-card cursor-pointer group scroll-fade-in    transition-all duration-500 border bg-card/70 backdrop-blur-md relative overflow-hidden    hover:border-primary/40 hover:shadow-lg rounded-2xl"
+              className="h-full flex flex-col project-card cursor-pointer group scroll-fade-in transition-all duration-500 border border-white/10 bg-white/70 dark:bg-slate-900/50 backdrop-blur-md relative overflow-hidden hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] rounded-xl"
               style={{
                 transitionDelay: `${index * 0.1}s`,
               }}
@@ -302,10 +306,10 @@ const ProjectsSection = () => {
               </div>
 
               <CardHeader className="relative pb-3 pt-6">
-                <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors duration-300 text-center">
+                <CardTitle className="text-lg font-semibold group-hover:text-primary transition-colors duration-300 text-center leading-snug">
                   {project.title}
                 </CardTitle>
-                <CardDescription className="text-sm text-center font-medium group-hover:text-foreground transition-colors duration-300">
+                <CardDescription className="text-xs text-center font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                   {project.subtitle}
                 </CardDescription>
               </CardHeader>
@@ -320,8 +324,10 @@ const ProjectsSection = () => {
 
                 {/* Single hero metric */}
                 <div className="text-center py-3 px-3 bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg border border-primary/20 group-hover:border-primary/50 shadow-sm transition-all duration-300">
-                  <div className="text-3xl font-black text-primary mb-2">{Object.values(project.metrics)[0]}</div>
-                  <div className="text-sm text-muted-foreground font-semibold uppercase tracking-wider">
+                  <div className="text-2xl font-extrabold text-primary mb-1 font-mono">
+                    {Object.values(project.metrics)[0]}
+                  </div>
+                  <div className="text-[10px] text-muted-foreground font-semibold uppercase tracking-wider">
                     {Object.keys(project.metrics)[0]}
                   </div>
                 </div>
