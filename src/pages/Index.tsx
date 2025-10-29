@@ -15,7 +15,7 @@ const Index = () => {
     if (!bg) return;
 
     const handleMouseMove = (e: MouseEvent) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 10; // smaller = more subtle
+      const x = (e.clientX / window.innerWidth - 0.5) * 10; // smaller = subtle motion
       const y = (e.clientY / window.innerHeight - 0.5) * 10;
       bg.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
     };

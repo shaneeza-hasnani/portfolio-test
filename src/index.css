@@ -2,181 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design system inspired by warm, professional portfolio aesthetics 
-Portfolio Color Palette:
-- Old Rose: #CD8B76 (18 45% 63%)
-- Powder Blue: #95B8D1 (209 36% 70%) 
-- Tea Green: #C4F4C7 (125 63% 87%)
-- Davy's Gray: #4D5061 (229 10% 34%)
-- Melon: #FFA69E (9 100% 81%)
+/* Portfolio Color Palette:
+- Old Rose: #CD8B76
+- Powder Blue: #95B8D1
+- Tea Green: #C4F4C7
+- Davy's Gray: #4D5061
+- Melon: #FFA69E
 */
 
 @layer base {
   :root {
-    /* Main backgrounds - soft powder blue tints */
     --background: 209 36% 97%;
     --foreground: 229 10% 34%;
-
-    /* Card styling */
-    --card: 0 0% 100%;
-    --card-foreground: 229 10% 34%;
-
-    /* Popover styling */
-    --popover: 0 0% 100%;
-    --popover-foreground: 229 10% 34%;
-
-    /* Primary - Old Rose */
     --primary: 18 45% 63%;
     --primary-foreground: 0 0% 100%;
-
-    /* Secondary - Powder Blue */
     --secondary: 209 36% 70%;
     --secondary-foreground: 229 10% 34%;
-
-    /* Muted tones */
     --muted: 209 36% 90%;
     --muted-foreground: 229 10% 50%;
-
-    /* Accent - Melon */
     --accent: 9 100% 81%;
     --accent-foreground: 229 10% 34%;
-
-    /* Destructive */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    /* Borders and inputs */
     --border: 229 10% 85%;
-    --input: 229 10% 85%;
     --ring: 18 45% 63%;
 
-    /* Custom portfolio colors */
     --old-rose: 18 45% 63%;
     --powder-blue: 209 36% 70%;
     --tea-green: 125 63% 87%;
     --davys-gray: 229 10% 34%;
     --melon: 9 100% 81%;
-
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--powder-blue)), hsl(var(--tea-green)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
-    --gradient-accent: linear-gradient(90deg, hsl(var(--old-rose)), hsl(var(--melon)));
-
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(var(--davys-gray) / 0.1);
-    --shadow-medium: 0 8px 30px -8px hsl(var(--davys-gray) / 0.15);
-    --shadow-hover: 0 12px 40px -10px hsl(var(--old-rose) / 0.2);
-
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    /* Dark theme with warm undertones */
     --background: 229 15% 12%;
     --foreground: 209 36% 90%;
-
-    --card: 229 12% 15%;
-    --card-foreground: 209 36% 90%;
-
-    --popover: 229 12% 15%;
-    --popover-foreground: 209 36% 90%;
-
     --primary: 18 45% 65%;
     --primary-foreground: 229 15% 12%;
-
-    --secondary: 229 10% 22%;
-    --secondary-foreground: 209 36% 85%;
-
     --muted: 229 10% 20%;
     --muted-foreground: 209 20% 65%;
-
     --accent: 9 100% 75%;
-    --accent-foreground: 229 15% 12%;
-
-    --destructive: 0 75% 55%;
-    --destructive-foreground: 209 36% 90%;
-
     --border: 229 10% 25%;
-    --input: 229 10% 25%;
-    --ring: 18 45% 65%;
-
-    /* Custom dark portfolio colors */
-    --old-rose: 18 45% 65%;
-    --powder-blue: 209 36% 75%;
-    --tea-green: 125 50% 80%;
-    --davys-gray: 229 10% 80%;
-    --melon: 9 100% 75%;
-
-    /* Dark gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(229 12% 18%));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
-    --gradient-accent: linear-gradient(90deg, hsl(var(--old-rose)), hsl(var(--melon)));
-
-    /* Dark shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
-    --shadow-medium: 0 8px 30px -8px hsl(0 0% 0% / 0.4);
-    --shadow-hover: 0 12px 40px -10px hsl(var(--old-rose) / 0.3);
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    text-rendering: optimizeLegibility;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
   }
 
-  /* Custom scrollbar */
+  /* Scrollbar styling */
   ::-webkit-scrollbar {
     width: 8px;
   }
-
   ::-webkit-scrollbar-track {
     @apply bg-muted;
   }
-
   ::-webkit-scrollbar-thumb {
     @apply bg-primary rounded-full;
   }
-
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-accent;
   }
 }
 
 @layer components {
-  /* ✨ Minimal, Live, Interactive Background */
+  /* 🌸 Live minimal background */
   .animated-background {
     position: fixed;
     top: 0;
@@ -185,13 +82,21 @@ Portfolio Color Palette:
     height: 100%;
     z-index: -1;
     pointer-events: none;
-    background: radial-gradient(circle at 30% 30%, hsl(var(--primary) / 0.08), transparent 60%),
-                radial-gradient(circle at 70% 70%, hsl(var(--accent) / 0.08), transparent 70%),
-                radial-gradient(circle at 50% 50%, hsl(var(--powder-blue) / 0.06), transparent 80%);
+    background:
+      radial-gradient(circle at 30% 30%, hsl(var(--primary) / 0.08), transparent 60%),
+      radial-gradient(circle at 70% 70%, hsl(var(--accent) / 0.08), transparent 70%),
+      radial-gradient(circle at 50% 50%, hsl(var(--powder-blue) / 0.06), transparent 80%);
     background-blend-mode: overlay;
-    transition: background-position 0.2s ease-out;
     background-size: 200% 200%;
+    transition: background-position 0.3s ease-out;
     animation: softFloat 20s ease-in-out infinite alternate;
+  }
+
+  .dark .animated-background {
+    background:
+      radial-gradient(circle at 30% 30%, hsl(var(--old-rose) / 0.08), transparent 60%),
+      radial-gradient(circle at 70% 70%, hsl(var(--melon) / 0.06), transparent 70%),
+      radial-gradient(circle at 50% 50%, hsl(var(--tea-green) / 0.04), transparent 80%);
   }
 
   @keyframes softFloat {
@@ -206,120 +111,17 @@ Portfolio Color Palette:
     }
   }
 
-  .dark .animated-background {
-    background: radial-gradient(circle at 30% 30%, hsl(var(--old-rose) / 0.08), transparent 60%),
-                radial-gradient(circle at 70% 70%, hsl(var(--melon) / 0.06), transparent 70%),
-                radial-gradient(circle at 50% 50%, hsl(var(--tea-green) / 0.04), transparent 80%);
-  }
-}
-
-
-@keyframes softMove {
-  0% {
-    background-position: 0% 50%;
-    transform: scale(1);
-  }
-  50% {
-    background-position: 100% 50%;
-    transform: scale(1.02);
-  }
-  100% {
-    background-position: 0% 50%;
-    transform: scale(1);
-  }
-}
-
-  /* Hero section styles */
-  .hero-gradient {
-    background: var(--gradient-hero);
-    position: relative;
-  }
-
-  .card-gradient {
-    background: var(--gradient-card);
-  }
-
-  .accent-gradient {
-    background: var(--gradient-accent);
-  }
-
-  /* Scroll-triggered animations */
-  .scroll-fade-in {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .scroll-fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Animation utilities */
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out;
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.8s ease-out;
-  }
-
-  .animate-scale-in {
-    animation: scaleIn 0.5s ease-out;
-  }
-
-  /* Enhanced interactive hover effects */
   .hover-lift {
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition:
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .hover-lift:hover {
     transform: translateY(-6px);
-    box-shadow: var(--shadow-hover);
+    box-shadow: 0 8px 24px hsl(var(--primary) / 0.25);
   }
 
-  .hover-glow {
-    transition: var(--transition-smooth);
-    position: relative;
-  }
-
-  .hover-glow:hover {
-    box-shadow: 0 0 30px hsl(var(--primary) / 0.4);
-    animation: pulseGlow 2s ease-in-out infinite;
-  }
-
-  /* Project card styles with enhanced effects */
-  .project-card {
-    background: var(--gradient-card);
-    border: 1px solid hsl(var(--border));
-    box-shadow: var(--shadow-soft);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform;
-  }
-
-  .project-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: var(--shadow-hover);
-  }
-
-  /* Skill badge styles with micro-interactions */
-  .skill-badge {
-    background: hsl(var(--muted));
-    color: hsl(var(--foreground));
-    border: 1px solid hsl(var(--border));
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .skill-badge:hover {
-    background: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
-    transform: scale(1.08) rotate(-2deg);
-    box-shadow: 0 4px 12px hsl(var(--primary) / 0.3);
-  }
-
-  /* Parallax container */
   .parallax-element {
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform;
@@ -334,46 +136,5 @@ Portfolio Color Palette:
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* New animations for live background */
-@keyframes warmGradientFlow {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px hsl(var(--primary) / 0.5);
   }
 }
