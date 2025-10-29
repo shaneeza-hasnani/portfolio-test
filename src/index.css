@@ -105,10 +105,10 @@
     backdrop-filter: blur(8px);
   }
 
-  /* --- CTA button (Let’s Connect) consistency --- */
+  /* --- CTA button (Let’s Connect) --- */
   nav .cta-button {
     background: hsl(var(--primary));
-    color: white;
+    color: #ffffff;
     border-radius: 0.75rem;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -116,9 +116,14 @@
 
   nav .cta-button:hover {
     background: hsl(var(--primary) / 0.9);
-    color: white !important; /* keep text bright on hover */
+    color: #ffffff !important; /* keep text white */
     transform: translateY(-1px);
     box-shadow: 0 3px 8px hsl(var(--primary) / 0.25);
+  }
+
+  nav .cta-button:focus,
+  nav .cta-button:active {
+    color: #ffffff !important;
   }
 
   /* --- Parallax smoothing --- */
@@ -130,4 +135,12 @@
   main > section {
     border-top: 1px solid hsl(var(--border) / 0.08);
   }
+}
+
+/* --- Force CTA text color to stay white in all states --- */
+nav .cta-button,
+nav .cta-button:hover,
+nav .cta-button:focus,
+nav .cta-button:active {
+  color: #ffffff !important;
 }
