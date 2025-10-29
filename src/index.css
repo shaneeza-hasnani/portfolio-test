@@ -116,7 +116,7 @@
 
   nav .cta-button:hover {
     background: hsl(var(--primary) / 0.9);
-    color: white !important; /* keep text bright on hover */
+    color: white;
     transform: translateY(-1px);
     box-shadow: 0 3px 8px hsl(var(--primary) / 0.25);
   }
