@@ -7,8 +7,8 @@ const HeroSection = () => {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 20;
-      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+      const x = (e.clientX / window.innerWidth - 0.5) * 10;
+      const y = (e.clientY / window.innerHeight - 0.5) * 10;
       setParallaxOffset({ x, y });
     };
 
@@ -40,7 +40,7 @@ const HeroSection = () => {
     });
   };
   return (
-    <section className="min-h-[85vh] flex items-center justify-center hero-gradient relative overflow-hidden pt-12 md:pt-16 pb-8">
+    <section className="min-h-[85vh] flex items-center justify-center hero-gradient relative overflow-hidden pt-24 pb-12">
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
           {/* Headshot with parallax */}

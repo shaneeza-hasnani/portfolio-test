@@ -146,9 +146,7 @@ Portfolio Color Palette:
 
   body {
     @apply bg-background text-foreground;
-    font-feature-settings:
-      "rlig" 1,
-      "calt" 1;
+    font-feature-settings: "rlig" 1, "calt" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -178,52 +176,63 @@ Portfolio Color Palette:
 }
 
 @layer components {
-  /* Animated Background - Continuous gradient flow */
+  /* ✨ Minimal, Live, Interactive Background */
   .animated-background {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    background: linear-gradient(
-      135deg,
-      hsl(var(--powder-blue) / 0.15),
-      hsl(var(--tea-green) / 0.12),
-      hsl(var(--old-rose) / 0.15),
-      hsl(var(--melon) / 0.12),
-      hsl(var(--powder-blue) / 0.15)
-    );
-    background-size: 400% 400%;
-    animation: warmGradientFlow 15s ease infinite;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(circle at 30% 30%, hsl(var(--primary) / 0.08), transparent 60%),
+                radial-gradient(circle at 70% 70%, hsl(var(--accent) / 0.08), transparent 70%),
+                radial-gradient(circle at 50% 50%, hsl(var(--powder-blue) / 0.06), transparent 80%);
+    background-blend-mode: overlay;
+    transition: background-position 0.2s ease-out;
+    background-size: 200% 200%;
+    animation: softFloat 20s ease-in-out infinite alternate;
   }
 
-  .animated-background::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      45deg,
-      hsl(var(--old-rose) / 0.1),
-      transparent,
-      hsl(var(--tea-green) / 0.1),
-      transparent
-    );
-    background-size: 300% 300%;
-    animation: warmGradientFlow 20s ease-in-out infinite reverse;
+  @keyframes softFloat {
+    0% {
+      background-position: 45% 55%;
+    }
+    50% {
+      background-position: 55% 45%;
+    }
+    100% {
+      background-position: 50% 50%;
+    }
   }
+
+  .dark .animated-background {
+    background: radial-gradient(circle at 30% 30%, hsl(var(--old-rose) / 0.08), transparent 60%),
+                radial-gradient(circle at 70% 70%, hsl(var(--melon) / 0.06), transparent 70%),
+                radial-gradient(circle at 50% 50%, hsl(var(--tea-green) / 0.04), transparent 80%);
+  }
+}
+
+
+@keyframes softMove {
+  0% {
+    background-position: 0% 50%;
+    transform: scale(1);
+  }
+  50% {
+    background-position: 100% 50%;
+    transform: scale(1.02);
+  }
+  100% {
+    background-position: 0% 50%;
+    transform: scale(1);
+  }
+}
 
   /* Hero section styles */
   .hero-gradient {
-    background: radial-gradient(
-      ellipse at top,
-      hsl(var(--background)),
-      hsl(var(--muted) / 0.25),
-      hsl(var(--background))
-    );
+    background: var(--gradient-hero);
     position: relative;
-    transition: background 0.6s ease-in-out;
-    animation: subtleGlow 18s ease-in-out infinite alternate;
   }
 
   .card-gradient {
@@ -238,9 +247,8 @@ Portfolio Color Palette:
   .scroll-fade-in {
     opacity: 0;
     transform: translateY(50px);
-    transition:
-      opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .scroll-fade-in.visible {
@@ -263,9 +271,8 @@ Portfolio Color Palette:
 
   /* Enhanced interactive hover effects */
   .hover-lift {
-    transition:
-      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-      box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .hover-lift:hover {
@@ -354,8 +361,7 @@ Portfolio Color Palette:
 
 /* New animations for live background */
 @keyframes warmGradientFlow {
-  0%,
-  100% {
+  0%, 100% {
     background-position: 0% 50%;
   }
   50% {
@@ -364,26 +370,10 @@ Portfolio Color Palette:
 }
 
 @keyframes pulseGlow {
-  0%,
-  100% {
+  0%, 100% {
     box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
   }
   50% {
     box-shadow: 0 0 40px hsl(var(--primary) / 0.5);
-  }
-}
-
-@keyframes subtleGlow {
-  0% {
-    background-position: 0% 50%;
-    opacity: 0.95;
-  }
-  50% {
-    background-position: 100% 50%;
-    opacity: 1;
-  }
-  100% {
-    background-position: 0% 50%;
-    opacity: 0.95;
   }
 }
