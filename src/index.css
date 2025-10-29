@@ -2,78 +2,136 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Portfolio Color Palette:
-- Old Rose: #CD8B76
-- Powder Blue: #95B8D1
-- Tea Green: #C4F4C7
-- Davy's Gray: #4D5061
-- Melon: #FFA69E
+/* Design system inspired by warm, professional portfolio aesthetics 
+Portfolio Color Palette:
+- Old Rose: #CD8B76 (18 45% 63%)
+- Powder Blue: #95B8D1 (209 36% 70%) 
+- Tea Green: #C4F4C7 (125 63% 87%)
+- Davy's Gray: #4D5061 (229 10% 34%)
+- Melon: #FFA69E (9 100% 81%)
 */
 
 @layer base {
   :root {
+    /* Main backgrounds - soft powder blue tints */
     --background: 209 36% 97%;
     --foreground: 229 10% 34%;
+
+    /* Card styling */
+    --card: 0 0% 100%;
+    --card-foreground: 229 10% 34%;
+
+    /* Popover styling */
+    --popover: 0 0% 100%;
+    --popover-foreground: 229 10% 34%;
+
+    /* Primary - Old Rose */
     --primary: 18 45% 63%;
     --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Powder Blue */
     --secondary: 209 36% 70%;
     --secondary-foreground: 229 10% 34%;
+
+    /* Muted tones */
     --muted: 209 36% 90%;
     --muted-foreground: 229 10% 50%;
+
+    /* Accent - Melon */
     --accent: 9 100% 81%;
     --accent-foreground: 229 10% 34%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
     --border: 229 10% 85%;
+    --input: 229 10% 85%;
     --ring: 18 45% 63%;
 
+    /* Custom portfolio colors */
     --old-rose: 18 45% 63%;
     --powder-blue: 209 36% 70%;
     --tea-green: 125 63% 87%;
     --davys-gray: 229 10% 34%;
     --melon: 9 100% 81%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--powder-blue)), hsl(var(--tea-green)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
+    --gradient-accent: linear-gradient(90deg, hsl(var(--old-rose)), hsl(var(--melon)));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--davys-gray) / 0.1);
+    --shadow-medium: 0 8px 30px -8px hsl(var(--davys-gray) / 0.15);
+    --shadow-hover: 0 12px 40px -10px hsl(var(--old-rose) / 0.2);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --radius: 0.5rem;
   }
 
   .dark {
     --background: 229 15% 12%;
     --foreground: 209 36% 90%;
+    --card: 229 12% 15%;
+    --card-foreground: 209 36% 90%;
     --primary: 18 45% 65%;
     --primary-foreground: 229 15% 12%;
     --muted: 229 10% 20%;
     --muted-foreground: 209 20% 65%;
-    --accent: 9 100% 75%;
     --border: 229 10% 25%;
+    --old-rose: 18 45% 65%;
+    --powder-blue: 209 36% 75%;
+    --tea-green: 125 50% 80%;
+    --melon: 9 100% 75%;
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(229 12% 18%));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
+    --gradient-accent: linear-gradient(90deg, hsl(var(--old-rose)), hsl(var(--melon)));
   }
 }
 
 @layer base {
+  * {
+    @apply border-border;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
+    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   html {
     scroll-behavior: smooth;
   }
 
-  /* Scrollbar styling */
   ::-webkit-scrollbar {
     width: 8px;
   }
+
   ::-webkit-scrollbar-track {
     @apply bg-muted;
   }
+
   ::-webkit-scrollbar-thumb {
     @apply bg-primary rounded-full;
   }
+
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-accent;
   }
 }
 
 @layer components {
-  /* 🌸 Live minimal background */
+  /* ✨ Animated Background - soft gradient flow */
   .animated-background {
     position: fixed;
     top: 0;
@@ -83,25 +141,16 @@
     z-index: -1;
     pointer-events: none;
     background:
-      radial-gradient(circle at 30% 30%, hsl(var(--primary) / 0.08), transparent 60%),
-      radial-gradient(circle at 70% 70%, hsl(var(--accent) / 0.08), transparent 70%),
-      radial-gradient(circle at 50% 50%, hsl(var(--powder-blue) / 0.06), transparent 80%);
+      radial-gradient(circle at 20% 20%, hsl(var(--muted) / 0.15), transparent 60%),
+      radial-gradient(circle at 80% 80%, hsl(var(--accent) / 0.12), transparent 70%),
+      radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.08), transparent 65%);
     background-blend-mode: overlay;
-    background-size: 200% 200%;
-    transition: background-position 0.3s ease-out;
-    animation: softFloat 20s ease-in-out infinite alternate;
+    animation: softMove 18s ease-in-out infinite alternate;
   }
 
-  .dark .animated-background {
-    background:
-      radial-gradient(circle at 30% 30%, hsl(var(--old-rose) / 0.08), transparent 60%),
-      radial-gradient(circle at 70% 70%, hsl(var(--melon) / 0.06), transparent 70%),
-      radial-gradient(circle at 50% 50%, hsl(var(--tea-green) / 0.04), transparent 80%);
-  }
-
-  @keyframes softFloat {
+  @keyframes softMove {
     0% {
-      background-position: 45% 55%;
+      background-position: 50% 50%;
     }
     50% {
       background-position: 55% 45%;
@@ -111,23 +160,93 @@
     }
   }
 
+  /* 🪶 Section spacing & blending */
+  section {
+    scroll-margin-top: 80px;
+  }
+
+  section + section {
+    padding-top: 3rem;
+    margin-top: -1rem;
+    border-top: 1px solid hsl(var(--border) / 0.1);
+  }
+
+  /* 🧠 Project cards */
+  .project-card {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-soft);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .project-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* 💎 Skill badges */
+  .skill-badge {
+    background: hsl(var(--muted));
+    color: hsl(var(--foreground));
+    border: 1px solid hsl(var(--border));
+    transition: all 0.3s ease;
+  }
+
+  .skill-badge:hover {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px hsl(var(--primary) / 0.3);
+  }
+
+  /* 🌸 Hover lift */
   .hover-lift {
     transition:
-      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-      box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.35s;
   }
-
   .hover-lift:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 24px hsl(var(--primary) / 0.25);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px hsl(var(--primary) / 0.25);
   }
 
+  /* ☁️ CTA Buttons */
+  a.rounded-full {
+    backdrop-filter: blur(8px);
+    border-radius: 9999px;
+    border: 1px solid hsl(var(--border) / 0.4);
+    background: hsl(var(--card) / 0.6);
+    transition: all 0.3s ease;
+  }
+
+  a.rounded-full:hover {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    box-shadow: 0 4px 16px hsl(var(--primary) / 0.25);
+  }
+
+  /* 💬 Contact cards */
+  .contact-card {
+    border-radius: 1rem;
+    border: 1px solid hsl(var(--border) / 0.4);
+    background: hsl(var(--card) / 0.85);
+    transition: all 0.3s ease;
+  }
+
+  .contact-card:hover {
+    border-color: hsl(var(--primary) / 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px hsl(var(--primary) / 0.15);
+  }
+
+  /* ✨ Parallax container */
   .parallax-element {
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform;
   }
 }
 
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -136,5 +255,15 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes warmGradientFlow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }
