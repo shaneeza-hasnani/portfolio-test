@@ -1,7 +1,7 @@
 const AboutSection = () => {
   return (
     <section id="about" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-2">
         <div className="max-w-4xl mx-auto text-center space-y-2 animate-fade-in">
           <p className="leading-relaxed font-medium text-lg text-inherit">
             As a Certified Fraud Examiner, a Fraud Data Analyst, and a graduate student in Business Analytics and AI at
