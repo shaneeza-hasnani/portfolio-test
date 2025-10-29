@@ -39,7 +39,7 @@ const EducationSection = () => {
   ];
 
   return (
-    <section id="education" className="py-16 bg-transparent section-fade-top section-fade-bottom">
+    <section id="education" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
@@ -53,20 +53,20 @@ const EducationSection = () => {
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-6 top-0 bottom-0 w-px bg-primary/20"></div>
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-primary/30"></div>
             
             <div className="space-y-6">
               {education.map((edu, index) => (
                 <div key={index} className="relative flex gap-6 group">
                   {/* Timeline dot */}
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-sm group-hover:shadow-md transition-all duration-300 relative z-10">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-medium group-hover:shadow-hover transition-all duration-300 relative z-10">
                     <GraduationCap className="w-6 h-6 text-primary-foreground" />
                   </div>
                   
                   {/* Content */}
                   <div className="flex-1 pb-6">
                     <Card 
-                      className="cursor-pointer transition-all duration-300 border bg-background/50 border-l-4 border-l-primary/50 hover:border-l-primary hover:shadow-sm"
+                      className="cursor-pointer hover-lift transition-all duration-300 border-l-4 border-l-primary/50 hover:border-l-primary"
                       onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
                     >
                       <CardHeader className="pb-3">

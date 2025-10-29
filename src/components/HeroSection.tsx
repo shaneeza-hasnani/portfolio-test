@@ -13,38 +13,16 @@ const HeroSection = () => {
     icon: FileText,
     label: "Download my resume"
   }];
-  const smoothScroll = (targetId: string) => {
-    const element = document.getElementById(targetId);
-    if (element) {
-      const targetPosition = element.getBoundingClientRect().top + window.pageYOffset - 80;
-      const startPosition = window.pageYOffset;
-      const distance = targetPosition - startPosition;
-      const duration = 800;
-      let start: number | null = null;
-
-      const easeInOutCubic = (t: number): number => {
-        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-      };
-
-      const animation = (currentTime: number) => {
-        if (start === null) start = currentTime;
-        const timeElapsed = currentTime - start;
-        const progress = Math.min(timeElapsed / duration, 1);
-        const ease = easeInOutCubic(progress);
-        
-        window.scrollTo(0, startPosition + distance * ease);
-        
-        if (timeElapsed < duration) {
-          requestAnimationFrame(animation);
-        }
-      };
-
-      requestAnimationFrame(animation);
-    }
+  const scrollToProjects = () => {
+    document.getElementById('projects')?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  const scrollToProjects = () => smoothScroll('projects');
-  const scrollToContact = () => smoothScroll('contact');
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({
+      behavior: 'smooth'
+    });
+  };
   return <section className="min-h-[85vh] flex items-center justify-center hero-gradient relative overflow-hidden pt-24 pb-12">
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">

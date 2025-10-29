@@ -37,7 +37,7 @@ const ProjectsSection = () => {
     results: ["Attained 99.96% accuracy for transaction classification", "Achieved 97.25% recall for abnormal payment detection", "Maintained false positive rate under 0.02%", "Enabled reliable deployment for financial institutions"],
     technologies: ["Python", "Random Forest", "Decision Trees", "Excel", "Scikit-learn", "Feature Engineering", "Hyperparameter Optimization"],
     icon: ShieldCheck,
-    color: "from-[#CD8B76] to-[#FFA69E]",
+    color: "from-rose-300 to-orange-300",
     metrics: {
       accuracy: "99.96%",
       recall: "97.25%",
@@ -56,7 +56,7 @@ const ProjectsSection = () => {
     results: ["Enhanced compliance monitoring by 30%", "Successfully identified high-risk transaction patterns", "Adopted by directors following technical presentations", "Strengthened anti-money laundering capabilities"],
     technologies: ["Machine Learning", "Feature Engineering", "SQL", "Risk Scoring", "Compliance", "Pattern Recognition"],
     icon: TrendingUp,
-    color: "from-[#CD8B76] to-[#FFA69E]",
+    color: "from-teal-300 to-cyan-300",
     metrics: {
       anomalies: "847",
       falsePositives: "<5%",
@@ -92,7 +92,7 @@ const ProjectsSection = () => {
       {/* Catchy Hook - Credit Card Fraud Model */}
       {project.id === 1 && (
         <div className="px-6 pt-0 pb-2">
-          <div className="bg-gradient-to-r from-[#CD8B76]/10 to-[#FFA69E]/10 border border-[#CD8B76]/30 rounded-lg p-4">
+          <div className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-950/20 dark:to-orange-950/20 border border-red-200/50 dark:border-red-800/50 rounded-lg p-4">
             <p className="text-lg font-semibold text-center text-foreground leading-relaxed">
               Every second counts when $8.8 billion is at stake—meet the model that catches fraud in real-time
             </p>
@@ -103,7 +103,7 @@ const ProjectsSection = () => {
       {/* Catchy Hook - Wire Transfer Anomaly Detection */}
       {project.id === 3 && (
         <div className="px-6 pt-0 pb-2">
-          <div className="bg-gradient-to-r from-[#CD8B76]/10 to-[#FFA69E]/10 border border-[#CD8B76]/30 rounded-lg p-4">
+          <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border border-green-200/50 dark:border-green-800/50 rounded-lg p-4">
             <p className="text-lg font-semibold text-center text-foreground leading-relaxed">
               One anonymous transfer. Seven countries. Twelve shell companies. One AI model to connect the dots.
             </p>
@@ -178,7 +178,7 @@ const ProjectsSection = () => {
       behavior: 'smooth'
     });
   };
-  return <section id="projects" className="py-16 bg-transparent section-fade-top section-fade-bottom">
+  return <section id="projects" className="py-12 bg-background">
       <div className="container mx-auto px-6">
         {/* Call to Action for Fraud Simulator */}
         <div className="text-center mb-12 animate-fade-in">
@@ -202,7 +202,7 @@ const ProjectsSection = () => {
           </div>}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {projects.map((project, index) => <Card key={project.id} className="h-full flex flex-col cursor-pointer group animate-slide-up transition-all duration-500 border bg-background/50 relative overflow-hidden hover:border-primary/50 hover:shadow-md" style={{
+          {projects.map((project, index) => <Card key={project.id} className="h-full flex flex-col project-card cursor-pointer group animate-slide-up transition-all duration-500 border bg-card relative overflow-hidden hover:border-primary/50 hover:shadow-[0_0_30px_rgba(var(--primary),0.15)]" style={{
           animationDelay: `${index * 0.1}s`
         }} onClick={() => setSelectedProject(project.id)}>
               
