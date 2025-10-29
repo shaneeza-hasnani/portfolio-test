@@ -202,7 +202,7 @@ const ProjectsSection = () => {
           </div>}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {projects.map((project, index) => <Card key={project.id} className="project-card cursor-pointer group animate-slide-up hover:shadow-2xl transition-all duration-500 border bg-card relative overflow-hidden" style={{
+          {projects.map((project, index) => <Card key={project.id} className="h-full flex flex-col project-card cursor-pointer group animate-slide-up hover:shadow-2xl transition-all duration-500 border bg-card relative overflow-hidden" style={{
           animationDelay: `${index * 0.1}s`
         }} onClick={() => setSelectedProject(project.id)}>
               {/* Animated background gradient */}
@@ -224,7 +224,7 @@ const ProjectsSection = () => {
                 </div>
               </CardHeader>
 
-              <CardContent className="relative space-y-5">
+              <CardContent className="flex-1 relative space-y-5">
                 <p className="text-muted-foreground leading-relaxed line-clamp-3 group-hover:text-foreground transition-colors duration-300">
                   {project.description}
                 </p>
