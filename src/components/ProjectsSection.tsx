@@ -49,9 +49,9 @@ const ProjectsSection = () => {
     icon: TrendingUp,
     color: "from-green-500 to-emerald-500",
     metrics: {
-      enhancement: "30%",
-      records: "20,000+",
-      adoption: "Director-level"
+      anomalies: "847",
+      falsePositives: "<5%",
+      enhancement: "30%"
     },
     github: "https://github.com/shaneeza-hasnani/wire-transfer-anomaly",
     model: "/wire-transfer-model"
