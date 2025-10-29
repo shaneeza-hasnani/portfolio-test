@@ -25,12 +25,10 @@
     @apply text-foreground;
     background: linear-gradient(
       135deg,
-      hsl(var(--secondary) / 0.2),
-      hsl(var(--accent) / 0.15),
-      hsl(var(--primary) / 0.12)
+      hsl(var(--secondary) / 0.15),
+      hsl(var(--accent) / 0.12),
+      hsl(var(--primary) / 0.1)
     );
-    background-size: 300% 300%;
-    animation: gradientFlow 20s ease-in-out infinite alternate;
     background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -38,18 +36,75 @@
       background 0.8s ease,
       color 0.4s ease;
   }
+}
 
-  @keyframes gradientFlow {
-    0% {
-      background-position: 50% 50%;
-    }
-    50% {
-      background-position: 60% 45%;
-    }
-    100% {
-      background-position: 50% 55%;
-    }
+/* --- Floating Live Background with Subtle Parallax Drift --- */
+.live-bg-blobs {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+  transform: translate(var(--blob-x, 0px), var(--blob-y, 0px));
+  transition: transform 0.6s ease-out;
+}
+
+.live-bg-blobs::before,
+.live-bg-blobs::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.4;
+  mix-blend-mode: soft-light;
+  animation: floatBlobs 30s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Warm rose tone (top-left) */
+.live-bg-blobs::before {
+  width: 60vw;
+  height: 60vw;
+  top: -15%;
+  left: -20%;
+  background: radial-gradient(circle, hsl(18 45% 63% / 0.4), transparent 70%);
+  animation-delay: 0s;
+}
+
+/* Cool powder blue tone (bottom-right) */
+.live-bg-blobs::after {
+  width: 55vw;
+  height: 55vw;
+  bottom: -10%;
+  right: -15%;
+  background: radial-gradient(circle, hsl(209 36% 70% / 0.4), transparent 70%);
+  animation-delay: 6s;
+}
+
+/* Continuous soft movement */
+@keyframes floatBlobs {
+  0% {
+    transform: translate(0%, 0%) scale(1);
   }
+  50% {
+    transform: translate(4%, -3%) scale(1.05);
+  }
+  100% {
+    transform: translate(-3%, 4%) scale(1);
+  }
+}
+
+/* --- Dark mode subtle glow --- */
+.dark .live-bg-blobs::before {
+  background: radial-gradient(circle, hsl(17 45% 40% / 0.35), transparent 70%);
+  opacity: 0.3;
+}
+
+.dark .live-bg-blobs::after {
+  background: radial-gradient(circle, hsl(220 25% 25% / 0.35), transparent 70%);
+  opacity: 0.25;
 }
 
 /* --- Layout & visual harmony --- */
@@ -64,7 +119,6 @@
     @apply px-6 mx-auto max-w-6xl;
   }
 
-  /* --- Card design --- */
   .card {
     background: hsl(var(--background) / 0.7);
     backdrop-filter: blur(10px);
@@ -78,7 +132,6 @@
     box-shadow: 0 8px 22px hsl(var(--primary) / 0.15);
   }
 
-  /* --- Button design --- */
   button,
   .btn {
     @apply px-5 py-2 rounded-lg font-medium transition-all duration-300;
@@ -92,7 +145,6 @@
     transform: translateY(-2px);
   }
 
-  /* --- Navigation refinement --- */
   nav button {
     border: none;
     background: transparent;
@@ -107,8 +159,8 @@
   }
 
   nav button:hover {
-    color: #ffffff; /* keep white on hover */
-    background: hsl(var(--primary) / 0.9);
+    color: white;
+    background: hsl(var(--primary));
     transform: translateY(-1px);
   }
 
@@ -119,7 +171,6 @@
     backdrop-filter: blur(8px);
   }
 
-  /* --- CTA button --- */
   nav .cta-button {
     background: hsl(var(--primary));
     color: #ffffff;
@@ -135,99 +186,22 @@
     box-shadow: 0 3px 8px hsl(var(--primary) / 0.25);
   }
 
-  /* --- Seamless section blending --- */
-  main > section {
-    border-top: none;
-    position: relative;
-    background: transparent !important;
+  nav .cta-button:focus,
+  nav .cta-button:active {
+    color: #ffffff !important;
   }
 
-  main > section::before {
-    content: "";
-    position: absolute;
-    top: -4rem;
-    left: 0;
-    width: 100%;
-    height: 8rem;
-    background: linear-gradient(to bottom, hsla(0, 0%, 100%, 0.1), hsla(0, 0%, 100%, 0));
-    pointer-events: none;
+  .parallax-element {
+    transition: transform 0.25s ease-out;
+  }
+
+  main > section {
+    border-top: none;
+    background: transparent !important;
   }
 
   section {
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
   }
-
-  .parallax-element {
-    transition: transform 0.25s ease-out;
-  }
-}
-
-/* --- Floating Live Background with Parallax Drift --- */
-.live-bg-blobs {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 0;
-  pointer-events: none;
-  transform: translate(var(--blob-x, 0px), var(--blob-y, 0px));
-  transition: transform 0.4s ease-out;
-}
-
-.live-bg-blobs::before,
-.live-bg-blobs::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.35;
-  mix-blend-mode: soft-light;
-  animation: floatBlobs 30s ease-in-out infinite alternate;
-}
-
-/* Warm rose blob (top-left) */
-.live-bg-blobs::before {
-  width: 60vw;
-  height: 60vw;
-  top: -10%;
-  left: -20%;
-  background: radial-gradient(circle, hsl(18 45% 63% / 0.5), transparent 70%);
-  animation-delay: 0s;
-}
-
-/* Cool blue blob (bottom-right) */
-.live-bg-blobs::after {
-  width: 50vw;
-  height: 50vw;
-  bottom: -10%;
-  right: -10%;
-  background: radial-gradient(circle, hsl(209 36% 70% / 0.4), transparent 70%);
-  animation-delay: 5s;
-}
-
-/* Blob float animation */
-@keyframes floatBlobs {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(5%, -3%) scale(1.1);
-  }
-  100% {
-    transform: translate(-3%, 4%) scale(1);
-  }
-}
-
-/* --- Dark Mode Glow --- */
-.dark .live-bg-blobs::before {
-  background: radial-gradient(circle, hsl(17 45% 40% / 0.4), transparent 70%);
-  opacity: 0.3;
-}
-
-.dark .live-bg-blobs::after {
-  background: radial-gradient(circle, hsl(220 25% 25% / 0.4), transparent 70%);
-  opacity: 0.25;
 }

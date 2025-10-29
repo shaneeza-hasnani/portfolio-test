@@ -15,12 +15,11 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-  // ✨ Subtle parallax drift effect for live background blobs
+  // 🪶 Subtle mouse parallax drift for background blobs
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const { innerWidth, innerHeight } = window;
-      // Gentle movement multiplier (lower = more subtle)
-      const x = (e.clientX / innerWidth - 0.5) * 25;
+      const x = (e.clientX / innerWidth - 0.5) * 25; // movement intensity
       const y = (e.clientY / innerHeight - 0.5) * 25;
       document.documentElement.style.setProperty("--blob-x", `${x}px`);
       document.documentElement.style.setProperty("--blob-y", `${y}px`);
@@ -37,10 +36,10 @@ const App = () => {
           <Toaster />
           <Sonner />
 
-          {/* 🌈 Global animated live background with parallax drift */}
+          {/* 🌈 Global animated live background */}
           <div className="live-bg-blobs"></div>
 
-          {/* Main content above background */}
+          {/* Main content (kept above background) */}
           <div className="relative z-10">
             <BrowserRouter>
               <Routes>
