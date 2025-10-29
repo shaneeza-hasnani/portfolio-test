@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* --- Minimal, seamless global design --- */
-/* Warm palette: Old Rose, Melon, Powder Blue, Tea Green */
+/* --- Seamless, minimal global design --- */
+/* Palette: Old Rose, Melon, Powder Blue, Tea Green */
 
 @layer base {
   :root {
@@ -22,57 +22,37 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--powder-blue) / 0.18),
+      hsl(var(--tea-green) / 0.15),
+      hsl(var(--old-rose, 18 45% 63%) / 0.1)
+    );
+    background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    transition:
+      background 0.8s ease,
+      color 0.4s ease;
   }
 }
 
-/* --- Live background animation --- */
+/* --- Layout & visual harmony --- */
 @layer components {
-  .animated-background {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background:
-      radial-gradient(circle at 20% 30%, hsl(var(--powder-blue) / 0.25), transparent 60%),
-      radial-gradient(circle at 80% 70%, hsl(var(--melon) / 0.25), transparent 65%),
-      radial-gradient(circle at 50% 100%, hsl(var(--old-rose, 18 45% 63%) / 0.25), transparent 70%);
-    background-blend-mode: overlay;
-    background-size: 200% 200%;
-    animation: subtleFlow 25s ease-in-out infinite alternate;
-  }
-
-  @keyframes subtleFlow {
-    0% {
-      background-position: 50% 50%;
-      filter: hue-rotate(0deg);
-    }
-    50% {
-      background-position: 55% 45%;
-      filter: hue-rotate(5deg);
-    }
-    100% {
-      background-position: 50% 55%;
-      filter: hue-rotate(0deg);
-    }
-  }
-
-  /* --- Layout consistency --- */
   section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .container {
     @apply px-6 mx-auto max-w-6xl;
   }
 
-  /* --- Smooth card + button design --- */
+  /* --- Card design --- */
   .card {
-    background: hsl(var(--background) / 0.6);
-    backdrop-filter: blur(12px);
+    background: hsl(var(--background) / 0.7);
+    backdrop-filter: blur(10px);
     border: 1px solid hsl(var(--border));
     border-radius: var(--radius);
     box-shadow: 0 4px 16px hsl(var(--foreground) / 0.05);
@@ -80,9 +60,10 @@
   }
 
   .card:hover {
-    box-shadow: 0 8px 20px hsl(var(--primary) / 0.15);
+    box-shadow: 0 8px 22px hsl(var(--primary) / 0.15);
   }
 
+  /* --- Button design --- */
   button,
   .btn {
     @apply px-5 py-2 rounded-lg font-medium transition-all duration-300;
@@ -96,13 +77,13 @@
     transform: translateY(-2px);
   }
 
-  /* --- Remove harsh section breaks --- */
-  main > section {
-    border-top: 1px solid hsl(var(--border) / 0.1);
-  }
-
   /* --- Parallax smoothing --- */
   .parallax-element {
     transition: transform 0.25s ease-out;
+  }
+
+  /* --- Subtle section blending --- */
+  main > section {
+    border-top: 1px solid hsl(var(--border) / 0.08);
   }
 }
