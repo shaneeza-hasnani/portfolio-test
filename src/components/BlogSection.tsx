@@ -59,9 +59,9 @@ const BlogSection = () => {
   };
 
   return (
-    <section id="blog" className="py-20 bg-muted/30">
+    <section id="blog" className="py-12 bg-muted/20">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-8 animate-fade-in">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
             Insights & <span className="text-primary">Learning</span>
           </h2>
@@ -92,7 +92,7 @@ const BlogSection = () => {
         {blogPosts.filter(post => post.featured).map((post) => (
           <Card 
             key={post.id} 
-            className="mb-12 border-0 shadow-medium hover-lift animate-slide-up bg-gradient-card"
+            className="mb-12 border-0 shadow-medium hover-lift animate-slide-up bg-white/70 backdrop-blur-md border border-border/40"
           >
             <div className="grid lg:grid-cols-3 gap-6">
               <div className="lg:col-span-2">
@@ -146,7 +146,7 @@ const BlogSection = () => {
           {blogPosts.filter(post => !post.featured).map((post, index) => (
             <Card 
               key={post.id} 
-              className="project-card cursor-pointer group animate-slide-up"
+              className="project-card cursor-pointer group animate-slide-up bg-white/70 backdrop-blur-md border border-border/40 hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader>

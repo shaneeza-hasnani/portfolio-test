@@ -42,7 +42,7 @@ const TimelineExperience = () => {
               
               {/* Content */}
               <div className="flex-1 pb-6">
-                <Card className="cursor-pointer hover-lift transition-all duration-300 border-l-4 border-l-primary/50 hover:border-l-primary" onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}>
+                <Card className="cursor-pointer hover-lift transition-all duration-300 border-l-4 border-l-primary/50 hover:border-l-primary bg-white/70 backdrop-blur-md border border-border/40 hover:shadow-lg hover:scale-[1.02]" onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}>
                   <CardHeader className="pb-3">
                     <div className="flex items-start justify-between">
                       <div className="flex-1 space-y-2">

@@ -11,7 +11,7 @@ const MetricsSection = () => {
       suffix: "K+",
       prefix: "$",
       description: "Total amount saved through fraud detection systems",
-      color: "from-green-500 to-emerald-600"
+      color: "from-[hsl(18,45%,63%)] to-[hsl(18,45%,53%)]"
     },
     {
       icon: Target,
@@ -19,7 +19,7 @@ const MetricsSection = () => {
       value: 99.96,
       suffix: "%",
       description: "Average accuracy across all ML fraud detection models",
-      color: "from-blue-500 to-cyan-600"
+      color: "from-[hsl(209,36%,70%)] to-[hsl(209,36%,60%)]"
     },
     {
       icon: TrendingUp,
@@ -27,7 +27,7 @@ const MetricsSection = () => {
       value: 30,
       suffix: "%",
       description: "Average improvement in operational efficiency",
-      color: "from-purple-500 to-indigo-600"
+      color: "from-[hsl(18,45%,63%)] to-[hsl(9,100%,81%)]"
     },
     {
       icon: BarChart3,
@@ -35,7 +35,7 @@ const MetricsSection = () => {
       value: 500,
       suffix: "+",
       description: "Monthly datasets processed through automated pipelines",
-      color: "from-orange-500 to-red-600"
+      color: "from-[hsl(9,100%,81%)] to-[hsl(9,100%,71%)]"
     },
     {
       icon: Users,
@@ -43,7 +43,7 @@ const MetricsSection = () => {
       value: 25,
       suffix: "%",
       description: "Improvement in compliance monitoring capabilities",
-      color: "from-pink-500 to-rose-600"
+      color: "from-[hsl(18,45%,68%)] to-[hsl(18,45%,58%)]"
     },
     {
       icon: Award,
@@ -51,14 +51,14 @@ const MetricsSection = () => {
       value: 20,
       suffix: "%",
       description: "Faster fraud case resolution turnaround time",
-      color: "from-teal-500 to-emerald-600"
+      color: "from-[hsl(209,36%,75%)] to-[hsl(209,36%,65%)]"
     }
   ];
 
   return (
-    <section className="py-12 bg-muted/30">
+    <section className="py-12 bg-muted/20">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-8 animate-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
             Impact by the <span className="text-primary">Numbers</span>
           </h2>
@@ -71,7 +71,7 @@ const MetricsSection = () => {
           {metrics.map((metric, index) => (
             <Card 
               key={metric.label}
-              className="border-0 bg-gradient-card shadow-soft hover-lift group relative overflow-hidden animate-slide-up"
+              className="border-0 bg-white/70 backdrop-blur-md border border-border/40 shadow-soft hover-lift group relative overflow-hidden animate-slide-up hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Animated background gradient */}

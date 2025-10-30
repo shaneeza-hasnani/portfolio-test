@@ -208,7 +208,7 @@ const ContactSection = () => {
                     href={info.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="contact-card flex items-center gap-4 p-4 w-full hover-lift transition-all"
+                    className="contact-card flex items-center gap-4 p-4 w-full hover-lift transition-all bg-white/70 backdrop-blur-md border border-border/40 rounded-lg hover:shadow-lg hover:scale-[1.02]"
                   >
                     <div className="p-2 rounded-lg bg-primary/10 flex-shrink-0">
                       <info.icon className="w-5 h-5 text-primary" />

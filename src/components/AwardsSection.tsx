@@ -17,9 +17,9 @@ const AwardsSection = () => {
     url: "/ACFE_Scholarship_2024.pdf",
     label: "Download the Fraud Magazine Snippet"
   }];
-  return <section id="awards" className="py-12 bg-muted/30">
+  return <section id="awards" className="py-12 bg-muted/20">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12 animate-fade-in">
+        <div className="text-center mb-8 animate-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
             Awards & <span className="text-primary">Recognition</span>
           </h2>
@@ -29,7 +29,7 @@ const AwardsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
-          {achievements.map((achievement, index) => <Card key={achievement.title} className="text-center hover:shadow-hover transition-all duration-300 border-0 bg-gradient-to-br from-card to-card/50 animate-scale-in flex flex-col" style={{
+          {achievements.map((achievement, index) => <Card key={achievement.title} className="text-center hover:shadow-hover transition-all duration-300 border-0 bg-white/70 backdrop-blur-md border border-border/40 animate-scale-in flex flex-col" style={{
           animationDelay: `${index * 0.1}s`
         }}>
               <CardHeader className="pb-3 flex-shrink-0">

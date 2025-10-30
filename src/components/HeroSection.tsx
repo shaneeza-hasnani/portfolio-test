@@ -62,7 +62,7 @@ const HeroSection = () => {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/60 backdrop-blur-md border border-border text-foreground hover:bg-primary hover:text-white transition-all duration-300 shadow-sm"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/70 backdrop-blur-md border border-border/40 text-foreground hover:bg-primary hover:text-white transition-all duration-300 shadow-sm hover:scale-[1.02]"
           >
             <link.icon className="w-5 h-5" />
             <span className="text-sm font-medium">{link.name}</span>

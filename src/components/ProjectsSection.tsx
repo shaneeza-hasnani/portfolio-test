@@ -128,7 +128,7 @@ const ProjectsSection = () => {
     },
   ];
   const ProjectModal = ({ project }: { project: (typeof projects)[0] }) => (
-    <Card className="project-card border-0 shadow-medium">
+    <Card className="project-card border-0 shadow-medium bg-white/70 backdrop-blur-md border border-border/40">
       <CardHeader>
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-3">
@@ -262,7 +262,7 @@ const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="py-12 bg-gradient-to-b from-background via-muted/10 to-background"
+      className="py-12 bg-muted/20"
       ref={sectionRef}
     >
       <div className="container mx-auto px-6">
