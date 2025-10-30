@@ -1,6 +1,6 @@
 const AboutSection = () => {
   return (
-    <section id="about" className="py-4 bg-background">
+    <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center space-y-4 animate-fade-in">
           <p className="leading-relaxed text-[1.05rem] text-foreground/90">
