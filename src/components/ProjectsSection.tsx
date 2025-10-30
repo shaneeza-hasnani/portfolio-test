@@ -262,14 +262,11 @@ const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="py-12 lg:py-16 bg-gradient-to-b from-background via-muted/10 to-background"
+      className="py-12 bg-gradient-to-b from-background via-muted/10 to-background"
       ref={sectionRef}
     >
       <div className="container mx-auto px-6">
-        {/* Call to Action for Fraud Simulator */}
-        <div className="text-center mb-12 animate-fade-in"></div>
-
-        <div className="text-center mb-16 scroll-fade-in">
+        <div className="text-center mb-8 scroll-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
             Featured <span className="text-primary">Projects</span>
           </h2>

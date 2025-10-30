@@ -87,10 +87,10 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-16 md:py-20 bg-transparent relative overflow-hidden">
+    <section id="contact" className="py-12 bg-transparent relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-6xl">
         {/* Header */}
-        <div className="text-center mb-12 animate-fade-in">
+        <div className="text-center mb-8 animate-fade-in">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             Let’s <span className="text-primary">Connect</span>
           </h2>

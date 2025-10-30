@@ -39,9 +39,9 @@ const EducationSection = () => {
   ];
 
   return (
-    <section id="education" className="py-20 bg-background">
+    <section id="education" className="py-12 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12 animate-fade-in">
+        <div className="text-center mb-8 animate-fade-in">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4">
             <span className="text-primary">Education</span>
           </h2>
@@ -55,7 +55,7 @@ const EducationSection = () => {
             {/* Timeline line */}
             <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-primary/30"></div>
             
-            <div className="space-y-6">
+            <div className="space-y-4">
               {education.map((edu, index) => (
                 <div key={index} className="relative flex gap-6 group">
                   {/* Timeline dot */}

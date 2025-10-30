@@ -19,6 +19,11 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  section[id] {
+    scroll-margin-top: 20px;
   }
 
   body {

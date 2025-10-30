@@ -30,7 +30,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="flex flex-col items-center justify-center text-center py-16 md:py-20 relative z-10">
+    <section className="flex flex-col items-center justify-center text-center py-16 relative z-10">
       {/* Profile Image */}
       <div
         className="relative mb-8"
